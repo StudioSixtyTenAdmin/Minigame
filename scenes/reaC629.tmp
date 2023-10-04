@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://5kcjgt0r5u6l"]
+
+[ext_resource type="Script" path="res://scripts/reading_scene.gd" id="1_smqtr"]
+[ext_resource type="PackedScene" uid="uid://c4i3ln83xm7gp" path="res://scenes/cards/card_root.tscn" id="2_uafhp"]
+[ext_resource type="Resource" uid="uid://dvofm7m0j51im" path="res://assets/card_resources/card_1.tres" id="3_84f12"]
+
+[node name="reading_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_smqtr")
+metadata/_edit_vertical_guides_ = []
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+color = Color(0.505882, 0.505882, 0.505882, 1)
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.65
+anchor_right = 1.0
+anchor_bottom = 0.7
+offset_left = 15.0
+offset_top = -15.5
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 2.0
+stretch_mode = 3
+
+[node name="UI" type="SplitContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OptionA" type="Button" parent="AspectRatioContainer/UI"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Option A"
+
+[node name="OptionB" type="Button" parent="AspectRatioContainer/UI"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Option B"
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.25
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="card" parent="AspectRatioContainer2" instance=ExtResource("2_uafhp")]
+scale = Vector2(1, 1.05605)
+card_resource = ExtResource("3_84f12")
+
+[connection signal="pressed" from="AspectRatioContainer/UI/OptionA" to="." method="_on_option_a_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/UI/OptionB" to="." method="_on_option_b_pressed"]

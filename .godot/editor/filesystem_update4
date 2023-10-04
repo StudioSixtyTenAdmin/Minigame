@@ -1,0 +1,14 @@
+res://scenes/reading_scene.tscn
+res://scenes/cards/card_root.tscn
+res://scripts/card_resource.gd
+res://scripts/client_resource.gd
+res://scripts/client_script.gd
+res://scripts/reading_scene.gd
+res://scripts/card_script.gd
+res://scenes/cards/curve1.tres
+res://scenes/cards/curves/curve1.tres
+res://scenes/cards/curves/curve4.tres
+res://scenes/cards/curves/curve2.tres
+res://scenes/cards/curves/curve3.tres
+res://scenes/cards/curves/curve5.tres
+res://scenes/cards/curves/curve6.tres

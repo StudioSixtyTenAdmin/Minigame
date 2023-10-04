@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4i3ln83xm7gp"]
+
+[ext_resource type="Script" path="res://scripts/card_script.gd" id="1_8w5c3"]
+[ext_resource type="Curve2D" uid="uid://pdgbiwve4jba" path="res://scenes/cards/curves/curve6.tres" id="2_lr5fg"]
+
+[node name="card" type="Node2D"]
+position = Vector2(0, 24)
+script = ExtResource("1_8w5c3")
+
+[node name="Path2D" type="Path2D" parent="."]
+rotation = 0.21293
+curve = ExtResource("2_lr5fg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(203.726, -117.711)
+rotates = false
+
+[node name="GboxCardImage1" type="Sprite2D" parent="Path2D/PathFollow2D"]
+position = Vector2(0.0842285, 0.0673828)
