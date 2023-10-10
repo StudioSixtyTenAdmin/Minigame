@@ -3,3 +3,5 @@ res://scripts/client_script.gd
 res://scenes/clients/client_root.tscn
 res://scenes/reading_scene.tscn
 res://scenes/cards/card_root.tscn
+res://scenes/tar_root_scene.tscn
+res://scenes/client_scene.gd

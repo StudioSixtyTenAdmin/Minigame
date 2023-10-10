@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://bwhbq7hxokivu"]
+[gd_scene load_steps=3 format=3 uid="uid://bwhbq7hxokivu"]
+
+[ext_resource type="PackedScene" uid="uid://bkgg2b2f7xs4x" path="res://scenes/client_scene.tscn" id="1_8j0fc"]
+[ext_resource type="PackedScene" uid="uid://5kcjgt0r5u6l" path="res://scenes/reading_scene.tscn" id="2_x01og"]
 
 [node name="Tar_Root_Scene" type="Node2D"]
+
+[node name="client_scene_" parent="." instance=ExtResource("1_8j0fc")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 720.0
+offset_bottom = 1280.0
+
+[node name="reading_scene" parent="." instance=ExtResource("2_x01og")]
+offset_right = 720.0
+offset_bottom = 1280.0
