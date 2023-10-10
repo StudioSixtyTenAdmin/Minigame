@@ -9,7 +9,7 @@ extends Node2D
 func _ready():
 	var client_portrait = Image.load_from_file(portrait_path)
 	var client_name = client_resource.client_name
-	var intro_text = client_resource.intro_text
-	var reaction_a = client_resource.reaction_a
-	var reaction_b = client_resource.reaction_b
+	#var intro_text = client_resource.intro_text
+	var reaction_a = client_resource.reaction_negative
+	var reaction_b = client_resource.reaction_positive
 	get_child(0).texture = ImageTexture.create_from_image(client_portrait)

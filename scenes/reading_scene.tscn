@@ -59,6 +59,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+rotation = -0.0785398
 
 [node name="card" parent="AspectRatioContainer2" instance=ExtResource("2_uafhp")]
 card_resource = ExtResource("3_84f12")

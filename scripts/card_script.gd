@@ -5,6 +5,7 @@ extends Node2D
 
 var numby_poo = randi_range(2,4)
 var prog_speed = 0.05
+var count = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,10 +15,14 @@ func _ready():
 	var keyword_2 = card_resource.keyword_2
 	var keyword_3 = card_resource.keyword_3
 	$Path2D/PathFollow2D/GboxCardImage1.texture = ImageTexture.create_from_image(card_art)
+	$Keyword1.text = keyword_1
+	$Keyword2.text = keyword_2
+	$Keyword3.text = keyword_3
 
 #new function to load a new card resource
 func _new_card():
 	prog_speed = 0.05
+	count = 0
 	
 	if numby_poo == 5:
 		numby_poo = 1
@@ -34,14 +39,35 @@ func _new_card():
 	var rand_num = randi_range(1,6)
 	$Path2D.curve = load('res://scenes/cards/curves/curve'+str(rand_num)+'.tres')
 	$Path2D/PathFollow2D/GboxCardImage1.texture = ImageTexture.create_from_image(card_art)
-	$Path2D/PathFollow2D.progress_ratio = randf_range(0.25,0.99)
-	$Path2D.rotation_degrees = randi_range(-10,10)
+	$Keyword1.text = keyword_1
+	$Keyword2.text = keyword_2
+	$Keyword3.text = keyword_3
+	
+	$Keyword1.set_position(Vector2(randf_range(0,126),randf_range(0,126)))
+	$Keyword2.set_position(Vector2(randf_range(-126,0),randf_range(-126,0)))
+	$Keyword3.set_position(Vector2(randf_range(-126,0),randf_range(126,0)))
+	
+	
+	$Path2D/PathFollow2D.progress_ratio = randf_range(0.01,0.5)
+	$Path2D/PathFollow2D/GboxCardImage1.rotation = 0
+	$Path2D/PathFollow2D/GboxCardImage1.rotate(randf_range(0.1,-0.1))
+
 
 func _process(delta):
-	
-	if $Path2D/PathFollow2D.progress_ratio < 0.96:
+	count += delta
+	if count < 0.2:
+		if $Path2D/PathFollow2D/GboxCardImage1.rotation<0:
+			$Path2D/PathFollow2D/GboxCardImage1.rotate(-delta)
+		if $Path2D/PathFollow2D/GboxCardImage1.rotation>0:
+			$Path2D/PathFollow2D/GboxCardImage1.rotate(+delta)
+
+	if $Path2D/PathFollow2D.progress_ratio < 0.99:
 		$Path2D/PathFollow2D.progress_ratio += prog_speed
 		if prog_speed >= 0.001:
 			prog_speed -= 0.0025
 	else:
-		$Path2D/PathFollow2D.progress_ratio = 1
+		$Path2D/PathFollow2D.progress_ratio += 1
+		
+	#$Keyword1.modulate = Color(1, 1, 1, 1)
+	#$Keyword2.text = keyword_2
+	#$Keyword3.text = keyword_3

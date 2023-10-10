@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_wgm1l")
 card_name = "Death"
-keyword_1 = ""
-keyword_2 = ""
-keyword_3 = ""
+keyword_1 = "Loss"
+keyword_2 = "Distance"
+keyword_3 = "Fear"
 card_art_path = "res://assets/card_art/card_2.png"

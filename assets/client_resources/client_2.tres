@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://c1jy7gw7b2ki1"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_ybqc1"]
+
+[resource]
+script = ExtResource("1_ybqc1")
+client_name = "Farmer1"
+intro_text = "Oh reader, my life is at a crossroads and I need your help with a reading! My crops are in turmoil."
+reaction_a = "Oh my goodness your fortune is incredible!"
+reaction_b = "Oh damn your future is full of doom and gloom :("
+portrait_path = "res://assets/client_portraits/client_1_portrait.png"
