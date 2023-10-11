@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkgg2b2f7xs4x"]
+[gd_scene load_steps=6 format=3 uid="uid://bkgg2b2f7xs4x"]
 
 [ext_resource type="PackedScene" uid="uid://dhj7wm20ug320" path="res://scenes/clients/client_root.tscn" id="1_bgsk8"]
 [ext_resource type="Script" path="res://scenes/client_scene.gd" id="1_etdv8"]
 [ext_resource type="Script" path="res://scripts/client_script.gd" id="2_jrrs3"]
 [ext_resource type="Resource" uid="uid://c8d87b4hcdkke" path="res://assets/client_resources/client_1.tres" id="3_0wk6q"]
+[ext_resource type="AudioStream" uid="uid://bfho13w7qkoej" path="res://assets/DialogueBeep.wav" id="5_ciilk"]
 
 [node name="client_scene_" type="Control"]
 layout_mode = 3
@@ -169,6 +170,10 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Continue"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="dialogue_window"]
+stream = ExtResource("5_ciilk")
+volume_db = -11.556
 
 [connection signal="value_changed" from="gold_slider" to="." method="_on_gold_slider_value_changed"]
 [connection signal="pressed" from="gold_slider/Button" to="." method="_on_button_pressed"]

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Minigame_Project"
 run/main_scene="res://scenes/tar_root_scene.tscn"
-config/features=PackedStringArray("4.1", "Mobile")
+config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
