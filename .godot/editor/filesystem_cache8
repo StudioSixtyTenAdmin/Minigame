@@ -1,47 +1,63 @@
-2a60927148abd1d33b818b535e306557
-::res://::1697046509
-icon.svg::CompressedTexture2D::1473184283133097865::1696585136::1696585136::1::::<><>::
-::res://assets/::1697041088
-DialogueBeep.wav::AudioStreamWAV::2752713520817164697::1697041088::1697041088::1::::<><>::
-::res://assets/card_art/::1696585136
-card_1.png::CompressedTexture2D::4592701959396161440::1696585136::1696585136::1::::<><>::
-card_2.png::CompressedTexture2D::8254261274333476198::1696585136::1696585136::1::::<><>::
-card_3.png::CompressedTexture2D::1255368108979917271::1696585136::1696585136::1::::<><>::
-card_4.png::CompressedTexture2D::6876376609228203889::1696585136::1696585136::1::::<><>::
-card_5.png::CompressedTexture2D::7148456664418217459::1696585136::1696585136::1::::<><>::
-::res://assets/card_resources/::1697025605
-card_1.tres::Resource/Resource::8662455770959490852::1697025605::0::1::::<><>::res://scripts/card_resource.gd
-card_2.tres::Resource/Resource::754489434073646894::1697025605::0::1::::<><>::res://scripts/card_resource.gd
-card_3.tres::Resource/Resource::7703444385248385110::1697025605::0::1::::<><>::res://scripts/card_resource.gd
-card_4.tres::Resource/Resource::6352772950192470929::1697025605::0::1::::<><>::res://scripts/card_resource.gd
-card_5.tres::Resource/Resource::854365608735218163::1697025605::0::1::::<><>::res://scripts/card_resource.gd
-::res://assets/client_portraits/::1696585136
-client_1_portrait.png::CompressedTexture2D::3385196324589252131::1696585136::1696585136::1::::<><>::
-::res://assets/client_resources/::1697025606
-client_1.tres::Resource/Resource::7097327244513228760::1697025605::0::1::::<><>::res://scripts/client_resource.gd
-client_2.tres::Resource/Resource::6617845405575074874::1697025605::0::1::::<><>::res://scripts/client_resource.gd
-client_3.tres::Resource/Resource::7230913519727460065::1697025605::0::1::::<><>::res://scripts/client_resource.gd
-client_4.tres::Resource/Resource::7125038273947761094::1697025606::0::1::::<><>::res://scripts/client_resource.gd
-client_5.tres::Resource/Resource::6655482850712820407::1697025606::0::1::::<><>::res://scripts/client_resource.gd
-::res://scenes/::1697041222
-client_scene.gd::GDScript::-1::1697040985::0::1::::<>Control<>::
-client_scene.tscn::PackedScene::3101107999493749585::1697041222::0::1::::<><>::uid://dhj7wm20ug320<>res://scenes/client_scene.gd<>res://scripts/client_script.gd<>uid://c8d87b4hcdkke<>uid://bfho13w7qkoej
-reading_scene.tscn::PackedScene::2126446938463437657::1697041221::0::1::::<><>::res://scripts/reading_scene.gd<>uid://c4i3ln83xm7gp<>uid://dvofm7m0j51im
-tar_root_scene.tscn::PackedScene::3945116870328438734::1697041222::0::1::::<><>::uid://bkgg2b2f7xs4x<>uid://5kcjgt0r5u6l
-::res://scenes/cards/::1697041222
-card_root.tscn::PackedScene::6826553309537568363::1697041222::0::1::::<><>::res://scripts/card_script.gd<>uid://pdgbiwve4jba
-::res://scenes/cards/curves/::1696585136
-curve1.tres::Curve2D::2347915073665688831::1696585136::0::1::::<><>::
-curve2.tres::Curve2D::12539430424721151::1696585136::0::1::::<><>::
-curve3.tres::Curve2D::336993211327491123::1696585136::0::1::::<><>::
-curve4.tres::Curve2D::744946668068602718::1696585136::0::1::::<><>::
-curve5.tres::Curve2D::5318222673684907469::1696585136::0::1::::<><>::
-curve6.tres::Curve2D::1059392330716306574::1696585136::0::1::::<><>::
-::res://scenes/clients/::1697041221
-client_root.tscn::PackedScene::7671146260719304815::1697041221::0::1::::<><>::
-::res://scripts/::1697030933
-card_resource.gd::GDScript::-1::1696585136::0::1::::CardResource<>Resource<>::
-card_script.gd::GDScript::-1::1697025606::0::1::::<>Node2D<>::
-client_resource.gd::GDScript::-1::1697025606::0::1::::ClientResource<>Resource<>::
-client_script.gd::GDScript::-1::1697030933::0::1::::<>Node2D<>::
-reading_scene.gd::GDScript::-1::1696585136::0::1::::<>Control<>::
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1697188258
+icon.svg::CompressedTexture2D::1473184283133097865::1695994442::1695994514::1::::<><>::
+::res://assets/::1697205694
+DialogueBeep.wav::AudioStreamWAV::2752713520817164697::1697111239::1697111239::1::::<><>::
+::res://assets/card_art/::1696343357
+card_1.png::CompressedTexture2D::4592701959396161440::1696342848::1696343066::1::::<><>::
+card_2.png::CompressedTexture2D::8254261274333476198::1696342895::1696343066::1::::<><>::
+card_3.png::CompressedTexture2D::1255368108979917271::1696343355::1696343357::1::::<><>::
+card_4.png::CompressedTexture2D::6876376609228203889::1696342954::1696343066::1::::<><>::
+card_5.png::CompressedTexture2D::7148456664418217459::1696343055::1696343066::1::::<><>::
+::res://assets/card_resources/::1696518480
+card_1.tres::Resource/Resource::8662455770959490852::1696518480::0::1::::<><>::res://scripts/card_resource.gd
+card_2.tres::Resource/Resource::754489434073646894::1696518480::0::1::::<><>::res://scripts/card_resource.gd
+card_3.tres::Resource/Resource::7703444385248385110::1696518480::0::1::::<><>::res://scripts/card_resource.gd
+card_4.tres::Resource/Resource::6352772950192470929::1696518480::0::1::::<><>::res://scripts/card_resource.gd
+card_5.tres::Resource/Resource::854365608735218163::1696518480::0::1::::<><>::res://scripts/card_resource.gd
+::res://assets/client_portraits/::1696342751
+client_1_portrait.png::CompressedTexture2D::3385196324589252131::1696259322::1696342751::1::::<><>::
+::res://assets/client_resources/::1696867262
+client_1.tres::Resource/Resource::7097327244513228760::1696867262::0::1::::<><>::res://scripts/client_resource.gd
+client_2.tres::Resource/Resource::6617845405575074874::1696866024::0::1::::<><>::res://scripts/client_resource.gd
+client_3.tres::Resource/Resource::7230913519727460065::1696866034::0::1::::<><>::res://scripts/client_resource.gd
+client_4.tres::Resource/Resource::7125038273947761094::1696866039::0::1::::<><>::res://scripts/client_resource.gd
+client_5.tres::Resource/Resource::6655482850712820407::1696866055::0::1::::<><>::res://scripts/client_resource.gd
+::res://assets/text_dialogue/::1697205770
+Character data - Sheet1.csv::Translation::3799768286099250539::1697205578::1697205772::1::::<><>::
+Character data - Sheet1.Card.translation::OptimizedTranslation::1725588724490596221::1697205772::0::1::::<><>::
+Character data - Sheet1.Keywords Upright.translation::OptimizedTranslation::2163531262303711762::1697205772::0::1::::<><>::
+Character data - Sheet1.Keywords Reversed.translation::OptimizedTranslation::8747154594515578610::1697205772::0::1::::<><>::
+Character data - Sheet1.Client Context.translation::OptimizedTranslation::931241077669613881::1697205772::0::1::::<><>::
+Character data - Sheet1.Set your price.translation::OptimizedTranslation::7915421369939464860::1697205772::0::1::::<><>::
+Character data - Sheet1.Question.translation::OptimizedTranslation::9016655948298729745::1697205772::0::1::::<><>::
+Character data - Sheet1.Draw Upright.translation::OptimizedTranslation::2833945245553862516::1697205772::0::1::::<><>::
+Character data - Sheet1.Draw Reverse.translation::OptimizedTranslation::5461358948508104354::1697205772::0::1::::<><>::
+Character data - Sheet1.Reaction positive.translation::OptimizedTranslation::8122507623992876367::1697205772::0::1::::<><>::
+Character data - Sheet1.Reaction Negative.translation::OptimizedTranslation::7802891766025512857::1697205772::0::1::::<><>::
+Character data - Sheet1.Interval.translation::OptimizedTranslation::1060855131424235247::1697205772::0::1::::<><>::
+Character data - Sheet1.Fail State.translation::OptimizedTranslation::7323527678654652219::1697205772::0::1::::<><>::
+::res://scenes/::1697205350
+client_scene.gd::GDScript::-1::1697202257::0::1::::<>Control<>::
+client_scene.tscn::PackedScene::3101107999493749585::1697205350::0::1::::<><>::uid://dhj7wm20ug320::::res://scenes/clients/client_root.tscn<>res://scenes/client_scene.gd<>res://scripts/client_script.gd<>uid://c8d87b4hcdkke::::res://assets/client_resources/client_1.tres<>uid://3qxknx1wgh4u::::res://scenes/dialogue_box.tscn
+reading_scene.tscn::PackedScene::2126446938463437657::1697205349::0::1::::<><>::res://scripts/reading_scene.gd<>uid://c4i3ln83xm7gp::::res://scenes/cards/card_root.tscn<>uid://dvofm7m0j51im::::res://assets/card_resources/card_1.tres
+dialogue_box.tscn::PackedScene::1999732734247559578::1697205350::0::1::::<><>::uid://bfho13w7qkoej::::res://assets/DialogueBeep.wav<>res://scenes/dialogue_box.gd
+dialogue_box.gd::GDScript::-1::1697202415::0::1::::<>PanelContainer<>::
+tar_root_scene.tscn::PackedScene::3945116870328438734::1697205350::0::1::::<><>::uid://bkgg2b2f7xs4x::::res://scenes/client_scene.tscn<>uid://5kcjgt0r5u6l::::res://scenes/reading_scene.tscn
+::res://scenes/cards/::1697205350
+card_root.tscn::PackedScene::6826553309537568363::1697205350::0::1::::<><>::res://scripts/card_script.gd<>uid://pdgbiwve4jba::::res://scenes/cards/curves/curve6.tres
+::res://scenes/cards/curves/::1696433290
+curve1.tres::Curve2D::2347915073665688831::1696433250::0::1::::<><>::
+curve2.tres::Curve2D::12539430424721151::1696433241::0::1::::<><>::
+curve3.tres::Curve2D::336993211327491123::1696433259::0::1::::<><>::
+curve4.tres::Curve2D::744946668068602718::1696433269::0::1::::<><>::
+curve5.tres::Curve2D::5318222673684907469::1696433280::0::1::::<><>::
+curve6.tres::Curve2D::1059392330716306574::1696433290::0::1::::<><>::
+::res://scenes/clients/::1697205349
+client_root.tscn::PackedScene::7671146260719304815::1697205349::0::1::::<><>::
+::res://scripts/::1697201152
+card_resource.gd::GDScript::-1::1696424201::0::1::::CardResource<>Resource<>::
+card_script.gd::GDScript::-1::1696842258::0::1::::<>Node2D<>::
+client_resource.gd::GDScript::-1::1696867262::0::1::::ClientResource<>Resource<>::
+client_script.gd::GDScript::-1::1697201152::0::1::::<>Node2D<>::
+reading_scene.gd::GDScript::-1::1696424201::0::1::::<>Control<>::

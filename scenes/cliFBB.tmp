@@ -144,4 +144,3 @@ layout_mode = 1
 
 [connection signal="value_changed" from="gold_slider" to="." method="_on_gold_slider_value_changed"]
 [connection signal="pressed" from="gold_slider/Button" to="." method="_on_button_pressed"]
-[connection signal="choose_price" from="dialogue_box" to="." method="_on_dialogue_box_choose_price"]

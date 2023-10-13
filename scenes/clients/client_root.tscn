@@ -70,10 +70,7 @@ func _process(delta):
 			prog_speed -= 0.0025
 	else:
 		$Path2D/PathFollow2D.progress_ratio += 1
-		
-	#$Keyword1.modulate = Color(1, 1, 1, 1)
-	#$Keyword2.text = keyword_2
-	#$Keyword3.text = keyword_3
+
 "
 
 [node name="client" type="Node2D"]

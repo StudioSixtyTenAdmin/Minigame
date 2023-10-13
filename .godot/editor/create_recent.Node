@@ -1,3 +1,6 @@
+Node
+Timer
+RichTextLabel
 AudioStreamPlayer
 Button
 Label
@@ -9,8 +12,6 @@ MarginContainer
 Container
 AspectRatioContainer
 ProgressBar
-Node
-RichTextLabel
 Path2D
 PathFollow2D
 Node2D

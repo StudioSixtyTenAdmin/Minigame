@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://3qxknx1wgh4u"]
+
+[ext_resource type="AudioStream" uid="uid://bfho13w7qkoej" path="res://assets/DialogueBeep.wav" id="1_7s8pr"]
+[ext_resource type="Script" path="res://scenes/dialogue_box.gd" id="1_g6hfk"]
+[ext_resource type="Script" path="res://scenes/PauseCalculator.gd" id="3_6jh5h"]
+[ext_resource type="Script" path="res://scenes/DialogueManager.gd" id="4_0eimu"]
+
+[node name="dialogue_window" type="PanelContainer"]
+custom_minimum_size = Vector2(300, 200)
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.4
+anchor_right = 0.5
+anchor_bottom = 0.4
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_g6hfk")
+
+[node name="dialogue_text" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="text_continue" type="Button" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Continue"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_7s8pr")
+volume_db = -11.556
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.04
+
+[node name="PauseCalculator" type="Node" parent="."]
+script = ExtResource("3_6jh5h")
+
+[node name="DialogueManager" type="Node" parent="."]
+script = ExtResource("4_0eimu")
+
+[connection signal="pressed" from="text_continue" to="." method="_on_text_continue_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_typer_timeout"]
