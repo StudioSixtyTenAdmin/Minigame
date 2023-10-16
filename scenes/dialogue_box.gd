@@ -13,19 +13,44 @@ signal message_completed()
 var linecount = 0
 signal choose_price 
 signal text_ready
+var count = 1
+var textLength 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_update_message("Florian, a young labourer, [wave]seeks your counsel[/wave], the baker has offered him an apprenticeship, but he has his sights set on another position.")
+	textLength = content.text.length()-13
 
 
 
 func _on_text_continue_pressed():
-	_update_message("[wave]Set your price for the reading.[/wave]")
+	if count == 1:
+		_update_message("[wave]Set your price for the reading.[/wave]")
+		textLength = content.text.length()-13
+		choose_price.emit(intro_text_complete)
+	
+	if count == 2:
+		_update_message("“Sir, the baker has offered to apprentice me, but the blacksmith has no sons and is fond of me. If I were to apprentice for him, I could inherit everything. What do the [wave]cards[/wave] say?”")
+		textLength = content.text.length()-13
+	
+	if count == 3:
+		_update_message("[wave]I knew it! Thank you, sir![/wave]")
+		textLength = content.text.length()-13
+	
+	if count == 4:
+		_update_message("The Innkeeper seeks your service, his wife has been suffering a dire malaise for a month hence. [wave]What will become of her?[/wave]")
+		textLength = content.text.length()
+	
+	if count == 5:
+		_update_message("[wave]Set your price for the reading.[/wave]")
+		textLength = content.text.length()-13
+		choose_price.emit(intro_text_complete)
+	
+	if count ==6 
 	
 	$text_continue.visible = false
 	await text_ready
-	choose_price.emit(intro_text_complete)
+	count+=1
 	
 	
 func _update_message(message: String):
