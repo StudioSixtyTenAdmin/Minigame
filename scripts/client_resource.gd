@@ -1,6 +1,7 @@
 extends Resource
 class_name ClientResource
 
+@export var client_id: int
 @export var client_name: String
 @export var card_profile: String
 @export var keywords_upright: String

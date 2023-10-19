@@ -1,19 +1,19 @@
 [gd_scene load_steps=6 format=3 uid="uid://bkgg2b2f7xs4x"]
 
 [ext_resource type="PackedScene" uid="uid://dhj7wm20ug320" path="res://scenes/clients/client_root.tscn" id="1_bgsk8"]
-[ext_resource type="Script" path="res://scenes/client_scene.gd" id="1_etdv8"]
+[ext_resource type="Script" path="res://scripts/client_scene_script.gd" id="1_gd6md"]
 [ext_resource type="Script" path="res://scripts/client_script.gd" id="2_jrrs3"]
 [ext_resource type="Resource" uid="uid://c8d87b4hcdkke" path="res://assets/client_resources/client_1.tres" id="3_0wk6q"]
 [ext_resource type="PackedScene" uid="uid://3qxknx1wgh4u" path="res://scenes/dialogue_box.tscn" id="6_wapug"]
 
-[node name="client_scene_" type="Control"]
+[node name="client_scene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_etdv8")
+script = ExtResource("1_gd6md")
 
 [node name="Background" type="ColorRect" parent="."]
 visible = false
@@ -46,7 +46,7 @@ grow_vertical = 2
 text = "Gold
 "
 
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="."]
+[node name="client_parent" type="AspectRatioContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -56,12 +56,12 @@ offset_right = -40.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Control" parent="AspectRatioContainer2"]
+[node name="Control" type="Control" parent="client_parent"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="client" parent="AspectRatioContainer2/Control" instance=ExtResource("1_bgsk8")]
+[node name="client" parent="client_parent/Control" instance=ExtResource("1_bgsk8")]
 script = ExtResource("2_jrrs3")
 client_resource = ExtResource("3_0wk6q")
 
@@ -144,4 +144,3 @@ layout_mode = 1
 
 [connection signal="value_changed" from="gold_slider" to="." method="_on_gold_slider_value_changed"]
 [connection signal="pressed" from="gold_slider/Button" to="." method="_on_button_pressed"]
-[connection signal="choose_price" from="dialogue_box" to="." method="_on_dialogue_box_choose_price"]

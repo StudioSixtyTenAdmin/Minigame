@@ -4,12 +4,13 @@
 
 [resource]
 script = ExtResource("1_jq5sn")
-client_name = "Florian: The hired hand"
-card_profile = "The Fool "
-keywords_upright = "beginnings, freedom, innocence, originality, adventure, idealism, spontaneity"
-keywords_reversed = "reckless, careless, distracted, naive, foolish, gullible, stale, dull"
-client_context = "Florian, a young labourer, seeks your counsel, the baker has offered him an apprenticeship, but he has his sights set on another position."
-question = "“Sir, the baker has offered to apprentice me, but the blacksmith has no sons and is fond of me. If I were to apprentice for him, I could inherit everything. What do the cards say?”"
-reaction_positive = "Sir, I thank you for your counsel, a baker I shall be."
-reaction_negative = "I knew it! Thank you, sir!"
+client_ID = 0
+client_name = ""
+card_profile = ""
+keywords_upright = ""
+keywords_reversed = ""
+client_context = ""
+question = ""
+reaction_positive = ""
+reaction_negative = ""
 portrait_path = "res://assets/client_portraits/client_1_portrait.png"

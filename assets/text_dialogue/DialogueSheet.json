@@ -1,0 +1,67 @@
+[
+  {
+	"Name": "Florian: The hired hand",
+	"Card": "The Fool",
+	"Keywords Upright": "beginnings, freedom, innocence, originality, adventure, idealism, spontaneity",
+	"Keywords Reversed": "reckless, careless, distracted, naive, foolish, gullible, stale, dull",
+	"Client Context": "Florian, a young labourer, seeks your counsel, the baker has offered him an apprenticeship, but he has his sights set on another position.",
+	"Question": "Sir, the baker has offered to apprentice me, but the blacksmith has no sons and is fond of me. If I were to apprentice for him, I could inherit everything. What do the cards say?",
+	"Card__1": "The Wheel of Fortune",
+	"Draw Upright": "You are a young man, unskilled and alone. The baker has made you a good offer; the cards suggest that you should accept!",
+	"Draw Reverse": "You are a young man full of promise, the cards tell of opportunity. You should refuse the offer and approach the blacksmith with your proposal.",
+	"Reaction positive": "Sir, I thank you for your counsel, a baker I shall be.",
+	"Reaction Negative": "I knew it! Thank you, sir!"
+  },
+  {
+	"Name": "Maurice: The Innkeeper",
+	"Card": "The Hierophant",
+	"Keywords Upright": "tradition, social groups, conventionality, conformity, education, knowledge, beliefs",
+	"Keywords Reversed": "rebellion, unconventionality, non-conformity, new methods, ignorance",
+	"Client Context": "The Innkeeper seeks your service, his wife has been suffering a dire malaise for a month hence. What will become of her?",
+	"Question": "My beloved wife has been ailing for weeks, please tell me, will she live?",
+	"Card__1": "The 3 of Swords",
+	"Draw Upright": "This card foretells hardship, hurt and great sorrow, your wife should put her affairs in order and make peace with her maker.",
+	"Draw Reverse": "I see a great hardship has been endured, this card foretells healing. Your wife shall overcome her malaise and return to her duties.",
+	"Reaction positive": "You damned scoundrel, you are nothing but a charlatan!",
+	"Reaction Negative": "Thank you sir."
+  },
+  {
+	"Name": "Martha:",
+	"Card": "Death",
+	"Keywords Upright": "transformation, endings, change, transition, letting go, release",
+	"Keywords Reversed": "fear of change, repeating negative patterns, resisting change, stagnancy, decay",
+	"Client Context": "Martha, a village woman, seeks your help, her crops have failed.",
+	"Question": "I deal in death, I fear it has cast an ill-omen upon me. Ask the cards how I can restore my crop?",
+	"Card__1": "Temperance",
+	"Draw Upright": "You have drawn temperance, this suggests balance. Your crops have not failed because of an ill-omen. Go back to the land, prepare it well, work it daily and your crops will be abundant.",
+	"Draw Reverse": "Mistress, you have drawn Temperance, which suggests there is imbalance. You must restore the natural balance, spill salt along the boundary of your property and have the blacksmith forge a horse-shoe for your home.",
+	"Reaction positive": "Do you suppose me a fool, sir, unable to work my land? The only foolishness was seeking answers here.",
+	"Reaction Negative": "A horse-shoe… death and destruction are in my home and you think a horse-shoe will save me. Be damned!"
+  },
+  {
+	"Name": "Jonah: The Minstrel",
+	"Card": "The Magician",
+	"Keywords Upright": "willpower, desire, being resourceful, skill, ability, concentration, manifestation",
+	"Keywords Reversed": "manipulation, cunning, trickery, wasted talent, illusion, deception",
+	"Client Context": "The Minstrel, Jonah has come to consult with the cards, he wants a place to settle for some time.",
+	"Question": "Sire, I am weary from my travel, is this village a haven for… one such as me?",
+	"Card__1": "The Empress",
+	"Draw Upright": "I have heard whispers of Minstrel, the people enjoy the tales you bring; the village will nurture you for a time. Stay!",
+	"Draw Reverse": "I have heard whispers of Minstrel, the village is full of janglers; be on thy way!",
+	"Reaction positive": "Gramercy sire, by my troth I shall not forget your kindness.",
+	"Reaction Negative": "I have heard whispers of you too sire, a man hears a lot on the road…"
+  },
+  {
+	"Name": "Vera: The Healer",
+	"Card": "Strength",
+	"Keywords Upright": "unconscious, intuition, mystery, spirituality, higher power, inner voice",
+	"Keywords Reversed": "repressed intuition, hidden motives, superficiality, confusion, cognitive dissonance",
+	"Client Context": "Vera, the healer, has come to seek your guidance. The inquisitor has been watching her collect herbs and she fears his intentions.",
+	"Question": "I have seen him, watching me as I forage. I fear his intent, should I take my son and leave this place?",
+	"Card__1": "The High Priestess",
+	"Draw Upright": "Madam, you’ve drawn The High Priestess, it’s a powerful message from the cards; you must trust your instincts, you are not safe here.",
+	"Draw Reverse": "My dear, I fear you have some fanciful ideas. The inquisitor does not concern himself with such simple matters. Fear not!",
+	"Reaction positive": "I appreciate your candour sir, I must make haste.",
+	"Reaction Negative": "Are you certain? Thank you sir, I am safe!"
+  }
+]

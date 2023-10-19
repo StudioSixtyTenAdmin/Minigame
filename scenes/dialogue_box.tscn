@@ -3,7 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://bfho13w7qkoej" path="res://assets/DialogueBeep.wav" id="1_7s8pr"]
 [ext_resource type="Script" path="res://scenes/dialogue_box.gd" id="1_g6hfk"]
 [ext_resource type="Script" path="res://scenes/PauseCalculator.gd" id="3_6jh5h"]
-[ext_resource type="Script" path="res://scenes/DialogueManager.gd" id="4_0eimu"]
+[ext_resource type="Script" path="res://scenes/DialogueVoicePlayer.gd" id="3_s3i34"]
 
 [node name="dialogue_window" type="PanelContainer"]
 custom_minimum_size = Vector2(300, 200)
@@ -35,9 +35,10 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Continue"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="DialogueVoicePlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_7s8pr")
 volume_db = -11.556
+script = ExtResource("3_s3i34")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.04
@@ -45,8 +46,12 @@ wait_time = 0.04
 [node name="PauseCalculator" type="Node" parent="."]
 script = ExtResource("3_6jh5h")
 
-[node name="DialogueManager" type="Node" parent="."]
-script = ExtResource("4_0eimu")
+[node name="PauseTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="pressed" from="text_continue" to="." method="_on_text_continue_pressed"]
+[connection signal="finished" from="DialogueVoicePlayer" to="." method="_on_dialogue_voice_player_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_typer_timeout"]
+[connection signal="pause_requested" from="PauseCalculator" to="." method="_on_pause_calculator_pause_requested"]
+[connection signal="tag_value" from="PauseCalculator" to="." method="_on_pause_calculator_tag_value"]
+[connection signal="timeout" from="PauseTimer" to="." method="_on_pause_timer_timeout"]

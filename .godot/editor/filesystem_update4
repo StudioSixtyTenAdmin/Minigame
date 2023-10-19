@@ -1,9 +1,9 @@
 res://scenes/clients/client_root.tscn
 res://scenes/client_scene.gd
+res://scripts/client_scene_script.gd
 res://scripts/client_script.gd
-res://scenes/dialogue_box.gd
+res://scenes/cards/card_root.tscn
 res://scenes/reading_scene.tscn
 res://scenes/client_scene.tscn
-res://scenes/dialogue_box.tscn
 res://scenes/tar_root_scene.tscn
-res://scenes/cards/card_root.tscn
+res://scripts/client_resource.gd

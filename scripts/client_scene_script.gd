@@ -4,7 +4,8 @@ var price_setting = false
 
 @onready var client_id = randi_range(1,5)
 
-func ready():
+func _ready():
+	client_id = randi_range(1,5)
 	print('client_id: ',_get_client_id())
 
 
