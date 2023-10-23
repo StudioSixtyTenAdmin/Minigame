@@ -6,4 +6,12 @@ res://scenes/cards/card_root.tscn
 res://scenes/reading_scene.tscn
 res://scenes/client_scene.tscn
 res://scenes/tar_root_scene.tscn
-res://scripts/client_resource.gd
+res://scenes/DialogueVoicePlayer.gd
+res://scenes/dialogue_box.tscn
+res://scenes/PauseCalculator.gd
+res://scenes/dialogue_box.gd
+res://assets/client_resources/client_2.tres
+res://assets/client_resources/client_4.tres
+res://assets/client_resources/client_3.tres
+res://assets/client_resources/client_5.tres
+res://assets/client_resources/client_1.tres

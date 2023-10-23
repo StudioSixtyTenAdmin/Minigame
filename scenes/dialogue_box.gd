@@ -28,8 +28,11 @@ var true_text_length = 0
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	_update_message("[wave]Florian[/wave], a [b]young[/b] labourer, [wave]seeks your counsel[/wave],{p=0.5} the baker has offered him an apprenticeship, but he has his sights set on another position.")
+#func _ready():
+#	_update_message("[wave]Florian[/wave], a [b]young[/b] labourer, [wave]seeks your counsel[/wave],{p=0.5} the baker has offered him an apprenticeship, but he has his sights set on another position.")
+
+func _first_text(message):
+	_update_message(message)
 
 func _on_text_continue_pressed():
 	if count == 1:
@@ -101,4 +104,4 @@ func _on_pause_timer_timeout():
 
 func _on_pause_calculator_tag_value(x):
 	true_text_length = x
-	print ('Output:',true_text_length)
+	#print ('Output:',true_text_length)

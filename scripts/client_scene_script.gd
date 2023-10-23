@@ -1,12 +1,18 @@
 extends Control
 
 var price_setting = false
+var client 
 
-@onready var client_id = randi_range(1,5)
+var client_id = randi_range(1,5)
+
+#func entertree():
+#	client_id = randi_range(1,5)
 
 func _ready():
-	client_id = randi_range(1,5)
-	print('client_id: ',_get_client_id())
+	client = $client_parent/Control/client
+	print('Client_scene: ',Time.get_ticks_msec(),'client_id: ',_get_client_id())
+	print(client.client_resource.client_context)
+	$dialogue_box._first_text(client.client_resource.client_context)
 
 
 func _on_gold_slider_value_changed(value):

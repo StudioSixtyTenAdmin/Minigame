@@ -4,13 +4,13 @@
 
 [resource]
 script = ExtResource("1_ybqc1")
-client_ID = 1
-client_name = ""
-card_profile = ""
+client_id = 2
+client_name = "Maurice: The Innkeeper"
+card_profile = "The Hierophant"
 keywords_upright = ""
 keywords_reversed = ""
-client_context = ""
-question = ""
-reaction_positive = ""
-reaction_negative = ""
-portrait_path = "res://assets/client_portraits/client_1_portrait.png"
+client_context = "The Innkeeper seeks your service, his wife has been suffering a dire malaise for a month hence. What will become of her?"
+question = "My beloved wife has been ailing for weeks, please tell me, will she live?"
+reaction_positive = "You damned scoundrel, you are nothing but a charlatan!"
+reaction_negative = "Thank you sir."
+portrait_path = "res://assets/client_portraits/client_2_portrait.png"

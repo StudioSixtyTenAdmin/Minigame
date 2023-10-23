@@ -4,13 +4,13 @@
 
 [resource]
 script = ExtResource("1_kobh7")
-client_ID = 3
-client_name = ""
-card_profile = ""
+client_id = 3
+client_name = "Martha"
+card_profile = "Death"
 keywords_upright = ""
 keywords_reversed = ""
-client_context = ""
-question = ""
-reaction_positive = ""
-reaction_negative = ""
-portrait_path = "res://assets/client_portraits/client_1_portrait.png"
+client_context = "Martha, a village woman, seeks your help, her crops have failed."
+question = "I deal in death, I fear it has cast an ill-omen upon me. Ask the cards how I can restore my crop?"
+reaction_positive = "Do you suppose me a fool, sir, unable to work my land? The only foolishness was seeking answers here."
+reaction_negative = "A horse-shoe… death and destruction are in my home and you think a horse-shoe will save me. Be damned!"
+portrait_path = "res://assets/client_portraits/client_3_portrait.png"

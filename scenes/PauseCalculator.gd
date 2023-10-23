@@ -49,10 +49,10 @@ func _ready() -> void:
 # and performs the first call to _extract_next_pause
 func extract_pauses_from_string(source_string: String) -> String:
 	total_tag_length = 0
-	print("Total Tag Length: ",total_tag_length)
+	#print("Total Tag Length: ",total_tag_length)
 	_pauses = []
 	_find_pauses(source_string)
-	print(total_tag_length)
+	#print(total_tag_length)
 	tag_value.emit(total_tag_length)
 	return _extract_tags(source_string)
 
@@ -104,10 +104,10 @@ func _adjust_position(pos: int, source_string: String) -> int:
 		midcount += tag_length
 		_new_pos -= tag_length
 	
-	print("midcount Length: ",midcount)
-	print("Total Tag Length before adding midcount: ", total_tag_length)
+	#print("midcount Length: ",midcount)
+	#print("Total Tag Length before adding midcount: ", total_tag_length)
 	total_tag_length = midcount
-	print("Total Tag Length after adding midcount: ", total_tag_length)
+	#print("Total Tag Length after adding midcount: ", total_tag_length)
 	return _new_pos
 
 # Removes all custom tags from the string
