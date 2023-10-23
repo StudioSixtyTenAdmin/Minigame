@@ -106,6 +106,7 @@ offset_right = 200.0
 offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 2
+max_value = 20.0
 
 [node name="Button" type="Button" parent="gold_slider"]
 layout_mode = 1
@@ -142,5 +143,7 @@ vertical_alignment = 1
 [node name="dialogue_box" parent="." instance=ExtResource("6_wapug")]
 layout_mode = 1
 
+[connection signal="price_set" from="." to="dialogue_box" method="_on_client_scene_price_set"]
 [connection signal="value_changed" from="gold_slider" to="." method="_on_gold_slider_value_changed"]
-[connection signal="pressed" from="gold_slider/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="gold_slider/Button" to="." method="_on_gold_button_pressed"]
+[connection signal="choose_price" from="dialogue_box" to="." method="_on_dialogue_box_choose_price"]

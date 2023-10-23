@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctswap7g7ypoa"]
+
+[ext_resource type="Script" path="res://scenes/cards/3d_card_root.gd" id="1_0ktj6"]
+[ext_resource type="Script" path="res://scenes/cards/Camera3D.gd" id="2_4qc44"]
+[ext_resource type="Texture2D" uid="uid://bmn11rocngsri" path="res://assets/card_art/card_ back.png" id="2_crxm0"]
+[ext_resource type="Shape3D" uid="uid://drnlwnya2k3qa" path="res://scenes/cards/3d_card_root.tres" id="2_h3t3e"]
+
+[node name="3d_card_root" type="Node3D"]
+script = ExtResource("1_0ktj6")
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 0.684356, -0.729148, 0, 0.729148, 0.684356, 0, -7.579, 8.462)
+script = ExtResource("2_4qc44")
+target = NodePath(".")
+
+[node name="fan_root" type="Node3D" parent="."]
+
+[node name="Area3D4" type="Area3D" parent="fan_root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fan_root/Area3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 0)
+shape = ExtResource("2_h3t3e")
+
+[node name="Area3D2" type="Area3D" parent="fan_root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fan_root/Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+shape = ExtResource("2_h3t3e")
+
+[node name="Area3D" type="Area3D" parent="fan_root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fan_root/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+shape = ExtResource("2_h3t3e")
+
+[node name="Area3D3" type="Area3D" parent="fan_root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fan_root/Area3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+shape = ExtResource("2_h3t3e")
+
+[node name="Area3D5" type="Area3D" parent="fan_root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fan_root/Area3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
+shape = ExtResource("2_h3t3e")
+
+[node name="Sprite3D" type="Sprite3D" parent="fan_root"]
+texture = ExtResource("2_crxm0")
+
+[node name="Sprite3D2" type="Sprite3D" parent="fan_root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+texture = ExtResource("2_crxm0")
+
+[node name="Sprite3D3" type="Sprite3D" parent="fan_root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+texture = ExtResource("2_crxm0")
+
+[node name="Sprite3D4" type="Sprite3D" parent="fan_root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+texture = ExtResource("2_crxm0")
+
+[node name="Sprite3D5" type="Sprite3D" parent="fan_root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+texture = ExtResource("2_crxm0")
+
+[connection signal="mouse_entered" from="fan_root/Area3D4" to="." method="_on_area_3d_4_mouse_entered"]
+[connection signal="mouse_entered" from="fan_root/Area3D2" to="." method="_on_area_3d_2_mouse_entered"]
+[connection signal="mouse_entered" from="fan_root/Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_entered" from="fan_root/Area3D3" to="." method="_on_area_3d_3_mouse_entered"]
+[connection signal="mouse_entered" from="fan_root/Area3D5" to="." method="_on_area_3d_5_mouse_entered"]

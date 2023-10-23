@@ -18,41 +18,42 @@ signal text_ready
 var count = 1
 var textLength 
 var playing_voice = false
+var show_continue = true
 
 var true_text_length = 0
 
 #Load Dialogue Text
 
+func _change_show_continue(changed_to):
+	show_continue = changed_to
 
-
+func _set_price():
+	_update_message("[wave]Set {p=0.1}your [/wave]{p=0.1}[b]price![/b]")
+	choose_price.emit(true)
+	_change_show_continue(false)
+	#await _on_client_scene_price_set()
 
 
 # Called when the node enters the scene tree for the first time.
 #func _ready():
 #	_update_message("[wave]Florian[/wave], a [b]young[/b] labourer, [wave]seeks your counsel[/wave],{p=0.5} the baker has offered him an apprenticeship, but he has his sights set on another position.")
 
-func _first_text(message):
+func _next_text(message):
 	_update_message(message)
 
 func _on_text_continue_pressed():
 	if count == 1:
-		_update_message("[wave]Set {p=0.1}your [/wave]{p=0.1}[b]price![/b]")
-		choose_price.emit(intro_text_complete)
+		_set_price()
 	
 	if count == 2:
-		_update_message("Sir, the baker has offered to apprentice me, but the blacksmith has no sons and is fond of me.{p=0.5} If I were to apprentice for him, {p=0.1}[wave]I could inherit everything[/wave]. What do the cards say?")
+		get_parent()._dialogue_tree(1)
 	
-	if count == 3:
-		_update_message("[wave]I knew[/wave] it!{p=0.1} Thank you, sir!")
-
+	if count ==3:
+		get_parent()._dialogue_tree(2)
 	
-	if count == 4:
-		_update_message("The Innkeeper seeks your service, his wife has been suffering a dire malaise for a month hence. [wave]What will become of her?[/wave]")
-
-	
-	if count == 5:
-		_update_message("[wave]Set your price for the reading.[/wave]")
-		choose_price.emit(intro_text_complete)
+	if count ==4:
+		get_parent()._new_client()
+		count = 0
 	
 	
 	$text_continue.visible = false
@@ -81,7 +82,8 @@ func _on_typer_timeout():
 		playing_voice = false
 		timer.stop()
 		emit_signal("message_completed")
-		$text_continue.visible = true
+		if show_continue == true:
+			$text_continue.visible = true
 		text_ready.emit()
 
 # Called when the voice player finishes playing the voice clip
@@ -105,3 +107,8 @@ func _on_pause_timer_timeout():
 func _on_pause_calculator_tag_value(x):
 	true_text_length = x
 	#print ('Output:',true_text_length)
+
+func _on_client_scene_price_set():
+	print('price is set')
+	_change_show_continue(true)
+	$text_continue.visible = true

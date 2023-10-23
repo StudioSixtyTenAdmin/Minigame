@@ -1,3 +1,15 @@
+TouchScreenButton
+Control
+CollisionShape3D
+CollisionPolygon3D
+Node2D
+CollisionShape2D
+Area2D
+Area3D
+Node3D
+Camera3D
+SubViewportContainer
+Sprite3D
 Button
 Node
 Timer
@@ -5,7 +17,6 @@ RichTextLabel
 AudioStreamPlayer
 Label
 PanelContainer
-Control
 HSlider
 GridContainer
 MarginContainer
@@ -14,6 +25,5 @@ AspectRatioContainer
 ProgressBar
 Path2D
 PathFollow2D
-Node2D
 SplitContainer
 ColorRect
