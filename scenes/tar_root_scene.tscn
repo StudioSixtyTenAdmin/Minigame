@@ -16,5 +16,7 @@ offset_bottom = 1280.0
 
 [node name="reading_scene" parent="." instance=ExtResource("2_x01og")]
 visible = false
-offset_right = 720.0
-offset_bottom = 1280.0
+
+[connection signal="card_reading_options" from="client_scene_" to="reading_scene" method="_on_client_scene__card_reading_options"]
+[connection signal="card_selection_ready" from="client_scene_" to="reading_scene" method="_on_client_scene__card_selection_ready"]
+[connection signal="finish_reading_scene" from="reading_scene" to="client_scene_" method="_on_reading_scene_finish_reading_scene"]

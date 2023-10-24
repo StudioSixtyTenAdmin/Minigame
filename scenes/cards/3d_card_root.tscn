@@ -7,6 +7,7 @@
 
 [node name="3d_card_root" type="Node3D"]
 script = ExtResource("1_0ktj6")
+click_ready = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.969872, -0.243615, 0, 0.243615, 0.969872, 0, -1.0672, 5.99837)

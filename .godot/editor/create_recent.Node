@@ -1,3 +1,4 @@
+RichTextLabel
 TouchScreenButton
 Control
 CollisionShape3D
@@ -13,7 +14,6 @@ Sprite3D
 Button
 Node
 Timer
-RichTextLabel
 AudioStreamPlayer
 Label
 PanelContainer

@@ -9,6 +9,17 @@ extends Node3D
 @onready var t = 0
 @onready var current_card = $fan_root/Sprite3D
 var move_card = false
+@export var click_ready = false
+signal card_selected 
+
+func _reset():
+	$fan_root._zero_position()
+	var a = $fan_root.global_position
+	var b = $fan_root.target.global_position
+	t = 0
+	current_card = $fan_root/Sprite3D
+	move_card = false
+	click_ready = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -19,19 +30,19 @@ func _process(delta):
 	if($fan_root.global_position.distance_to(b))<0.05:
 		a = b
 	if move_card:
-		current_card.position.y += delta*10
+		current_card.position.y += delta*50
 		for child in $fan_root.get_children():
 			if child != current_card:
-				child.position.y -= delta*10
+				child.position.y -= delta*50
 
 
 func _on_area_3d_mouse_entered():
-	print('middle')
+	#print('middle')
 	current_card = $fan_root/Sprite3D
 	t = 0
 	b = Vector3(0,0,0)
 	#b = Vector3(0,-7.579,8.462)
-	print(a,b)
+	#print(a,b)
 	$fan_root/Sprite3D.position.z = 0.85
 	$fan_root/Sprite3D2.position.z = 0
 	$fan_root/Sprite3D3.position.z = 0
@@ -41,12 +52,12 @@ func _on_area_3d_mouse_entered():
 
 
 func _on_area_3d_2_mouse_entered():
-	print('mid_left')
+	#print('mid_left')
 	current_card = $fan_root/Sprite3D2
 	t = 0
 	b = Vector3(0.6,0,0)
 	#b = Vector3(-1.25,-7.579,8.462)
-	print(a,b)
+	#print(a,b)
 	$fan_root/Sprite3D.position.z = 0.
 	$fan_root/Sprite3D2.position.z = 0.85
 	$fan_root/Sprite3D3.position.z = 0
@@ -57,12 +68,12 @@ func _on_area_3d_2_mouse_entered():
 
 
 func _on_area_3d_3_mouse_entered():
-	print('mid_right')
+	#print('mid_right')
 	current_card = $fan_root/Sprite3D3
 	t = 0
 	b = Vector3(-0.6,0,0)
 	#b = Vector3(1.25,-7.579,8.462)
-	print(a,b)
+	#print(a,b)
 	$fan_root/Sprite3D.position.z = 0
 	$fan_root/Sprite3D2.position.z = 0
 	$fan_root/Sprite3D3.position.z = 0.85
@@ -72,12 +83,12 @@ func _on_area_3d_3_mouse_entered():
 
 
 func _on_area_3d_4_mouse_entered():
-	print('far_left')
+	#print('far_left')
 	current_card = $fan_root/Sprite3D4
 	t = 0
 	b = Vector3(1.5,0,0)
 	#b = Vector3(-2.5,-7.579,8.462)
-	print(a,b)
+	#print(a,b)
 	$fan_root/Sprite3D.position.z = 0
 	$fan_root/Sprite3D2.position.z = 0
 	$fan_root/Sprite3D3.position.z = 0
@@ -88,12 +99,12 @@ func _on_area_3d_4_mouse_entered():
 
 
 func _on_area_3d_5_mouse_entered():
-	print('far_right')
+	#print('far_right')
 	current_card = $fan_root/Sprite3D5
 	t = 0
 	b = Vector3(-1.5,0,0)
 	#b = Vector3(2.5,-7.579,8.462)
-	print(a,b)
+	#print(a,b)
 	$fan_root/Sprite3D.position.z = 0
 	$fan_root/Sprite3D2.position.z = 0
 	$fan_root/Sprite3D3.position.z = 0
@@ -103,6 +114,11 @@ func _on_area_3d_5_mouse_entered():
 	#$Camera3D.target.position.x = 2
 
 func _input(input):
-	if input.is_action_pressed('mouseClick'):
+	if input.is_action_pressed('mouseClick') and click_ready:
+		click_ready = false
 		move_card = true
 		print(current_card)
+		await get_tree().create_timer(0.4).timeout
+		print('timeout')
+		move_card = false
+		card_selected.emit()
