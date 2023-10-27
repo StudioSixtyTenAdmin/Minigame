@@ -2,10 +2,9 @@
 
 [ext_resource type="AudioStream" uid="uid://bfho13w7qkoej" path="res://assets/DialogueBeep.wav" id="1_7s8pr"]
 [ext_resource type="Script" path="res://scenes/dialogue_box.gd" id="1_g6hfk"]
+[ext_resource type="Theme" uid="uid://dyhggra4gad0m" path="res://assets/text_dialogue/main_theme.tres" id="2_54ov5"]
 [ext_resource type="Script" path="res://scenes/PauseCalculator.gd" id="3_6jh5h"]
 [ext_resource type="Script" path="res://scenes/DialogueVoicePlayer.gd" id="3_s3i34"]
-
-[sub_resource type="Theme" id="Theme_abu2q"]
 
 [node name="dialogue_window" type="PanelContainer"]
 custom_minimum_size = Vector2(300, 200)
@@ -26,7 +25,7 @@ script = ExtResource("1_g6hfk")
 
 [node name="dialogue_text" type="RichTextLabel" parent="."]
 layout_mode = 2
-theme = SubResource("Theme_abu2q")
+theme = ExtResource("2_54ov5")
 bbcode_enabled = true
 visible_characters = 0
 visible_ratio = 0.0
@@ -36,6 +35,7 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme = ExtResource("2_54ov5")
 text = "Continue"
 
 [node name="DialogueVoicePlayer" type="AudioStreamPlayer" parent="."]

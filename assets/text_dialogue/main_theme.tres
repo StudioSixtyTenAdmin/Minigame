@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dyhggra4gad0m"]
+
+[ext_resource type="FontFile" uid="uid://cjcuhxh2ixjj6" path="res://assets/text_dialogue/OrticaAngular-Bold.otf" id="1_pldnr"]
+
+[resource]
+default_font = ExtResource("1_pldnr")
