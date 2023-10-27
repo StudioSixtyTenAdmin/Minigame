@@ -9,6 +9,25 @@
 [node name="reading_scene_root" type="Node3D"]
 script = ExtResource("1_jvk4l")
 
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+physics_object_picking = true
+size = Vector2i(720, 1280)
+render_target_clear_mode = 2
+render_target_update_mode = 0
+
+[node name="threed_card_root" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_q4s0d")]
+
 [node name="reading_scene" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -94,9 +113,6 @@ rotation = -0.0785398
 [node name="card" parent="reading_scene/AspectRatioContainer2" instance=ExtResource("2_uafhp")]
 card_resource = ExtResource("3_84f12")
 
-[node name="threed_card_root" parent="." instance=ExtResource("4_q4s0d")]
-click_ready = false
-
+[connection signal="card_selected" from="SubViewportContainer/SubViewport/threed_card_root" to="." method="_on_d_card_root_card_selected"]
 [connection signal="pressed" from="reading_scene/AspectRatioContainer/UI/OptionA" to="." method="_on_option_a_pressed"]
 [connection signal="pressed" from="reading_scene/AspectRatioContainer/UI/OptionB" to="." method="_on_option_b_pressed"]
-[connection signal="card_selected" from="threed_card_root" to="." method="_on_d_card_root_card_selected"]

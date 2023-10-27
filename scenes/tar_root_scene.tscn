@@ -5,6 +5,8 @@
 
 [node name="Tar_Root_Scene" type="Node2D"]
 
+[node name="background_image" type="Sprite2D" parent="."]
+
 [node name="client_scene_" parent="." instance=ExtResource("1_8j0fc")]
 anchors_preset = 8
 anchor_left = 0.5

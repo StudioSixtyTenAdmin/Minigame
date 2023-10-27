@@ -3,3 +3,5 @@
 [node name="client" type="Node2D"]
 
 [node name="GboxClientPortrait1" type="Sprite2D" parent="."]
+position = Vector2(0, 200)
+scale = Vector2(0.25, 0.25)
