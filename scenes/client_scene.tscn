@@ -31,8 +31,11 @@ anchor_bottom = 0.5
 offset_right = 40.0
 grow_vertical = 2
 mouse_filter = 1
+max_value = 300.0
 step = 1.0
+value = 30.0
 fill_mode = 3
+show_percentage = false
 
 [node name="Label" type="Label" parent="gold_bar"]
 layout_mode = 1
@@ -48,6 +51,34 @@ grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("2_nocis")
 text = "Gold
+"
+
+[node name="karma_bar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 45.0
+offset_top = 20.0
+offset_right = -45.0
+grow_horizontal = 2
+mouse_filter = 1
+step = 1.0
+value = 50.0
+
+[node name="Label" type="Label" parent="karma_bar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -29.0
+offset_right = 29.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_nocis")
+text = "Karma
 "
 
 [node name="client_parent" type="AspectRatioContainer" parent="."]
@@ -79,7 +110,6 @@ offset_left = -40.0
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 1
-value = 50.0
 fill_mode = 3
 
 [node name="Label" type="Label" parent="rep_bar"]

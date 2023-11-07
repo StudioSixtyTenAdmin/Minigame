@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LocationResource" load_steps=2 format=3 uid="uid://h7klo8n5jc36"]
+
+[ext_resource type="Script" path="res://scripts/location_resource.gd" id="1_m6m4o"]
+
+[resource]
+script = ExtResource("1_m6m4o")
+location_name = "Hometown"
+number_of_readings = 19
+number_of_random_events = 7
+taxman_penalty = 0
+number_of_taxman_locaions = 0

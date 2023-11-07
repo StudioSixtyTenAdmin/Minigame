@@ -1,11 +1,11 @@
-res://scenes/cards/3d_card_root.tscn
+res://scenes/client_scene.tscn
 res://scenes/client_scene.gd
 res://scripts/client_scene_script.gd
 res://scripts/client_script.gd
-res://assets/client_resources/client_1.tres
-res://scenes/reading_scene.tscn
-res://scenes/client_scene.tscn
 res://scenes/tar_root_scene.tscn
+res://scenes/player_board.tscn
+res://scripts/location_resource.gd
+res://scripts/player_board.gd
+res://assets/location_resources/location_1.tres
+res://scenes/reading_scene.tscn
 res://scenes/dialogue_box.tscn
-res://scenes/clients/client_root.tscn
-res://scenes/reading_scene.gd

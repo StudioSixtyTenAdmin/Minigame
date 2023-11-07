@@ -7,6 +7,7 @@
 [node name="Tar_Root_Scene" type="Node2D"]
 
 [node name="background_image" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_rwku2")
 centered = false
 

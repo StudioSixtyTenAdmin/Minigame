@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt3ap5pj3gt4w"]
+
+[ext_resource type="Script" path="res://scripts/player_board.gd" id="1_43lhk"]
+[ext_resource type="Resource" uid="uid://h7klo8n5jc36" path="res://assets/location_resources/location_1.tres" id="2_o78r0"]
+
+[node name="player_board" type="Node"]
+script = ExtResource("1_43lhk")
+location_resource = ExtResource("2_o78r0")

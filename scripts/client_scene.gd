@@ -7,7 +7,6 @@ var price_setting = false
 func ready():
 	print('client_id: ',_get_client_id())
 
-
 func _on_gold_slider_value_changed(value):
 	$gold_slider/Label.text = str(value)
 

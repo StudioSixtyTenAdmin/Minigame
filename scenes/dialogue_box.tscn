@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://3qxknx1wgh4u"]
 
 [ext_resource type="AudioStream" uid="uid://bfho13w7qkoej" path="res://assets/DialogueBeep.wav" id="1_7s8pr"]
-[ext_resource type="Script" path="res://scenes/dialogue_box.gd" id="1_g6hfk"]
+[ext_resource type="Script" path="res://scripts/dialogue_box.gd" id="1_o8t3u"]
 [ext_resource type="Theme" uid="uid://dyhggra4gad0m" path="res://assets/text_dialogue/main_theme.tres" id="2_54ov5"]
 [ext_resource type="Script" path="res://scenes/PauseCalculator.gd" id="3_6jh5h"]
 [ext_resource type="Script" path="res://scenes/DialogueVoicePlayer.gd" id="3_s3i34"]
@@ -21,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_g6hfk")
+script = ExtResource("1_o8t3u")
 
 [node name="dialogue_text" type="RichTextLabel" parent="."]
 layout_mode = 2

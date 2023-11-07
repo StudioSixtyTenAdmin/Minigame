@@ -1,3 +1,4 @@
+Node
 SubViewportContainer
 SubViewport
 Sprite2D
@@ -14,7 +15,6 @@ Node3D
 Camera3D
 Sprite3D
 Button
-Node
 Timer
 AudioStreamPlayer
 Label

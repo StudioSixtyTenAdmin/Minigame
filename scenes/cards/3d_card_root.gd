@@ -35,7 +35,6 @@ func _process(delta):
 			if child != current_card:
 				child.position.y -= delta*50
 
-
 func _on_area_3d_mouse_entered():
 	#print('middle')
 	current_card = $fan_root/Sprite3D
@@ -50,7 +49,6 @@ func _on_area_3d_mouse_entered():
 	$fan_root/Sprite3D5.position.z = 0
 	#$Camera3D.target.position.x = 0
 
-
 func _on_area_3d_2_mouse_entered():
 	#print('mid_left')
 	current_card = $fan_root/Sprite3D2
@@ -64,8 +62,6 @@ func _on_area_3d_2_mouse_entered():
 	$fan_root/Sprite3D4.position.z = 0
 	$fan_root/Sprite3D5.position.z = 0
 	#$Camera3D.target.position.x = -1
-	
-
 
 func _on_area_3d_3_mouse_entered():
 	#print('mid_right')
@@ -81,7 +77,6 @@ func _on_area_3d_3_mouse_entered():
 	$fan_root/Sprite3D5.position.z = 0	
 	#$Camera3D.target.position.x = 1
 
-
 func _on_area_3d_4_mouse_entered():
 	#print('far_left')
 	current_card = $fan_root/Sprite3D4
@@ -95,8 +90,6 @@ func _on_area_3d_4_mouse_entered():
 	$fan_root/Sprite3D4.position.z = 0.85
 	$fan_root/Sprite3D5.position.z = 0
 	#$Camera3D.target.position.x = -2
-	
-
 
 func _on_area_3d_5_mouse_entered():
 	#print('far_right')
