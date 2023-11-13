@@ -24,9 +24,6 @@ func _process(delta):
 	pass
 
 
-
-
-
 func _establish_game_board():
 	location_name = location_resource.location_name
 	number_of_readings = location_resource.number_of_readings
@@ -38,9 +35,7 @@ func _establish_game_board():
 	chance_landing_on_event = int(float(number_of_random_events)/(number_of_readings+number_of_random_events)*100)
 	chance_landing_on_reading = int(float(number_of_readings)/(number_of_readings+number_of_random_events)*100)
 	print('The chance of landing on a random event is: %', chance_landing_on_event)
-	print('The chance of landing on a random reading is: %', chance_landing_on_reading)	
-	
-	
+	print('The chance of landing on a random reading is: %', chance_landing_on_reading)
 
 func _1_sec_timer(run):
 	var count = 0
