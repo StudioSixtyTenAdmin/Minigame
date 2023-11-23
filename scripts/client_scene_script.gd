@@ -1,7 +1,8 @@
 extends Control
 
 var price_setting = false
-signal price_set 
+signal price_set
+ 
 var client 
 
 var client_id #= randi_range(1,5)
@@ -91,3 +92,10 @@ func _on_reading_scene_finish_reading_scene(selection):
 	print('reading finished in client scene')
 	selection_choice = selection
 	sel_done.emit()
+
+
+func _on_button_pressed():
+	#func _hide_main():
+	print('Hide!')
+	#get_parent().paused = true
+	get_parent().visible = false

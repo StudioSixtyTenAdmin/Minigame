@@ -30,7 +30,6 @@ func _move_player():
 	print('The player moved forward ', roll, ' places. They landed on: ', player_place) 
 	var place_text = _tile_chance_calculator('Reading Event', chance_landing_on_reading, 'Random Event', chance_landing_on_event, 'TAXMAN', chance_landing_on_taxman) 
 	print(place_text)
-	$Label.text = place_text
 	_tax_tracker()
 	
 func _tax_tracker():

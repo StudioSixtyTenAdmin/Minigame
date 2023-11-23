@@ -27,6 +27,7 @@ color = Color(0.505882, 0.505882, 0.505882, 1)
 [node name="gold_bar" type="ProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
+anchor_top = 0.05
 anchor_bottom = 0.5
 offset_right = 40.0
 grow_vertical = 2
@@ -57,9 +58,9 @@ text = "Gold
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-offset_left = 45.0
+offset_left = 65.0
 offset_top = 20.0
-offset_right = -45.0
+offset_right = -65.0
 grow_horizontal = 2
 mouse_filter = 1
 step = 1.0
@@ -104,6 +105,7 @@ client_resource = ExtResource("3_0wk6q")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
+anchor_top = 0.05
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -40.0
@@ -182,7 +184,15 @@ vertical_alignment = 1
 [node name="dialogue_box" parent="." instance=ExtResource("6_wapug")]
 layout_mode = 1
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Main
+Menu"
+
 [connection signal="price_set" from="." to="dialogue_box" method="_on_client_scene_price_set"]
 [connection signal="value_changed" from="gold_slider" to="." method="_on_gold_slider_value_changed"]
 [connection signal="pressed" from="gold_slider/Button" to="." method="_on_gold_button_pressed"]
 [connection signal="choose_price" from="dialogue_box" to="." method="_on_dialogue_box_choose_price"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

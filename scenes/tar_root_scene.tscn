@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://5kcjgt0r5u6l" path="res://scenes/reading_scene.tscn" id="2_x01og"]
 
 [node name="Tar_Root_Scene" type="Node2D"]
+process_mode = 1
 
 [node name="background_image" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("1_rwku2")
 centered = false
 

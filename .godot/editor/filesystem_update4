@@ -1,9 +1,10 @@
-res://scenes/tar_root_scene.tscn
+res://scenes/client_scene.tscn
 res://scripts/client_scene_script.gd
 res://scripts/client_script.gd
 res://scripts/player_board.gd
-res://scenes/client_scene.tscn
+res://scenes/tar_root_scene.tscn
+res://scenes/Menu_Select.tscn
 res://scenes/player_board.tscn
 res://scenes/reading_scene.tscn
+res://scenes/Menu_Select.gd
 res://scenes/dialogue_box.tscn
-res://assets/location_resources/location_1.tres

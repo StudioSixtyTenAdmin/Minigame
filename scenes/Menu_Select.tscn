@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx7dj4d4rlj2b"]
+
+[ext_resource type="Script" path="res://scenes/Menu_Select.gd" id="1_e218o"]
+
+[node name="Menu_Select" type="Node2D"]
+script = ExtResource("1_e218o")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_direction = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 720.0
+offset_bottom = 1280.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = 300.0
+offset_right = 695.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Resume
+"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Open Settings"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume - 100"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+value = 100.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 312.0
+offset_top = 112.0
+offset_right = 704.0
+offset_bottom = 248.0
+text = "Tarot Demo"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
