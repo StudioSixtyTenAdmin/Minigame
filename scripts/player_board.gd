@@ -31,12 +31,13 @@ func _move_player():
 	var place_text = _tile_chance_calculator('Reading Event', chance_landing_on_reading, 'Random Event', chance_landing_on_event, 'TAXMAN', chance_landing_on_taxman) 
 	print(place_text)
 	_tax_tracker()
+	print('Players current place is:', player_place)
 	
 func _tax_tracker():
 	var tax_positions = []
 	
 	var taxpoint_differences = total_points / (number_of_taxman_locations+1)
-	print(total_points, taxpoint_differences)
+	#print(total_points, taxpoint_differences)
 
 func _diceroll():
 	var roll = randi_range(1,6)

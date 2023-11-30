@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://d3hec7smavvd4"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_jpwnc"]
+
+[resource]
+script = ExtResource("1_jpwnc")
+event_id = 15
+event_text = 0
+karma_change = 0
+gold_change = 0
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

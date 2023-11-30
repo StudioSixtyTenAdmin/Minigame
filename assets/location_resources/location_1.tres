@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_m6m4o")
 location_name = "Hometown"
-number_of_readings = 19
-number_of_random_events = 7
-taxman_penalty = 0
+number_of_readings = 20
+number_of_random_events = 13
+taxman_penalty = 5
 number_of_taxman_locaions = 2

@@ -1,2 +1,3 @@
+EventResource
 LocationResource
 Resource
