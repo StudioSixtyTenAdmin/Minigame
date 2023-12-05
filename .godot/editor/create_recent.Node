@@ -1,3 +1,4 @@
+Sprite2D
 Label
 Button
 OptionButton
@@ -11,7 +12,6 @@ CanvasModulate
 Node
 SubViewportContainer
 SubViewport
-Sprite2D
 RichTextLabel
 TouchScreenButton
 Control

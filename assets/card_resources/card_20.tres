@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://ce2dtw5obe2ir"]
+
+[ext_resource type="Script" path="res://scripts/card_resource.gd" id="1_6v77c"]
+
+[resource]
+script = ExtResource("1_6v77c")
+card_name = "Judgement"
+keyword_1 = ""
+keyword_2 = ""
+keyword_3 = ""
+card_art_path = "res://assets/card_art/20.jpg"

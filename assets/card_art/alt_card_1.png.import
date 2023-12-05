@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5kpw82r72kwu"
-path.s3tc="res://.godot/imported/alt_card_1.png-b182cf5e5a1acf796d621e21d25ee9cd.s3tc.ctex"
+uid="uid://0o3nd8uj87rm"
+path="res://.godot/imported/alt_card_1.png-b182cf5e5a1acf796d621e21d25ee9cd.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/card_art/alt_card_1.png"
-dest_files=["res://.godot/imported/alt_card_1.png-b182cf5e5a1acf796d621e21d25ee9cd.s3tc.ctex"]
+dest_files=["res://.godot/imported/alt_card_1.png-b182cf5e5a1acf796d621e21d25ee9cd.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

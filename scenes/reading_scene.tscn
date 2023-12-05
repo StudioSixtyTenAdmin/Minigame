@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://5kcjgt0r5u6l"]
+[gd_scene load_steps=6 format=3 uid="uid://5kcjgt0r5u6l"]
 
 [ext_resource type="Script" path="res://scripts/reading_scene.gd" id="1_vmx3t"]
 [ext_resource type="PackedScene" uid="uid://c4i3ln83xm7gp" path="res://scenes/cards/card_root.tscn" id="2_uafhp"]
 [ext_resource type="Script" path="res://scripts/reading_script.gd" id="2_xqcka"]
-[ext_resource type="Resource" uid="uid://dvofm7m0j51im" path="res://assets/card_resources/card_1.tres" id="3_84f12"]
 [ext_resource type="Theme" uid="uid://dyhggra4gad0m" path="res://assets/text_dialogue/main_theme.tres" id="4_3y8xl"]
 [ext_resource type="PackedScene" uid="uid://ctswap7g7ypoa" path="res://scenes/cards/3d_card_root.tscn" id="4_q4s0d"]
 
@@ -50,9 +49,9 @@ color = Color(0.505882, 0.505882, 0.505882, 1)
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="reading_scene"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.65
+anchor_top = 0.85
 anchor_right = 1.0
-anchor_bottom = 0.7
+anchor_bottom = 0.85
 offset_left = 15.0
 offset_top = -15.5
 offset_right = -15.0
@@ -106,15 +105,13 @@ text = "My dear, I fear you have some fanciful ideas. The inquisitor does not co
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.25
+anchor_top = 0.45
 anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -0.0785398
 
 [node name="card" parent="reading_scene/AspectRatioContainer2" instance=ExtResource("2_uafhp")]
-card_resource = ExtResource("3_84f12")
 
 [connection signal="card_selected" from="SubViewportContainer/SubViewport/threed_card_root" to="." method="_on_d_card_root_card_selected"]
 [connection signal="pressed" from="reading_scene/AspectRatioContainer/UI/OptionA" to="." method="_on_option_a_pressed"]

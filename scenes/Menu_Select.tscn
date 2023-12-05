@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bx7dj4d4rlj2b"]
+[gd_scene load_steps=3 format=3 uid="uid://bx7dj4d4rlj2b"]
 
 [ext_resource type="Script" path="res://scenes/Menu_Select.gd" id="1_e218o"]
+[ext_resource type="Texture2D" uid="uid://cdah7g0gh0w8n" path="res://assets/logo_art/Arcana_White.png" id="2_dd1ic"]
 
 [node name="Menu_Select" type="Node2D"]
 script = ExtResource("1_e218o")
@@ -64,11 +65,15 @@ layout_mode = 2
 value = 100.0
 
 [node name="Label" type="Label" parent="."]
-offset_left = 312.0
-offset_top = 112.0
-offset_right = 704.0
-offset_bottom = 248.0
-text = "Tarot Demo"
+offset_left = 304.0
+offset_top = 232.0
+offset_right = 696.0
+offset_bottom = 272.0
+text = "Game Demo"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(352, 112)
+texture = ExtResource("2_dd1ic")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

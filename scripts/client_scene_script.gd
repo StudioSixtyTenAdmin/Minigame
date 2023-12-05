@@ -23,6 +23,9 @@ func _ready():
 	_new_client()
 	
 func _new_client():
+	$client_parent/Control/client.visible = false
+	$dialogue_box.visible = false
+	
 	client_count+=1
 	var valid_client = false
 	while !valid_client:
@@ -40,6 +43,16 @@ func _new_client():
 	client = $client_parent/Control/client
 	client._update_client()
 	card_reading_options.emit(client.client_resource.draw_upright,client.client_resource.draw_reverse)
+	
+	#Little timeout for a pause between clients
+	var t = Timer.new()
+	self.add_child(t)
+	t.start(1)
+	await t.timeout
+	$client_parent/Control/client.visible = true
+	$dialogue_box.visible = true
+	
+	t.queue_free()
 	_dialogue_tree(0)
 	
 func _dialogue_tree(dialogue_count):
@@ -55,10 +68,10 @@ func _dialogue_tree(dialogue_count):
 		
 		if selection_choice == 'a':
 			$dialogue_box._next_text(client.client_resource.reaction_positive)
-			$rep_bar.value += 10
+			$reputation_bar.value += 10
 		if selection_choice == 'b':
 			$dialogue_box._next_text(client.client_resource.reaction_negative)
-			$rep_bar.value -= 10
+			$reputation_bar.value -= 10
 		
 	#if dialogue_count==3:
 	#	$dialogue_box._next_text(client.client_resource.reaction_positive)
