@@ -24,13 +24,16 @@ var client_path
 func _update_client():
 	var client_id = get_parent().get_parent().get_parent()._get_client_id()
 	client_path = 'res://assets/client_resources/client_'+str(client_id)+'.tres'
-	client_resource = load(client_path)
+	client_resource = ResourceLoader.load(client_path)
 	print('Client Ready First: ',Time.get_ticks_msec(),'client_id: ',client_id)
 	var portrait_path = client_resource.portrait_path
-	var client_portrait = Image.load_from_file(portrait_path)
+	#var client_portrait = Image.load_from_file(portrait_path)
+	print(portrait_path)
+	var client_portrait = load(portrait_path)
 	var client_name = client_resource.client_name
 	#var intro_text = client_resource.intro_text
 	var reaction_a = client_resource.reaction_negative
 	var reaction_b = client_resource.reaction_positive
-	get_child(0).texture = ImageTexture.create_from_image(client_portrait)
+	#get_child(0).texture = ImageTexture.create_from_image(client_portrait)
+	get_child(0).texture = client_portrait
 	print('Client Loaded')

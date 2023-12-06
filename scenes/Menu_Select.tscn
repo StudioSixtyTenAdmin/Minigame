@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx7dj4d4rlj2b"]
+[gd_scene load_steps=4 format=3 uid="uid://bx7dj4d4rlj2b"]
 
 [ext_resource type="Script" path="res://scenes/Menu_Select.gd" id="1_e218o"]
 [ext_resource type="Texture2D" uid="uid://cdah7g0gh0w8n" path="res://assets/logo_art/Arcana_White.png" id="2_dd1ic"]
+[ext_resource type="AudioStream" uid="uid://byiv3leiy6f0e" path="res://assets/audio/Prelude.wav" id="3_uihmt"]
 
 [node name="Menu_Select" type="Node2D"]
 script = ExtResource("1_e218o")
@@ -35,20 +36,24 @@ size_flags_vertical = 3
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Start Game"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Quit
 "
 
 [node name="Resume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Resume
 "
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Open Settings"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
@@ -74,6 +79,11 @@ text = "Game Demo"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(352, 112)
 texture = ExtResource("2_dd1ic")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_uihmt")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -12,14 +12,15 @@ config_version=5
 
 config/name="Minigame_Project"
 run/main_scene="res://scenes/Menu_Select.tscn"
-config/features=PackedStringArray("4.1", "Mobile")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/image="res://assets/logo_art/logo.png"
+config/icon="res://assets/logo_art/thumb.png"
 
 [display]
 
 window/size/viewport_width=720
 window/size/viewport_height=1280
-window/size/initial_position_type=2
+window/stretch/mode="viewport"
 window/handheld/orientation=1
 
 [input]
@@ -38,3 +39,4 @@ nextRoll={
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

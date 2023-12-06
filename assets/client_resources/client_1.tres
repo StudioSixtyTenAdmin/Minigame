@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_jq5sn")
 client_id = 1
+read_this_run = false
 client_name = "Florian: The hired hand"
 card_profile = "The Fool"
 keywords_upright = ""
@@ -15,4 +16,5 @@ draw_upright = "You are a young man, unskilled and alone. The baker has made you
 draw_reverse = "You are a young man full of promise, the cards tell of opportunity. You should refuse the offer and approach the blacksmith with your proposal."
 reaction_positive = "Sir, I thank you for your counsel, a baker I shall be."
 reaction_negative = "I knew it! Thank you, sir!"
+reaction_neutral = ""
 portrait_path = "res://assets/client_portraits/client_1_portrait.png"

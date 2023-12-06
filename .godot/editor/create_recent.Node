@@ -1,3 +1,4 @@
+AudioStreamPlayer
 Sprite2D
 Label
 Button
@@ -25,7 +26,6 @@ Node3D
 Camera3D
 Sprite3D
 Timer
-AudioStreamPlayer
 PanelContainer
 GridContainer
 MarginContainer

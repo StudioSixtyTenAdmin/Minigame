@@ -9,12 +9,14 @@ var count = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var card_art = Image.load_from_file(card_art_path)
+	#var card_art = Image.load_from_file(card_art_path)
+	var card_art = load(card_art_path)
 	var card_name = card_resource.card_name
 	var keyword_1 = card_resource.keyword_1
 	var keyword_2 = card_resource.keyword_2
 	var keyword_3 = card_resource.keyword_3
-	$Path2D/PathFollow2D/GboxCardImage1.texture = ImageTexture.create_from_image(card_art)
+	$Path2D/PathFollow2D/GboxCardImage1.texture = card_art
+	#$Path2D/PathFollow2D/GboxCardImage1.texture = ImageTexture.create_from_image(card_art)
 	$Keyword1.text = keyword_1
 	$Keyword2.text = keyword_2
 	$Keyword3.text = keyword_3
@@ -29,9 +31,10 @@ func _new_card():
 	#else:
 	#	numby_poo +=1
 	
-	var card_resource = load('res://assets/card_resources/card_'+str(numby_poo)+'.tres')
+	var card_resource = ResourceLoader.load('res://assets/card_resources/card_'+str(numby_poo)+'.tres')
 	var card_art_path = card_resource.card_art_path
-	var card_art = Image.load_from_file(card_art_path)
+	#var card_art = Image.load_from_file(card_art_path)
+	var card_art = load(card_art_path)
 	var card_name = card_resource.card_name
 	var keyword_1 = card_resource.keyword_1
 	var keyword_2 = card_resource.keyword_2
@@ -40,7 +43,8 @@ func _new_card():
 	#old random curve
 	#$Path2D.curve = load('res://scenes/cards/curves/curve'+str(rand_num)+'.tres')
 	$Path2D.curve = load('res://scenes/cards/curves/curve6.tres')
-	$Path2D/PathFollow2D/GboxCardImage1.texture = ImageTexture.create_from_image(card_art)
+	$Path2D/PathFollow2D/GboxCardImage1.texture = card_art
+	#$Path2D/PathFollow2D/GboxCardImage1.texture = ImageTexture.create_from_image(card_art)
 	$Keyword1.text = keyword_1
 	$Keyword2.text = keyword_2
 	$Keyword3.text = keyword_3

@@ -40,7 +40,7 @@ text = "Continue"
 
 [node name="DialogueVoicePlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_7s8pr")
-volume_db = -11.556
+volume_db = -20.0
 script = ExtResource("3_s3i34")
 
 [node name="Timer" type="Timer" parent="."]

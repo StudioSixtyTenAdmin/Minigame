@@ -42,20 +42,23 @@ func _next_text(message):
 	_update_message(message)
 
 func _on_text_continue_pressed():
-	if count == 1:
-		_set_price()
 	
-	if count == 2:
+	#Removed Price-Setting Requirement
+	#if count == 1:
+	#	_set_price()
+	
+	if count == 1:
 		get_parent()._dialogue_tree(1)
 	
-	if count == 3:
+	if count == 2:
 		#card Reading Scene
 		get_parent()._dialogue_tree(2)
 	
 	#if count ==4:
 	#	get_parent()._dialogue_tree(3)
 	
-	if count ==4:
+	#Reading Ends Here
+	if count ==3:
 		get_parent()._new_client()
 		count = 0
 	
