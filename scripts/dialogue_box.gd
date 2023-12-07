@@ -1,21 +1,21 @@
 class_name Dialogue
-extends PanelContainer
+extends Control
 
 #https://worldeater-dev.itch.io/bittersweet-birthday/devlog/224241/howto-a-simple-dialogue-system-in-godot
 
-@onready var content = get_node("dialogue_text") as RichTextLabel
-@onready var timer = get_node("Timer") as Timer
-@onready var pause_timer = get_node("PauseTimer") as Timer
+@onready var content = get_node("dialogue_window/dialogue_text") as RichTextLabel
+@onready var type_timer = get_node("dialogue_window/TypeTimer") as Timer
+@onready var pause_timer = get_node("dialogue_window/PauseTimer") as Timer
 @onready var intro_text_complete = true
-@onready var _calc = get_node("PauseCalculator") as PauseCalculator
-@onready var voice_player = get_node("DialogueVoicePlayer") as AudioStreamPlayer
+@onready var _calc = get_node("dialogue_window/PauseCalculator") as PauseCalculator
+@onready var voice_player = get_node("dialogue_window/DialogueVoicePlayer") as AudioStreamPlayer
 
 
 signal message_completed()
 
 signal choose_price 
 signal text_ready
-var count = 1
+var count = 2
 var textLength 
 var playing_voice = false
 var show_continue = true
@@ -60,7 +60,7 @@ func _on_text_continue_pressed():
 	#Reading Ends Here
 	if count ==3:
 		get_parent()._new_client()
-		count = 0
+		count = 1
 	
 	
 	$text_continue.visible = false
@@ -75,19 +75,20 @@ func _update_message(message: String):
 	content.visible_characters = 0
 	await true_text_length
 	
-	timer.start()
+	type_timer.start()
 	
 	playing_voice = true
 	voice_player.play_play(0)
 	
-	
+	#FIX WHY THE HELL THE TIMER ISN'T WORKING
 func _on_typer_timeout():
+	print('oing')
 	_calc.check_at_position(content.visible_characters)
 	if content.visible_characters < content.text.length() - true_text_length:
 		content.visible_characters +=1
 	else:
 		playing_voice = false
-		timer.stop()
+		type_timer.stop()
 		emit_signal("message_completed")
 		if show_continue == true:
 			$text_continue.visible = true
@@ -100,7 +101,7 @@ func _on_dialogue_voice_player_finished():
 
 func _on_pause_calculator_pause_requested(duration):
 	playing_voice = false
-	timer.stop()
+	type_timer.stop()
 	pause_timer.wait_time = duration
 	pause_timer.start()
 
@@ -108,7 +109,7 @@ func _on_pause_calculator_pause_requested(duration):
 func _on_pause_timer_timeout():
 	playing_voice = true
 	voice_player.play_play(0)
-	timer.start()
+	type_timer.start()
 
 
 func _on_pause_calculator_tag_value(x):

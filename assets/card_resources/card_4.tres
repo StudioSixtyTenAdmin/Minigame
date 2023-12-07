@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_15uvg")
 card_name = "The Emperor"
-keyword_1 = ""
-keyword_2 = ""
-keyword_3 = ""
+upright_reading = "Look who comes for you today, The Emperor! This is an omen of growth and success, but pay heed you must work hard and be methodical in your efforts."
+reversed_reading = "Ah, The Emperor reversed… this card tells that control has been lost, digging your heels in will not yield solutions. Tyrannical forces are at play, open your eyes and ears and don’t be fooled by he who shouts the loudest."
 card_art_path = "res://assets/card_art/04.jpg"

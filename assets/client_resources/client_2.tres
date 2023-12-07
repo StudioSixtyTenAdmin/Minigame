@@ -5,14 +5,11 @@
 [resource]
 script = ExtResource("1_ybqc1")
 client_id = 2
-client_name = "Maurice: The Innkeeper"
-card_profile = "The Hierophant"
-keywords_upright = ""
-keywords_reversed = ""
-client_context = "The Innkeeper seeks your service, his wife has been suffering a dire malaise for a month hence. What will become of her?"
-question = "My beloved wife has been ailing for weeks, please tell me, will she live?"
-draw_upright = "This card foretells hardship, hurt and great sorrow, your wife should put her affairs in order and make peace with her maker."
-draw_reverse = "I see a great hardship has been endured, this card foretells healing. Your wife shall overcome her malaise and return to her duties."
-reaction_positive = "You damned scoundrel, you are nothing but a charlatan!"
-reaction_negative = "Thank you sir."
+read_this_run = false
+client_name = "Daegal: The Monk"
+reason = 1
+question = "Sire, I seek your counsel on a most serious and… sacred matter. Madam Brenna has the ear of the Grand Meister, and her an occultist. Has she bewitched him?"
+reaction_positive = "My thanks, I shall continue to monitor her movements."
+reaction_negative = "You scoundrel, are you in cahoots with the witch?"
+reaction_neutral = ""
 portrait_path = "res://assets/client_portraits/client_2_portrait.png"

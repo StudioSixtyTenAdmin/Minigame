@@ -5,14 +5,11 @@
 [resource]
 script = ExtResource("1_20yri")
 client_id = 5
-client_name = "Vera: The Healer"
-card_profile = "Strength"
-keywords_upright = ""
-keywords_reversed = ""
-client_context = "Vera, the healer, has come to seek your guidance. The inquisitor has been watching her collect herbs and she fears his intentions."
-question = "I have seen him, watching me as I forage. I fear his intent, should I take my son and leave this place?"
-draw_upright = "Madam, you’ve drawn The High Priestess, it’s a powerful message from the cards; you must trust your instincts, you are not safe here."
-draw_reverse = "My dear, I fear you have some fanciful ideas. The inquisitor does not concern himself with such simple matters. Fear not!"
-reaction_positive = "I appreciate your candour sir, I must make haste."
-reaction_negative = "Are you certain? Thank you sir, I am safe!"
+read_this_run = false
+client_name = "Orvyn: The Playwright"
+reason = 2
+question = "Greetings my good fellow, I would like to engage your services for a most delicate matter… I have been stricken with a case of writer’s block, my well is dry! What can I do?"
+reaction_positive = "You have been most helpful good sir, I will be guided by your wisdom!"
+reaction_negative = "Ugh, I may as well have thrown my gold down the well. You blaggard!"
+reaction_neutral = ""
 portrait_path = "res://assets/client_portraits/client_5_portrait.png"

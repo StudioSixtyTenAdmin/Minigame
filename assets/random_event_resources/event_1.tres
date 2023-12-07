@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_w062a")
 event_id = 1
-event_text = 0
-karma_change = 0
-gold_change = 0
-rep_change = 0
+event_text = "The Meister of Scrolls has accused you of making eyes at his serving girl. He is dissatisfied with her work and requests that you cease."
+karma_change = -2
+gold_change = -1
+rep_change = -3
 karma_gain = false
 gold_gain = false
 rep_gain = false

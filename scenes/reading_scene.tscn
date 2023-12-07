@@ -82,7 +82,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("4_3y8xl")
-text = "Madam, you’ve drawn The High Priestess, it’s a powerful message from the cards; you must trust your instincts, you are not safe here."
+text = "Upright"
 
 [node name="OptionB" type="Button" parent="reading_scene/AspectRatioContainer/UI"]
 layout_mode = 2
@@ -99,7 +99,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("4_3y8xl")
-text = "My dear, I fear you have some fanciful ideas. The inquisitor does not concern himself with such simple matters. Fear not!"
+text = "Reversed"
 
 [node name="AspectRatioContainer2" type="AspectRatioContainer" parent="reading_scene"]
 layout_mode = 1

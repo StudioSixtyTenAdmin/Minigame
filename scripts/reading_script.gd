@@ -8,3 +8,5 @@ func _ready():
 func _new_card():
 	$AspectRatioContainer2/card._new_card()
 
+func _move_card():
+	$AspectRatioContainer2/card._move_card()

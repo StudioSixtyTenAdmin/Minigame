@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_weayn")
 event_id = 4
-event_text = 0
-karma_change = 0
-gold_change = 0
-rep_change = 0
+event_text = "A terrible malaise has befallen you, you are unable to work"
+karma_change = -1
+gold_change = -4
+rep_change = -1
 karma_gain = false
 gold_gain = false
 rep_gain = false

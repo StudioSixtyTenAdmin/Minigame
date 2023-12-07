@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_mh6ka")
 event_id = 2
-event_text = 0
-karma_change = 0
-gold_change = 0
+event_text = "The Widow Morgan has departed this earthly plain, she has left a favour for you in her will."
+karma_change = 2
+gold_change = 3
 rep_change = 0
 karma_gain = false
 gold_gain = false

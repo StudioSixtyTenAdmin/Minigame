@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx7dj4d4rlj2b"]
+[gd_scene load_steps=6 format=3 uid="uid://bx7dj4d4rlj2b"]
 
 [ext_resource type="Script" path="res://scenes/Menu_Select.gd" id="1_e218o"]
 [ext_resource type="Texture2D" uid="uid://cdah7g0gh0w8n" path="res://assets/logo_art/Arcana_White.png" id="2_dd1ic"]
+[ext_resource type="Texture2D" uid="uid://duj8wglcnlpbw" path="res://assets/ui_art/Main_menu_screen_No_logo_000.png" id="2_onfr0"]
+[ext_resource type="Texture2D" uid="uid://cuyh40yo86f5b" path="res://assets/ui_art/button-1.png" id="2_qikd2"]
 [ext_resource type="AudioStream" uid="uid://byiv3leiy6f0e" path="res://assets/audio/Prelude.wav" id="3_uihmt"]
 
 [node name="Menu_Select" type="Node2D"]
 script = ExtResource("1_e218o")
+
+[node name="MainMenuScreenNoLogo000" type="Sprite2D" parent="."]
+position = Vector2(360, 640)
+scale = Vector2(0.666, 0.666)
+texture = ExtResource("2_onfr0")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_direction = 1
@@ -20,19 +27,24 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.634
 anchor_bottom = 0.5
 offset_left = 25.0
-offset_top = 300.0
+offset_top = 615.0
 offset_right = 695.0
-offset_bottom = 600.0
+offset_bottom = 890.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(335, -368)
+scale = Vector2(0.5, 0.650272)
+texture = ExtResource("2_qikd2")
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2

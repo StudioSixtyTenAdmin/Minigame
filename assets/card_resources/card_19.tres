@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_avwpm")
 card_name = "Sun"
-keyword_1 = ""
-keyword_2 = ""
-keyword_3 = ""
+upright_reading = "Huzzah, you have drawn The Sun, a card of great joy and hope! Be confident that happiness and abundance will be plentiful."
+reversed_reading = "Ah friend, The Sun in reverse has been drawn, why do you turn your face from happiness? You must challenge your outlook and be willing to see the joy in things!"
 card_art_path = "res://assets/card_art/19.jpg"

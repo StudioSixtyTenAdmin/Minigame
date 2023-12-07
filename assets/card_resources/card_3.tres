@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_ekmxi")
 card_name = "Empress"
-keyword_1 = ""
-keyword_2 = ""
-keyword_3 = ""
+upright_reading = "The Empress tells of creation, fertility and abundance. Embrace new ideas, give yourself fully to new adventures and you will not set a foot wrong."
+reversed_reading = "The Empress reversed… you are giving too much of yourself. Take a step back and take stock; you must pour first, into your own cup."
 card_art_path = "res://assets/card_art/03.jpg"

@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_4snxk")
 event_id = 16
-event_text = 0
-karma_change = 0
-gold_change = 0
-rep_change = 0
+event_text = "You thwarted an attempted highway robbery. The Lady Grena sends her gratitude!"
+karma_change = 5
+gold_change = 1
+rep_change = 3
 karma_gain = false
 gold_gain = false
 rep_gain = false

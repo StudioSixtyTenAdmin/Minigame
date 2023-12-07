@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_sr3xt")
 card_name = "Strength"
-keyword_1 = ""
-keyword_2 = ""
-keyword_3 = ""
+upright_reading = "You have drawn a fine card, Strength, I can tell you are on the right path and regardless of the obstacles in your way - all will be well!"
+reversed_reading = "Strength reversed, tread carefully! You have succumbed to fear and self-doubt and leant on aggression. You must atone for your actions and ground yourself in peace, if you walk in anger all around you will burn."
 card_art_path = "res://assets/card_art/08.jpg"

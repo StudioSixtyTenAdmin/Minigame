@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://bel1yi5jb2ywj"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_8potp"]
+
+[resource]
+script = ExtResource("1_8potp")
+client_id = 16
+read_this_run = false
+client_name = "Silas: The pig farmer"
+card_profile = ""
+keywords_upright = ""
+keywords_reversed = ""
+client_context = ""
+question = "The price of swine has fallen fast. Should I add some cattle to my number?"
+draw_upright = ""
+draw_reverse = ""
+reaction_positive = "Thank you dear fellow, I shall send my boy tomorrow with something for your table!"
+reaction_negative = "Hmmm Sire I’m not so sure of your reading… I will wait and watch awhile before I decide."
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/client_5_portrait.png"

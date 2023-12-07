@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_wgm1l")
 card_name = "High Priestess"
-keyword_1 = ""
-keyword_2 = ""
-keyword_3 = ""
+upright_reading = "The High Priestess has come to deliver a powerful message, look inwards, trust your intuition. She has come to confirm that you have the answers you seek, trust in your judgement and you will steer a steady course."
+reversed_reading = "The High Priestess in reverse, this draw points to secrets and confusion, She tells that you are hiding from the truth. Look inside, do not shy from the truth within."
 card_art_path = "res://assets/card_art/02.jpg"

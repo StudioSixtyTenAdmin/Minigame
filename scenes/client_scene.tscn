@@ -147,8 +147,10 @@ texture = ExtResource("8_amy1l")
 
 [node name="dialogue_box" parent="." instance=ExtResource("6_wapug")]
 layout_mode = 1
-offset_top = 260.0
-offset_bottom = 460.0
+offset_left = -24.0
+offset_top = 704.0
+offset_right = 376.0
+offset_bottom = 904.0
 
 [node name="gold_slider" type="HSlider" parent="."]
 visible = false

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://cmc0njuhpoivc"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_lf8cb"]
+
+[resource]
+script = ExtResource("1_lf8cb")
+client_id = 6
+read_this_run = false
+client_name = "Regina: The Playwright’s Maid/Nurse"
+card_profile = ""
+keywords_upright = ""
+keywords_reversed = ""
+client_context = ""
+question = "Sire, my mother has a hex upon her, I beseech you to tell me how to help her!"
+draw_upright = ""
+draw_reverse = ""
+reaction_positive = "Sire, thank you. I will act upon your words!"
+reaction_negative = "There must be something I can do, I beseech you!"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/client_5_portrait.png"

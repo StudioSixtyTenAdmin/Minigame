@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_l002x")
 card_name = "Hermit"
-keyword_1 = ""
-keyword_2 = ""
-keyword_3 = ""
+upright_reading = "The Hermit has been drawn, the time has come to search your soul, do not seek answers in external forces. Take time and listen to what your soul tells you, everything you need is within."
+reversed_reading = "The Hermit reversed, friend you have placed yourself on the fringes, isolation has not yielded what you seek. Open your heart to others, step outside yourself, what will be, will be."
 card_art_path = "res://assets/card_art/09.jpg"

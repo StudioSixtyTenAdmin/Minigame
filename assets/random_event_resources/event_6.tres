@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_4snxk")
 event_id = 6
-event_text = 0
-karma_change = 0
-gold_change = 0
+event_text = "A full moon lights the night sky, you can cleanse the tools of your trade."
+karma_change = 1
+gold_change = 1
 rep_change = 0
 karma_gain = false
 gold_gain = false

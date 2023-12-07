@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_faqtm")
 card_name = "Moon"
-keyword_1 = ""
-keyword_2 = ""
-keyword_3 = ""
+upright_reading = "You have drawn The Moon, look very carefully at your situation, for all may not be as it seems. Listen to your inner voice and trust in your instincts."
+reversed_reading = "Ah you have drawn The Moon reversed, this suggests some dark forces are at play and you have succumbed to fearful thinking. Shed your fear and trust in your instincts!"
 card_art_path = "res://assets/card_art/18.jpg"

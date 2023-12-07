@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_ont5w")
 card_name = "Death"
-keyword_1 = ""
-keyword_2 = ""
-keyword_3 = ""
+upright_reading = "Death has been drawn, fear not, this card tells of change and growth, leaving negativity behind. After death comes rebirth; a fine augur indeed"
+reversed_reading = "Ah Death in reverse; a card of great resistance! You must let go, do not fear change, for change is growth."
 card_art_path = "res://assets/card_art/13.jpg"

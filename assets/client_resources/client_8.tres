@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://d026jud06i4u5"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_dxerh"]
+
+[resource]
+script = ExtResource("1_dxerh")
+client_id = 8
+read_this_run = false
+client_name = "Ursula: the Painter’s Assistant"
+card_profile = ""
+keywords_upright = ""
+keywords_reversed = ""
+client_context = ""
+question = "I know the hour is late sir, but I am in desperate need, will you help me? I have made a grave error and misplaced my master’s pigment. What is to become of me?"
+draw_upright = ""
+draw_reverse = ""
+reaction_positive = "Gramercy sir, you are most kind!"
+reaction_negative = "Alas, what is to become of me…"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/client_5_portrait.png"

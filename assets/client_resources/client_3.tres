@@ -5,14 +5,11 @@
 [resource]
 script = ExtResource("1_kobh7")
 client_id = 3
-client_name = "Martha"
-card_profile = "Death"
-keywords_upright = ""
-keywords_reversed = ""
-client_context = "Martha, a village woman, seeks your help, her crops have failed."
-question = "I deal in death, I fear it has cast an ill-omen upon me. Ask the cards how I can restore my crop?"
-draw_upright = "You have drawn temperance, this suggests balance. Your crops have not failed because of an ill-omen. Go back to the land, prepare it well, work it daily and your crops will be abundant."
-draw_reverse = "Mistress, you have drawn Temperance, which suggests there is imbalance. You must restore the natural balance, spill salt along the boundary of your property and have the blacksmith forge a horse-shoe for your home."
-reaction_positive = "Do you suppose me a fool, sir, unable to work my land? The only foolishness was seeking answers here."
-reaction_negative = "A horse-shoe… death and destruction are in my home and you think a horse-shoe will save me. Be damned!"
+read_this_run = false
+client_name = "Arthur: The Astronomer"
+reason = 1
+question = "I have it on good authority that your readings are insightful and true. Another Meister is using trickery to steal and discredit my work; how can I prevent this treachery?"
+reaction_positive = "You have given me sound advice, thank you!"
+reaction_negative = "By jove, I knew it! I will have my revenge…"
+reaction_neutral = ""
 portrait_path = "res://assets/client_portraits/client_3_portrait.png"

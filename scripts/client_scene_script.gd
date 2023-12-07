@@ -29,10 +29,10 @@ func _new_client():
 	client_count+=1
 	var valid_client = false
 	while !valid_client:
-		if client_count >= 5:	
+		if client_count >= 17:	
 			get_tree().quit()
 		
-		client_id = randi_range(1,5)
+		client_id = randi_range(1,17)
 		print('checking client id: ',client_id)
 		if past_clients.has(client_id):
 			valid_client= false
@@ -42,7 +42,7 @@ func _new_client():
 	print('client ID: ', client_id)
 	client = $client_parent/Control/client
 	client._update_client()
-	card_reading_options.emit(client.client_resource.draw_upright,client.client_resource.draw_reverse)
+	#card_reading_options.emit($Tar_Root_Scene/reading_scene/reading_scene/AspectRatioContainer2/card.upright_reading,$Tar_Root_Scene/reading_scene/reading_scene/AspectRatioContainer2/card.reversed_reading,)
 	
 	#Little timeout for a pause between clients
 	var t = Timer.new()
@@ -53,17 +53,19 @@ func _new_client():
 	$dialogue_box.visible = true
 	
 	t.queue_free()
-	_dialogue_tree(0)
+	_dialogue_tree(1)
 	
 func _dialogue_tree(dialogue_count):
-	if dialogue_count==0:
-		$dialogue_box._next_text(client.client_resource.client_context)
+	#if dialogue_count==0:
+	#	$dialogue_box._next_text(client.client_resource.client_context)
 	if dialogue_count==1:
 		$dialogue_box._next_text(client.client_resource.question)
 	if dialogue_count==2:
 		card_selection_ready.emit()
+		card_reading_options.emit($Tar_Root_Scene/reading_scene/reading_scene/AspectRatioContainer2/card.upright_reading,$Tar_Root_Scene/reading_scene/reading_scene/AspectRatioContainer2/card.reversed_reading)
 		print('card selection ready')
 		await sel_done
+	
 		print('signal received - selection is: ',selection_choice)
 		
 		if selection_choice == 'a':

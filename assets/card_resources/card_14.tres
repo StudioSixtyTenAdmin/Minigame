@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_ridpl")
 card_name = "Temperance"
-keyword_1 = ""
-keyword_2 = ""
-keyword_3 = ""
+upright_reading = "You have drawn Temperance, trust in your instincts, you are on the right course."
+reversed_reading = "You have drawn Temperance, reversed, this card tells of imbalance and recklessness. Be thorough in your thoughts, and be wary of making hasty decisions."
 card_art_path = "res://assets/card_art/14.jpg"

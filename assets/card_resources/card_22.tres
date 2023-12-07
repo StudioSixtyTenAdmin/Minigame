@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_ktukh")
 card_name = "The Fool"
-keyword_1 = ""
-keyword_2 = ""
-keyword_3 = ""
+upright_reading = "You have drawn The Fool, this suggests you will embark upon a new venture. This will not be without risk, but go forth with an open heart and mind and embrace the opportunities."
+reversed_reading = "Ah The Fool reversed; I caution you to think thrice before making decisions, lest you make a grave mistake!"
 card_art_path = "res://assets/card_art/22.jpg"

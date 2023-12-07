@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_jpwnc")
 event_id = 5
-event_text = 0
-karma_change = 0
-gold_change = 0
-rep_change = 0
+event_text = "You catch more fish than you can eat, you can sell the surplus at market."
+karma_change = 1
+gold_change = 3
+rep_change = 2
 karma_gain = false
 gold_gain = false
 rep_gain = false

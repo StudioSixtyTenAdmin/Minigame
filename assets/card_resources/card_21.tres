@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_f26cd")
 card_name = "World"
-keyword_1 = ""
-keyword_2 = ""
-keyword_3 = ""
+upright_reading = "The World, this card speaks of completion, a positive ending. Enjoy the fruits of your labour and do not forget to give back!"
+reversed_reading = "The world has been drawn in reverse, this suggests that despite your accomplishments, that you feel an emptiness. Examine your life, and find a path to happiness or malaise will set in"
 card_art_path = "res://assets/card_art/21.jpg"

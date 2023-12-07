@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_20k72")
 card_name = "Devil"
-keyword_1 = ""
-keyword_2 = ""
-keyword_3 = ""
+upright_reading = "The Devil has been drawn, an auspicious card to be sure, it is a great folly to seek fulfilment in material pleasures"
+reversed_reading = "The Devil reversed, my friend a great change is coming, you must open your heart to it! Change and growth will be a catalyst for greatness."
 card_art_path = "res://assets/card_art/15.jpg"

@@ -5,7 +5,6 @@
 [resource]
 script = ExtResource("1_aagkj")
 card_name = "Magician"
-keyword_1 = ""
-keyword_2 = ""
-keyword_3 = ""
+upright_reading = "Hark, you have drawn The Magician, this card foretells of new beginnings, the start of a new cycle. It is important to be prepared, be open to change and growth."
+reversed_reading = "The Magician reversed, keep your wits about you, this card warns of deception and illusion. Do not be fooled into thinking a polished pebble is a gem!"
 card_art_path = "res://assets/card_art/01.jpg"
