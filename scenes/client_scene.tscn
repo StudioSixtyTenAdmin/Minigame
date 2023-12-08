@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkgg2b2f7xs4x"]
+[gd_scene load_steps=17 format=3 uid="uid://bkgg2b2f7xs4x"]
 
 [ext_resource type="PackedScene" uid="uid://dhj7wm20ug320" path="res://scenes/clients/client_root.tscn" id="1_bgsk8"]
 [ext_resource type="Script" path="res://scripts/client_scene_script.gd" id="1_gd6md"]
@@ -9,7 +9,39 @@
 [ext_resource type="PackedScene" uid="uid://3qxknx1wgh4u" path="res://scenes/dialogue_box.tscn" id="6_wapug"]
 [ext_resource type="Texture2D" uid="uid://gvip7l4rggq6" path="res://assets/ui_art/Foreground__tex_v001.png" id="7_m621b"]
 [ext_resource type="Texture2D" uid="uid://7e3o1fsndqf4" path="res://assets/ui_art/gold-medici-icon.png" id="8_amy1l"]
+[ext_resource type="Texture2D" uid="uid://fewfoio1fn11" path="res://assets/ui_art/karma-icon-1.png" id="9_ip3oo"]
 [ext_resource type="Texture2D" uid="uid://ce5r5jg3x5vc0" path="res://assets/ui_art/karma-medici-icon.png" id="9_rm4i1"]
+[ext_resource type="Texture2D" uid="uid://ctcasf6wkgvpe" path="res://assets/ui_art/karma-icon-2.png" id="10_xxcwo"]
+[ext_resource type="Texture2D" uid="uid://dajh87snoy0ym" path="res://assets/ui_art/gold-icon-1.png" id="12_40bmd"]
+[ext_resource type="Texture2D" uid="uid://cscrf2gsg25vw" path="res://assets/ui_art/gold-icon-2.png" id="13_jh872"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0w7o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ip3oo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xxcwo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fmm83"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_40bmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jh872")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="client_scene" type="Control"]
 visibility_layer = 2
@@ -77,9 +109,15 @@ text = "Karma
 "
 
 [node name="Sprite2D" type="Sprite2D" parent="karma_bar/Label"]
+visible = false
 position = Vector2(144, -96.5)
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("9_rm4i1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="karma_bar/Label"]
+position = Vector2(144, -138)
+scale = Vector2(0.2, 0.19)
+sprite_frames = SubResource("SpriteFrames_i0w7o")
 
 [node name="reputation_bar" type="ProgressBar" parent="."]
 layout_mode = 1
@@ -141,9 +179,16 @@ text = "Gold
 "
 
 [node name="Sprite2D" type="Sprite2D" parent="gold_bar"]
+visible = false
 position = Vector2(-135.5, 168.862)
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("8_amy1l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="gold_bar"]
+position = Vector2(-144, 128)
+scale = Vector2(0.2, 0.19)
+sprite_frames = SubResource("SpriteFrames_fmm83")
+frame_progress = 0.579177
 
 [node name="dialogue_box" parent="." instance=ExtResource("6_wapug")]
 layout_mode = 1
