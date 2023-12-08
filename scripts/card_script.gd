@@ -1,37 +1,59 @@
 extends Node2D
 
 @export var card_resource : CardResource
-@onready var card_art_path = card_resource.card_art_path
+#@onready var card_art_path = card_resource.card_art_path
 
 var numby_poo = randi_range(1,21)
 var prog_speed = 0.05
 var count = 0
 
+var reading_upright
+var reading_reversed
+var upright_validation
+var upright_practical
+var upright_spiritual
+var reversed_validation
+var reversed_practical
+var reversed_spiritual
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	pass
 	#var card_art = Image.load_from_file(card_art_path)
-	var card_art = load(card_art_path)
-	var card_name = card_resource.card_name
 	#var keyword_1 = card_resource.keyword_1
 	#var keyword_2 = card_resource.keyword_2
 	#var keyword_3 = card_resource.keyword_3
-	$Path2D/PathFollow2D/GboxCardImage1.texture = card_art
+	#$Path2D/PathFollow2D/GboxCardImage1.texture = card_art
 	#$Path2D/PathFollow2D/GboxCardImage1.texture = ImageTexture.create_from_image(card_art)
 	#$Keyword1.text = keyword_1
 	#$Keyword2.text = keyword_2
 	#$Keyword3.text = keyword_3
 
 #new function to load a new card resource
-func _new_card():	
-	var card_resource = ResourceLoader.load('res://assets/card_resources/card_'+str(numby_poo)+'.tres')
+func _new_card():
+	var resource_path = 'res://assets/card_resources/card_'+str(numby_poo)+'.tres'
+	print(resource_path)
+	var card_resource = load(resource_path)
 	var card_art_path = card_resource.card_art_path
+
 	#var card_art = Image.load_from_file(card_art_path)
 	var card_art = load(card_art_path)
 	var card_name = card_resource.card_name
-
 	
 	$Path2D.curve = load('res://scenes/cards/curves/curve6.tres')
 	$Path2D/PathFollow2D/GboxCardImage1.texture = card_art
+	reading_upright = card_resource.upright_reading
+	reading_reversed = card_resource.reversed_reading
+	
+	upright_validation = card_resource.upright_validation
+	upright_practical = card_resource.upright_practical
+	upright_spiritual = card_resource.upright_spiritual
+	reversed_validation = card_resource.reversed_validation
+	reversed_practical = card_resource.reversed_practical
+	reversed_spiritual = card_resource.reversed_spiritual
+	
+	
+	numby_poo = randi_range(1,21)
 
 func _move_card():
 	prog_speed = 0.05

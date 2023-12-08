@@ -1,12 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4i3ln83xm7gp"]
+[gd_scene load_steps=3 format=3 uid="uid://c4i3ln83xm7gp"]
 
 [ext_resource type="Script" path="res://scripts/card_script.gd" id="1_8w5c3"]
-[ext_resource type="Resource" uid="uid://dvofm7m0j51im" path="res://assets/card_resources/card_1.tres" id="2_0sdty"]
 [ext_resource type="Curve2D" uid="uid://pdgbiwve4jba" path="res://scenes/cards/curves/curve6.tres" id="2_lr5fg"]
 
 [node name="card" type="Node2D"]
 script = ExtResource("1_8w5c3")
-card_resource = ExtResource("2_0sdty")
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(0, 64)

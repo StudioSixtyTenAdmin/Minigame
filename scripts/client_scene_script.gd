@@ -62,22 +62,69 @@ func _dialogue_tree(dialogue_count):
 		$dialogue_box._next_text(client.client_resource.question)
 	if dialogue_count==2:
 		card_selection_ready.emit()
-		card_reading_options.emit($Tar_Root_Scene/reading_scene/reading_scene/AspectRatioContainer2/card.upright_reading,$Tar_Root_Scene/reading_scene/reading_scene/AspectRatioContainer2/card.reversed_reading)
+
+		var card_node = $"../reading_scene/reading_scene/AspectRatioContainer2/card"
+
+		card_reading_options.emit(card_node.reading_upright,card_node.reading_reversed)
 		print('card selection ready')
 		await sel_done
 	
 		print('signal received - selection is: ',selection_choice)
 		
 		if selection_choice == 'a':
-			$dialogue_box._next_text(client.client_resource.reaction_positive)
-			$reputation_bar.value += 10
+			var result = _reaction_calculator(card_node,'upright')
+			
+			if result == 0:
+				$dialogue_box._next_text(client.client_resource.reaction_positive)
+				$reputation_bar.value += 10
+			
+			if result == 1 or result == 2:
+				$dialogue_box._next_text(client.client_resource.reaction_negative)
+				$reputation_bar.value -= 10
+			
 		if selection_choice == 'b':
-			$dialogue_box._next_text(client.client_resource.reaction_negative)
-			$reputation_bar.value -= 10
+			var result = _reaction_calculator(card_node,'reversed')
+			
+			if result == 0:
+				$dialogue_box._next_text(client.client_resource.reaction_positive)
+				$reputation_bar.value += 10
+			
+			if result == 1 or result == 2:
+				$dialogue_box._next_text(client.client_resource.reaction_negative)
+				$reputation_bar.value -= 10
 		
 	#if dialogue_count==3:
 	#	$dialogue_box._next_text(client.client_resource.reaction_positive)
 	dialogue_count+=1
+	
+func _reaction_calculator(card, position):
+	var final_reaction
+	if position == 'upright':
+#		#upright compare
+		#validation
+		if client.client_resource.reason == 0:
+			final_reaction = card.upright_validation 
+		#practical
+		if client.client_resource.reason == 1:
+			final_reaction = card.upright_practical
+		#spiritual
+		if client.client_resource.reason == 2:
+			final_reaction = card.upright_spiritual
+		
+	if position == 'reversed':
+		#reversed compare
+		if client.client_resource.reason == 0:
+			final_reaction = card.reversed_validation 
+		#practical
+		if client.client_resource.reason == 1:
+			final_reaction = card.reversed_practical
+		#spiritual
+		if client.client_resource.reason == 2:
+			final_reaction = card.reversed_spiritual
+	return final_reaction
+
+
+
 
 func _next_text():
 	$dialogue_box._next_text(client.client_resource.question)

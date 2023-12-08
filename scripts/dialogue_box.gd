@@ -69,7 +69,6 @@ func _on_text_continue_pressed():
 	
 	
 func _update_message(message: String):
-	
 	# Pause detection logic
 	content.bbcode_text = _calc.extract_pauses_from_string(message)
 	content.visible_characters = 0
@@ -81,8 +80,7 @@ func _update_message(message: String):
 	voice_player.play_play(0)
 	
 	#FIX WHY THE HELL THE TIMER ISN'T WORKING
-func _on_typer_timeout():
-	print('oing')
+func _on_type_typer_timeout():
 	_calc.check_at_position(content.visible_characters)
 	if content.visible_characters < content.text.length() - true_text_length:
 		content.visible_characters +=1
