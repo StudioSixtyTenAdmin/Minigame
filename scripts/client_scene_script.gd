@@ -76,22 +76,30 @@ func _dialogue_tree(dialogue_count):
 			
 			if result == 0:
 				$dialogue_box._next_text(client.client_resource.reaction_positive)
-				$reputation_bar.value += 10
+				$reputation_bar.value += randi_range(8,20)
+				$karma_bar.value += randi_range(8,20)
+				$gold_bar.value += randi_range(8,20)
 			
 			if result == 1 or result == 2:
 				$dialogue_box._next_text(client.client_resource.reaction_negative)
-				$reputation_bar.value -= 10
+				$reputation_bar.value -= randi_range(1,10)
+				$karma_bar.value -= randi_range(1,10)
+				$gold_bar.value -= randi_range(1,10)
 			
 		if selection_choice == 'b':
 			var result = _reaction_calculator(card_node,'reversed')
 			
 			if result == 0:
 				$dialogue_box._next_text(client.client_resource.reaction_positive)
-				$reputation_bar.value += 10
+				$reputation_bar.value += randi_range(8,20)
+				$karma_bar.value += randi_range(8,20)
+				$gold_bar.value += randi_range(8,20)
 			
 			if result == 1 or result == 2:
 				$dialogue_box._next_text(client.client_resource.reaction_negative)
-				$reputation_bar.value -= 10
+				$reputation_bar.value -= randi_range(1,10)
+				$karma_bar.value -= randi_range(1,10)
+				$gold_bar.value -= randi_range(1,10)
 		
 	#if dialogue_count==3:
 	#	$dialogue_box._next_text(client.client_resource.reaction_positive)
@@ -161,3 +169,9 @@ func _on_button_pressed():
 	print('Hide!')
 	#get_parent().paused = true
 	get_parent().visible = false
+
+func _process(delta):
+	
+	if $gold_slider.value <= 0:
+		remove_child(get_node('Tar_Root_Scene'))
+	
