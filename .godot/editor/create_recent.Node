@@ -1,9 +1,9 @@
+Sprite2D
 TextureProgressBar
 AnimatedSprite2D
 Control
 Container
 TextureButton
-Sprite2D
 AudioStreamPlayer
 Label
 Button
@@ -12,4 +12,3 @@ HSlider
 VBoxContainer
 Tree
 MenuButton
-ScrollContainer

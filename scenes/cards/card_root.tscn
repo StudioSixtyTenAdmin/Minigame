@@ -16,7 +16,7 @@ rotates = false
 
 [node name="GboxCardImage1" type="Sprite2D" parent="Path2D/PathFollow2D"]
 position = Vector2(0.0842285, 0.0673828)
-scale = Vector2(2, 2)
+scale = Vector2(2.8, 2.8)
 
 [node name="Keyword1" type="RichTextLabel" parent="."]
 visible = false

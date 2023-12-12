@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://5kcjgt0r5u6l"]
+[gd_scene load_steps=8 format=3 uid="uid://5kcjgt0r5u6l"]
 
 [ext_resource type="Script" path="res://scripts/reading_scene.gd" id="1_vmx3t"]
 [ext_resource type="PackedScene" uid="uid://c4i3ln83xm7gp" path="res://scenes/cards/card_root.tscn" id="2_uafhp"]
 [ext_resource type="Script" path="res://scripts/reading_script.gd" id="2_xqcka"]
 [ext_resource type="Theme" uid="uid://dyhggra4gad0m" path="res://assets/text_dialogue/main_theme.tres" id="4_3y8xl"]
 [ext_resource type="PackedScene" uid="uid://ctswap7g7ypoa" path="res://scenes/cards/3d_card_root.tscn" id="4_q4s0d"]
+
+[sub_resource type="Gradient" id="Gradient_6nssg"]
+offsets = PackedFloat32Array(0.984344, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m84r5"]
+gradient = SubResource("Gradient_6nssg")
 
 [node name="reading_scene_root" type="Node3D"]
 script = ExtResource("1_vmx3t")
@@ -49,35 +55,39 @@ color = Color(0.505882, 0.505882, 0.505882, 1)
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="reading_scene"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.85
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.85
-offset_left = 15.0
-offset_top = -15.5
-offset_right = -15.0
-offset_bottom = -15.0
+anchor_bottom = 0.98
+offset_left = 20.0
+offset_top = 168.0
+offset_right = -20.0
+offset_bottom = 3.59998
 grow_horizontal = 2
 grow_vertical = 2
-ratio = 2.0
-stretch_mode = 3
+ratio = 1.4872
+stretch_mode = 0
+alignment_vertical = 0
 
 [node name="UI" type="SplitContainer" parent="reading_scene/AspectRatioContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+split_offset = 335
 
 [node name="OptionA" type="Button" parent="reading_scene/AspectRatioContainer/UI"]
 layout_mode = 2
-size_flags_horizontal = 3
 clip_text = true
+
+[node name="Sprite2D" type="Sprite2D" parent="reading_scene/AspectRatioContainer/UI/OptionA"]
+position = Vector2(168, 228)
+scale = Vector2(5.125, 7.125)
+texture = SubResource("GradientTexture2D_m84r5")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="reading_scene/AspectRatioContainer/UI/OptionA"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
-anchor_top = 0.25
+anchor_top = 0.08
 anchor_right = 0.9
-anchor_bottom = 0.85
+anchor_bottom = 0.95
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -86,15 +96,22 @@ text = "Upright"
 
 [node name="OptionB" type="Button" parent="reading_scene/AspectRatioContainer/UI"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 13
+size_flags_vertical = 9
+
+[node name="Sprite2D" type="Sprite2D" parent="reading_scene/AspectRatioContainer/UI/OptionB"]
+position = Vector2(168, 228)
+scale = Vector2(5.125, 7.125)
+texture = SubResource("GradientTexture2D_m84r5")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="reading_scene/AspectRatioContainer/UI/OptionB"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
-anchor_top = 0.25
+anchor_top = 0.08
 anchor_right = 0.9
-anchor_bottom = 0.85
+anchor_bottom = 0.95
+offset_left = -1.14441e-05
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -112,6 +129,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="card" parent="reading_scene/AspectRatioContainer2" instance=ExtResource("2_uafhp")]
+position = Vector2(0, -160)
 
 [connection signal="card_selected" from="SubViewportContainer/SubViewport/threed_card_root" to="." method="_on_d_card_root_card_selected"]
 [connection signal="pressed" from="reading_scene/AspectRatioContainer/UI/OptionA" to="." method="_on_option_a_pressed"]
