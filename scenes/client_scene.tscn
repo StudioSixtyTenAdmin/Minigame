@@ -31,7 +31,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fmm83"]
@@ -45,7 +45,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [node name="client_scene" type="Control"]
@@ -144,6 +144,7 @@ offset_bottom = 904.0
 position = Vector2(184, 192)
 scale = Vector2(0.2, 0.19)
 sprite_frames = SubResource("SpriteFrames_i0w7o")
+autoplay = "default"
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 1
@@ -199,6 +200,7 @@ text = "Reputation"
 position = Vector2(536, 192)
 scale = Vector2(0.2, 0.19)
 sprite_frames = SubResource("SpriteFrames_fmm83")
+autoplay = "default"
 frame_progress = 0.579177
 
 [node name="gold_slider" type="HSlider" parent="."]
