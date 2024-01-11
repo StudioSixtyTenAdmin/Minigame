@@ -1,60 +1,109 @@
-[gd_scene load_steps=6 format=3 uid="uid://3qxknx1wgh4u"]
+[gd_scene load_steps=12 format=3 uid="uid://3qxknx1wgh4u"]
 
 [ext_resource type="AudioStream" uid="uid://bfho13w7qkoej" path="res://assets/DialogueBeep.wav" id="1_7s8pr"]
 [ext_resource type="Script" path="res://scripts/dialogue_box.gd" id="1_o8t3u"]
 [ext_resource type="Theme" uid="uid://dyhggra4gad0m" path="res://assets/text_dialogue/main_theme.tres" id="2_54ov5"]
+[ext_resource type="Texture2D" uid="uid://c2ydl6ugj263q" path="res://assets/ui_art/speech-bubble-v4.png" id="2_ry3m0"]
 [ext_resource type="Script" path="res://scenes/PauseCalculator.gd" id="3_6jh5h"]
 [ext_resource type="Script" path="res://scenes/DialogueVoicePlayer.gd" id="3_s3i34"]
+[ext_resource type="Texture2D" uid="uid://bl2s1d75njanb" path="res://assets/ui_art/continue_button_01_v001.png" id="4_7wcq3"]
+[ext_resource type="Texture2D" uid="uid://cod0hrfwts3wb" path="res://assets/ui_art/continue_button_02_v001.png" id="5_0nmhf"]
+[ext_resource type="Texture2D" uid="uid://bg0l1kxni1e4f" path="res://assets/ui_art/continue_button_03_v001.png" id="6_mwmn1"]
+[ext_resource type="Texture2D" uid="uid://4hdxpc1mf2em" path="res://assets/ui_art/continue_button_04_v001.png" id="7_4gpob"]
 
-[node name="dialogue_window" type="PanelContainer"]
-custom_minimum_size = Vector2(300, 200)
-anchors_preset = -1
+[sub_resource type="SpriteFrames" id="SpriteFrames_s5wig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7wcq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0nmhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mwmn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4gpob")
+}],
+"loop": true,
+"name": &"continue",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_o8t3u")
+
+[node name="dialogue_window" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(350, 170)
+layout_mode = 2
 anchor_left = 0.5
-anchor_top = 0.4
+anchor_top = 0.72
 anchor_right = 0.5
-anchor_bottom = 0.4
-offset_left = -150.0
-offset_top = -100.0
-offset_right = 150.0
-offset_bottom = 100.0
+anchor_bottom = 0.725
+offset_left = -20.9
+offset_top = 11.888
+offset_right = 374.1
+offset_bottom = 200.888
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_o8t3u")
 
-[node name="dialogue_text" type="RichTextLabel" parent="."]
+[node name="Speech-bubble-v3" type="Sprite2D" parent="dialogue_window"]
+position = Vector2(208.9, 63.312)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_ry3m0")
+
+[node name="dialogue_text" type="RichTextLabel" parent="dialogue_window"]
 layout_mode = 2
 theme = ExtResource("2_54ov5")
 bbcode_enabled = true
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="text_continue" type="Button" parent="."]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-theme = ExtResource("2_54ov5")
-text = "Continue"
-
-[node name="DialogueVoicePlayer" type="AudioStreamPlayer" parent="."]
+[node name="DialogueVoicePlayer" type="AudioStreamPlayer" parent="dialogue_window"]
 stream = ExtResource("1_7s8pr")
-volume_db = -11.556
+volume_db = -20.0
 script = ExtResource("3_s3i34")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="TypeTimer" type="Timer" parent="dialogue_window"]
 wait_time = 0.04
 
-[node name="PauseCalculator" type="Node" parent="."]
+[node name="PauseCalculator" type="Node" parent="dialogue_window"]
 script = ExtResource("3_6jh5h")
 
-[node name="PauseTimer" type="Timer" parent="."]
+[node name="PauseTimer" type="Timer" parent="dialogue_window"]
 one_shot = true
 
+[node name="text_continue" type="Button" parent="."]
+visible = false
+layout_direction = 1
+layout_mode = 2
+offset_left = 392.0
+offset_top = 400.0
+offset_right = 620.0
+offset_bottom = 452.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("2_54ov5")
+text = "Continue              "
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="text_continue"]
+position = Vector2(176, 24)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_s5wig")
+animation = &"continue"
+autoplay = "continue"
+frame_progress = 0.823897
+
+[connection signal="finished" from="dialogue_window/DialogueVoicePlayer" to="." method="_on_dialogue_voice_player_finished"]
+[connection signal="timeout" from="dialogue_window/TypeTimer" to="." method="_on_type_typer_timeout"]
+[connection signal="pause_requested" from="dialogue_window/PauseCalculator" to="." method="_on_pause_calculator_pause_requested"]
+[connection signal="tag_value" from="dialogue_window/PauseCalculator" to="." method="_on_pause_calculator_tag_value"]
+[connection signal="timeout" from="dialogue_window/PauseTimer" to="." method="_on_pause_timer_timeout"]
 [connection signal="pressed" from="text_continue" to="." method="_on_text_continue_pressed"]
-[connection signal="finished" from="DialogueVoicePlayer" to="." method="_on_dialogue_voice_player_finished"]
-[connection signal="timeout" from="Timer" to="." method="_on_typer_timeout"]
-[connection signal="pause_requested" from="PauseCalculator" to="." method="_on_pause_calculator_pause_requested"]
-[connection signal="tag_value" from="PauseCalculator" to="." method="_on_pause_calculator_tag_value"]
-[connection signal="timeout" from="PauseTimer" to="." method="_on_pause_timer_timeout"]

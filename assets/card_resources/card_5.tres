@@ -5,7 +5,12 @@
 [resource]
 script = ExtResource("1_id8gp")
 card_name = "Temperence"
-keyword_1 = ""
-keyword_2 = ""
-keyword_3 = ""
+upright_reading = "You have drawn Temperance, trust in your instincts, you are on the right course."
+reversed_reading = "You have drawn Temperance, reversed, this card tells of imbalance and recklessness. Be thorough in your thoughts, and be wary of making hasty decisions."
 card_art_path = "res://assets/card_art/alt_card_5.png"
+upright_validation = 2
+upright_practical = 0
+upright_spiritual = 1
+reversed_validation = 2
+reversed_practical = 0
+reversed_spiritual = 0

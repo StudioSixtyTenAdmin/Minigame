@@ -14,7 +14,7 @@ func _process(delta):
 
 func _on_d_card_root_card_selected():
 	$reading_scene.visible = true
-	$reading_scene._new_card()
+	$reading_scene._move_card()
 	threed_card_root.visible = false
 	$SubViewportContainer.visible = false
 
@@ -25,12 +25,15 @@ func _on_client_scene__card_reading_options(option_a, option_b):
 
 
 func _on_client_scene__card_selection_ready():
+	print('card Selection Ready')
+	$reading_scene._new_card()
 	threed_card_root._reset()
 	visible = true
 	$reading_scene.visible = false
 	threed_card_root.visible = true
 	threed_card_root.click_ready = true
 	$SubViewportContainer.visible = true
+	print('card Selection finished')
 
 
 func _on_option_a_pressed():

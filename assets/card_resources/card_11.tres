@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://cc35skuwnbf83"]
+
+[ext_resource type="Script" path="res://scripts/card_resource.gd" id="1_72eh1"]
+
+[resource]
+script = ExtResource("1_72eh1")
+card_name = "Justice"
+upright_reading = "Ah Justice has been drawn, this is a clear sign that what is meant will be. Put your faith in the universe, all will be well!"
+reversed_reading = "A stark warning friend, the Justice card has been drawn in reverse! This card speaks of injustice and denial; you must atone for wrongdoings or Justice will be served."
+card_art_path = "res://assets/card_art/11.jpg"
+upright_validation = 0
+upright_practical = 0
+upright_spiritual = 2
+reversed_validation = 1
+reversed_practical = 2
+reversed_spiritual = 0

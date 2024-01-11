@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://7eda5halkcm3"]
+
+[ext_resource type="Script" path="res://scripts/card_resource.gd" id="1_20k72"]
+
+[resource]
+script = ExtResource("1_20k72")
+card_name = "Devil"
+upright_reading = "The Devil has been drawn, an auspicious card to be sure, it is a great folly to seek fulfilment in material pleasures"
+reversed_reading = "The Devil reversed, my friend a great change is coming, you must open your heart to it! Change and growth will be a catalyst for greatness."
+card_art_path = "res://assets/card_art/15.jpg"
+upright_validation = 1
+upright_practical = 1
+upright_spiritual = 2
+reversed_validation = 2
+reversed_practical = 2
+reversed_spiritual = 0

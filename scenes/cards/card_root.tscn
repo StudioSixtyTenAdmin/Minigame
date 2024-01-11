@@ -11,11 +11,12 @@ position = Vector2(0, 64)
 curve = ExtResource("2_lr5fg")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(203.726, -117.711)
+position = Vector2(0, 320)
 rotates = false
 
 [node name="GboxCardImage1" type="Sprite2D" parent="Path2D/PathFollow2D"]
 position = Vector2(0.0842285, 0.0673828)
+scale = Vector2(2.8, 2.8)
 
 [node name="Keyword1" type="RichTextLabel" parent="."]
 visible = false

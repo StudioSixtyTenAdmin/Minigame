@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://de2albdj2y652"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_36uea"]
+
+[resource]
+script = ExtResource("1_36uea")
+client_id = 15
+read_this_run = false
+client_name = "Petra: The Assistant Herbalist"
+reason = 2
+question = "Hail Reader. I wish to avail of your service. A towns-woman has asked me to procure some herbs for her. Dangerous herbs in the wrong hands, does she wish to use them for ill?"
+reaction_positive = "I thank thee Reader, I will pray upon the matter."
+reaction_negative = "Alas and alack… my suspicions were correct. My thanks"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/client_5_portrait.png"

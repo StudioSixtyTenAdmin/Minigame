@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://bqvjsqub2fbhw"]
+
+[ext_resource type="Script" path="res://scripts/card_resource.gd" id="1_sr3xt"]
+
+[resource]
+script = ExtResource("1_sr3xt")
+card_name = "Strength"
+upright_reading = "You have drawn a fine card, Strength, I can tell you are on the right path and regardless of the obstacles in your way - all will be well!"
+reversed_reading = "Strength reversed, tread carefully! You have succumbed to fear and self-doubt and leant on aggression. You must atone for your actions and ground yourself in peace, if you walk in anger all around you will burn."
+card_art_path = "res://assets/card_art/08.jpg"
+upright_validation = 0
+upright_practical = 0
+upright_spiritual = 2
+reversed_validation = 1
+reversed_practical = 1
+reversed_spiritual = 2

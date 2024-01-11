@@ -1,14 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwhbq7hxokivu"]
 
+[ext_resource type="Texture2D" uid="uid://mkwy52w63hnx" path="res://assets/ui_art/Background_tex_v002.png" id="1_0phca"]
 [ext_resource type="PackedScene" uid="uid://bkgg2b2f7xs4x" path="res://scenes/client_scene.tscn" id="1_8j0fc"]
-[ext_resource type="Texture2D" uid="uid://bhsl6ak33luoi" path="res://assets/ui_art/background_tex_v001.png" id="1_rwku2"]
 [ext_resource type="PackedScene" uid="uid://5kcjgt0r5u6l" path="res://scenes/reading_scene.tscn" id="2_x01og"]
 
 [node name="Tar_Root_Scene" type="Node2D"]
+process_mode = 1
 
 [node name="background_image" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_rwku2")
+visibility_layer = 8
+texture = ExtResource("1_0phca")
 centered = false
 
 [node name="client_scene_" parent="." instance=ExtResource("1_8j0fc")]

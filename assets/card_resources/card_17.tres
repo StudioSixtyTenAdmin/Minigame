@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://buxbgxpuiso26"]
+
+[ext_resource type="Script" path="res://scripts/card_resource.gd" id="1_hipx5"]
+
+[resource]
+script = ExtResource("1_hipx5")
+card_name = "Star"
+upright_reading = "Hail, it is The Star! You have drawn a card of great hope, a difficult situation has resolved and now is the time to rest and heal! Have faith that all will be well!"
+reversed_reading = "Hark you have drawn The Star reversed, a struggle is upon you but you must face it head on. Do not run from your trouble, gather your courage!"
+card_art_path = "res://assets/card_art/17.jpg"
+upright_validation = 0
+upright_practical = 2
+upright_spiritual = 0
+reversed_validation = 1
+reversed_practical = 2
+reversed_spiritual = 1

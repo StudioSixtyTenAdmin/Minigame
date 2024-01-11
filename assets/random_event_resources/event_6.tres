@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://cmyq3lbjsm0tp"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_4snxk"]
+
+[resource]
+script = ExtResource("1_4snxk")
+event_id = 6
+event_text = "A full moon lights the night sky, you can cleanse the tools of your trade."
+karma_change = 1
+gold_change = 1
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

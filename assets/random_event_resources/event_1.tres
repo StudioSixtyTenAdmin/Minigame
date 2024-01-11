@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://b8jtgi4s3vj1n"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_w062a"]
+
+[resource]
+script = ExtResource("1_w062a")
+event_id = 1
+event_text = "The Meister of Scrolls has accused you of making eyes at his serving girl. He is dissatisfied with her work and requests that you cease."
+karma_change = -2
+gold_change = -1
+rep_change = -3
+karma_gain = false
+gold_gain = false
+rep_gain = false

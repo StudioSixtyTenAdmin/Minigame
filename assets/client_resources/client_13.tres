@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://b3gpvxfoxnvo3"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_5k8ts"]
+
+[resource]
+script = ExtResource("1_5k8ts")
+client_id = 13
+read_this_run = false
+client_name = "Maurice: The Innkeeper"
+reason = 1
+question = "I’ve served you at the inn many times, now it is me who is seeking your service! My wife has been suffering a dire malaise for a full moon cycle. Our children are but babes, will she recover?"
+reaction_positive = "Thank you sir."
+reaction_negative = "You damned scoundrel, you are nothing but a charlatan!"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/client_5_portrait.png"

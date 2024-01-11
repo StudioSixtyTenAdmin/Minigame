@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://ce2dtw5obe2ir"]
+
+[ext_resource type="Script" path="res://scripts/card_resource.gd" id="1_6v77c"]
+
+[resource]
+script = ExtResource("1_6v77c")
+card_name = "Judgement"
+upright_reading = "You have drawn Judgement, a card of reflection. It is time to take stock and evaluate your journey, respect the past but let it go as you take the next steps on your journey."
+reversed_reading = "My friend, you have drawn Judgement in reverse, She suggests that you are holding on to negativity and despair. Do not judge yourself so harshly, the past cannot be undone but the future stretches out before you!"
+card_art_path = "res://assets/card_art/20.jpg"
+upright_validation = 2
+upright_practical = 1
+upright_spiritual = 0
+reversed_validation = 2
+reversed_practical = 0
+reversed_spiritual = 1

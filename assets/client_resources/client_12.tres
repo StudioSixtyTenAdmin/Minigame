@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://ccwqxa6cup3kh"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_606mg"]
+
+[resource]
+script = ExtResource("1_606mg")
+client_id = 12
+read_this_run = false
+client_name = "Jonah: The Minstrel"
+reason = 1
+question = "Will you read my cards Sire, I have a most urgent need! Sire, I am weary from my travel, is this village a haven for… one such as me?"
+reaction_positive = "Gramercy sire, by my troth I shall not forget your kindness."
+reaction_negative = "I have heard whispers of you too sire, a man hears a lot on the road…"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/client_5_portrait.png"

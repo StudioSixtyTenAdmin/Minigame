@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://7h18ay2dwuym"]
+
+[ext_resource type="Script" path="res://scripts/card_resource.gd" id="1_k1ig3"]
+
+[resource]
+script = ExtResource("1_k1ig3")
+card_name = "Chariot"
+upright_reading = "The Chariot; a fine augur! You have had challenges and obstacles, this card tells that you are on the path to success. Victory will be yours."
+reversed_reading = "Alas, you have drawn The Chariot in reverse, I see you’ve steered from your course friend. If you do not regain control, all may be lost!"
+card_art_path = "res://assets/card_art/07.jpg"
+upright_validation = 0
+upright_practical = 0
+upright_spiritual = 2
+reversed_validation = 1
+reversed_practical = 0
+reversed_spiritual = 2

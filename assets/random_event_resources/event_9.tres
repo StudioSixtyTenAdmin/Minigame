@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://dsy5lwqvqhhdd"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_4snxk"]
+
+[resource]
+script = ExtResource("1_4snxk")
+event_id = 9
+event_text = "You are arrested and questioned for heresy, no charge is brought but suspicion has cast doubt on your character."
+karma_change = -3
+gold_change = -3
+rep_change = -3
+karma_gain = false
+gold_gain = false
+rep_gain = false

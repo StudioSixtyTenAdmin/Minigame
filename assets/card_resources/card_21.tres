@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=2 format=3 uid="uid://ddx3w3717ec30"]
+
+[ext_resource type="Script" path="res://scripts/card_resource.gd" id="1_f26cd"]
+
+[resource]
+script = ExtResource("1_f26cd")
+card_name = "World"
+upright_reading = "The World, this card speaks of completion, a positive ending. Enjoy the fruits of your labour and do not forget to give back!"
+reversed_reading = "The world has been drawn in reverse, this suggests that despite your accomplishments, that you feel an emptiness. Examine your life, and find a path to happiness or malaise will set in"
+card_art_path = "res://assets/card_art/21.jpg"
+upright_validation = 0
+upright_practical = 1
+upright_spiritual = 0
+reversed_validation = 1
+reversed_practical = 2
+reversed_spiritual = 2

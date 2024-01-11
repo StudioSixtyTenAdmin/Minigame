@@ -1,11 +1,52 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkgg2b2f7xs4x"]
+[gd_scene load_steps=22 format=3 uid="uid://bkgg2b2f7xs4x"]
 
 [ext_resource type="PackedScene" uid="uid://dhj7wm20ug320" path="res://scenes/clients/client_root.tscn" id="1_bgsk8"]
 [ext_resource type="Script" path="res://scripts/client_scene_script.gd" id="1_gd6md"]
 [ext_resource type="Script" path="res://scripts/client_script.gd" id="2_jrrs3"]
 [ext_resource type="Theme" uid="uid://dyhggra4gad0m" path="res://assets/text_dialogue/main_theme.tres" id="2_nocis"]
 [ext_resource type="Resource" uid="uid://c8d87b4hcdkke" path="res://assets/client_resources/client_1.tres" id="3_0wk6q"]
+[ext_resource type="Texture2D" uid="uid://d2j11m4tcrdog" path="res://assets/ui_art/Frame_mid_v001.png" id="6_gjuts"]
 [ext_resource type="PackedScene" uid="uid://3qxknx1wgh4u" path="res://scenes/dialogue_box.tscn" id="6_wapug"]
+[ext_resource type="Texture2D" uid="uid://cvyq1ahcwhwfk" path="res://assets/ui_art/karma-empty.png" id="7_1hctx"]
+[ext_resource type="Texture2D" uid="uid://gvip7l4rggq6" path="res://assets/ui_art/Foreground__tex_v001.png" id="7_m621b"]
+[ext_resource type="Texture2D" uid="uid://ck4et34s76k4p" path="res://assets/ui_art/karma-full.png" id="8_ru5ip"]
+[ext_resource type="Texture2D" uid="uid://fewfoio1fn11" path="res://assets/ui_art/karma-icon-1.png" id="9_ip3oo"]
+[ext_resource type="Texture2D" uid="uid://2h30d56jmjeh" path="res://assets/ui_art/reputation-empty.png" id="9_v7ny2"]
+[ext_resource type="Texture2D" uid="uid://bqmhsa88dijpr" path="res://assets/ui_art/reputation-full.png" id="10_3qprt"]
+[ext_resource type="Texture2D" uid="uid://ctcasf6wkgvpe" path="res://assets/ui_art/karma-icon-2.png" id="10_xxcwo"]
+[ext_resource type="Texture2D" uid="uid://cn6al6j6ay3x" path="res://assets/ui_art/gold-empty.png" id="11_p73ih"]
+[ext_resource type="Texture2D" uid="uid://dajh87snoy0ym" path="res://assets/ui_art/gold-icon-1.png" id="12_40bmd"]
+[ext_resource type="Texture2D" uid="uid://mvbqsi0dg7b" path="res://assets/ui_art/gold-full.png" id="12_kpjt0"]
+[ext_resource type="Texture2D" uid="uid://cscrf2gsg25vw" path="res://assets/ui_art/gold-icon-2.png" id="13_jh872"]
+[ext_resource type="Texture2D" uid="uid://dmy5ohxuk8c3n" path="res://assets/ui_art/reputation_icon.png" id="19_l75sk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0w7o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ip3oo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xxcwo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fmm83"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_40bmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jh872")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="client_scene" type="Control"]
 visibility_layer = 2
@@ -16,70 +57,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gd6md")
-
-[node name="Background" type="ColorRect" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 720.0
-offset_bottom = 1280.0
-color = Color(0.505882, 0.505882, 0.505882, 1)
-
-[node name="gold_bar" type="ProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 0.5
-offset_right = 40.0
-grow_vertical = 2
-mouse_filter = 1
-max_value = 300.0
-step = 1.0
-value = 30.0
-fill_mode = 3
-show_percentage = false
-
-[node name="Label" type="Label" parent="gold_bar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_right = 60.0
-offset_bottom = 11.5
-grow_horizontal = 0
-grow_vertical = 2
-theme = ExtResource("2_nocis")
-text = "Gold
-"
-
-[node name="karma_bar" type="ProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-offset_left = 45.0
-offset_top = 20.0
-offset_right = -45.0
-grow_horizontal = 2
-mouse_filter = 1
-step = 1.0
-value = 50.0
-
-[node name="Label" type="Label" parent="karma_bar"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -29.0
-offset_right = 29.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("2_nocis")
-text = "Karma
-"
 
 [node name="client_parent" type="AspectRatioContainer" parent="."]
 layout_mode = 1
@@ -100,33 +77,131 @@ size_flags_vertical = 4
 script = ExtResource("2_jrrs3")
 client_resource = ExtResource("3_0wk6q")
 
-[node name="rep_bar" type="ProgressBar" parent="."]
+[node name="foreground" type="Sprite2D" parent="."]
+texture = ExtResource("7_m621b")
+centered = false
+
+[node name="overlay" type="Sprite2D" parent="."]
+texture = ExtResource("6_gjuts")
+centered = false
+
+[node name="karma_bar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.05
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = 304.0
+offset_right = 2631.0
+offset_bottom = 4697.0
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+value = 70.0
+fill_mode = 3
+texture_under = ExtResource("7_1hctx")
+texture_progress = ExtResource("8_ru5ip")
+
+[node name="reputation_bar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 136.0
+offset_top = -8.0
+offset_right = 1991.0
+offset_bottom = 4961.0
+grow_horizontal = 2
+scale = Vector2(0.2, 0.2)
+texture_under = ExtResource("9_v7ny2")
+texture_progress = ExtResource("10_3qprt")
+
+[node name="gold_bar" type="TextureProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
+anchor_top = 0.05
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -40.0
+offset_left = -88.0
+offset_top = 304.0
+offset_right = 2487.0
+offset_bottom = 4697.0
 grow_horizontal = 0
 grow_vertical = 2
-mouse_filter = 1
+scale = Vector2(0.2, 0.2)
+value = 40.0
 fill_mode = 3
+texture_under = ExtResource("11_p73ih")
+texture_progress = ExtResource("12_kpjt0")
 
-[node name="Label" type="Label" parent="rep_bar"]
+[node name="dialogue_box" parent="." instance=ExtResource("6_wapug")]
+layout_mode = 1
+offset_left = -24.0
+offset_top = 704.0
+offset_right = 376.0
+offset_bottom = 904.0
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(184, 192)
+scale = Vector2(0.2, 0.19)
+sprite_frames = SubResource("SpriteFrames_i0w7o")
+autoplay = "default"
+
+[node name="Label3" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -11.5
-offset_right = -40.0
-offset_bottom = 11.5
+offset_left = -680.0
+offset_top = -310.0
+offset_right = -598.0
+offset_bottom = -266.0
 grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("2_nocis")
+text = "Karma
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -310.0
+offset_right = -40.0
+offset_bottom = -266.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("2_nocis")
+text = "Gold
+"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -1247.0
+offset_right = 65.0
+offset_bottom = -1203.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_nocis")
 text = "Reputation"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(536, 192)
+scale = Vector2(0.2, 0.19)
+sprite_frames = SubResource("SpriteFrames_fmm83")
+autoplay = "default"
+frame_progress = 0.579177
 
 [node name="gold_slider" type="HSlider" parent="."]
 visible = false
@@ -179,10 +254,21 @@ text = "Slide to set price"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="dialogue_box" parent="." instance=ExtResource("6_wapug")]
-layout_mode = 1
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "Main
+Menu"
+
+[node name="ReputationIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(360, 120)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("19_l75sk")
 
 [connection signal="price_set" from="." to="dialogue_box" method="_on_client_scene_price_set"]
+[connection signal="choose_price" from="dialogue_box" to="." method="_on_dialogue_box_choose_price"]
 [connection signal="value_changed" from="gold_slider" to="." method="_on_gold_slider_value_changed"]
 [connection signal="pressed" from="gold_slider/Button" to="." method="_on_gold_button_pressed"]
-[connection signal="choose_price" from="dialogue_box" to="." method="_on_dialogue_box_choose_price"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
