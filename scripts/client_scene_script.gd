@@ -18,11 +18,35 @@ signal sel_done
 
 var selection_choice
 
-
 func _ready():
-	_new_client()
+	turn()
+
+func turn():
+	dialogue_count = 0
+	$dialogue_box.visible = false
+	await $player_board._move_player()
+	if $player_board.place_text == 'Reading Event' or $player_board.place_text == 'TAXMAN':
+		_new_client()
+	if $player_board.place_text == 'Random Event':
+		_new_event()
+
+#Write a func to spit out random event
+func _new_event():
+	$client_parent/Control/client.visible = false
+	$dialogue_box.visible = false
 	
+	#Little timeout for a pause between clients
+	var t = Timer.new()
+	self.add_child(t)
+	t.start(1)
+	await t.timeout
+	$dialogue_box.visible = true
+	
+	t.queue_free()
+	$dialogue_box._random_event("Bleep Bloop this is a random event!")
+
 func _new_client():
+	print('running NEW CLIENT')
 	$client_parent/Control/client.visible = false
 	$dialogue_box.visible = false
 	
@@ -60,6 +84,7 @@ func _dialogue_tree(dialogue_count):
 	#	$dialogue_box._next_text(client.client_resource.client_context)
 	if dialogue_count==1:
 		$dialogue_box._next_text(client.client_resource.question)
+		$dialogue_box.count = 2
 	if dialogue_count==2:
 		card_selection_ready.emit()
 
@@ -170,8 +195,9 @@ func _on_button_pressed():
 	#get_parent().paused = true
 	get_parent().visible = false
 
-func _process(delta):
-	
-	if $gold_slider.value <= 0:
-		remove_child(get_node('Tar_Root_Scene'))
-	
+#Demo fail state
+#func _process(delta):
+#	
+#	if $gold_slider.value <= 0:
+#		remove_child(get_node('Tar_Root_Scene'))
+#	

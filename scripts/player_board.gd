@@ -1,8 +1,9 @@
 extends Node
 
 @export var location_resource : LocationResource
-# Called when the node enters the scene tree for the first time.
+# Whole script needs updated if any additional types of points are required
 
+@export var place_text = 'Reading Event'
 var location_name
 var number_of_readings
 var number_of_random_events
@@ -17,7 +18,7 @@ var total_points
 
 func _ready():
 	_establish_game_board()
-	_move_player()
+	#_move_player()
 
 func _input(event):
 	if event.is_action_pressed("nextRoll"):
@@ -28,7 +29,7 @@ func _move_player():
 	await _second_countdown(true,roll)
 	player_place += roll
 	print('The player moved forward ', roll, ' places. They landed on: ', player_place) 
-	var place_text = _tile_chance_calculator('Reading Event', chance_landing_on_reading, 'Random Event', chance_landing_on_event, 'TAXMAN', chance_landing_on_taxman) 
+	place_text = _tile_chance_calculator('Reading Event', chance_landing_on_reading, 'Random Event', chance_landing_on_event, 'TAXMAN', chance_landing_on_taxman) 
 	print(place_text)
 	_tax_tracker()
 	print('Players current place is:', player_place)

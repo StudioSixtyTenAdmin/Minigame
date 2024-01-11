@@ -19,6 +19,7 @@ var count = 2
 var textLength 
 var playing_voice = false
 var show_continue = true
+var event = false
 
 var true_text_length = 0
 
@@ -38,20 +39,32 @@ func _set_price():
 #func _ready():
 #	_update_message("[wave]Florian[/wave], a [b]young[/b] labourer, [wave]seeks your counsel[/wave],{p=0.5} the baker has offered him an apprenticeship, but he has his sights set on another position.")
 
+func _random_event(message):
+	event = true
+	count = 0
+	_update_message(message)
+	
+	
 func _next_text(message):
 	_update_message(message)
 
 func _on_text_continue_pressed():
+	print('count:',count)
+	#Event is occuring
+	if count == 0:
+		get_parent().turn()
 	
 	#Removed Price-Setting Requirement
 	#if count == 1:
 	#	_set_price()
 	
 	if count == 1:
+		event = false
 		get_parent()._dialogue_tree(1)
 	
 	if count == 2:
 		#card Reading Scene
+		event = false
 		get_parent()._dialogue_tree(2)
 	
 	#if count ==4:
@@ -59,13 +72,15 @@ func _on_text_continue_pressed():
 	
 	#Reading Ends Here
 	if count ==3:
-		get_parent()._new_client()
+		get_parent().turn()
 		count = 1
 	
 	
 	$text_continue.visible = false
 	await text_ready
-	count+=1
+	
+	if event == false:
+		count+=1
 	
 	
 func _update_message(message: String):
