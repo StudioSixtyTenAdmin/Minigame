@@ -15,7 +15,7 @@ signal message_completed()
 
 signal choose_price 
 signal text_ready
-var count = 2
+var count = 1
 var textLength 
 var playing_voice = false
 var show_continue = true
@@ -40,8 +40,8 @@ func _set_price():
 #	_update_message("[wave]Florian[/wave], a [b]young[/b] labourer, [wave]seeks your counsel[/wave],{p=0.5} the baker has offered him an apprenticeship, but he has his sights set on another position.")
 
 func _random_event(message):
-	event = true
-	count = 0
+	#event = true
+	#count = 0
 	_update_message(message)
 	
 	
@@ -50,17 +50,13 @@ func _next_text(message):
 
 func _on_text_continue_pressed():
 	print('count:',count)
-	#Event is occuring
-	if count == 0:
-		get_parent().turn()
 	
-	#Removed Price-Setting Requirement
-	#if count == 1:
-	#	_set_price()
+	#Event is occuring
+	#if count == 0:
+	#	get_parent().turn()
 	
 	if count == 1:
-		event = false
-		get_parent()._dialogue_tree(1)
+		get_parent().turn()
 	
 	if count == 2:
 		#card Reading Scene
@@ -73,15 +69,15 @@ func _on_text_continue_pressed():
 	#Reading Ends Here
 	if count ==3:
 		get_parent().turn()
+		print('Setting Count == 1')
 		count = 1
-	
 	
 	$text_continue.visible = false
 	await text_ready
 	
-	if event == false:
-		count+=1
 	
+	#count+=1
+	#print('Adding +1 to count. New count:', count)
 	
 func _update_message(message: String):
 	# Pause detection logic

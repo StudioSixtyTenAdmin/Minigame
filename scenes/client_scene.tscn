@@ -271,6 +271,17 @@ texture = ExtResource("19_l75sk")
 
 [node name="player_board" parent="." instance=ExtResource("20_gnm8i")]
 
+[node name="random_event" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 280.0
+offset_top = 184.0
+offset_right = 464.0
+offset_bottom = 288.0
+theme = ExtResource("2_nocis")
+bbcode_enabled = true
+text = "[wave]Random Event![/wave]"
+
 [connection signal="price_set" from="." to="dialogue_box" method="_on_client_scene_price_set"]
 [connection signal="choose_price" from="dialogue_box" to="." method="_on_dialogue_box_choose_price"]
 [connection signal="value_changed" from="gold_slider" to="." method="_on_gold_slider_value_changed"]

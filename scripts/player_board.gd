@@ -28,11 +28,11 @@ func _move_player():
 	var roll = _diceroll()
 	await _second_countdown(true,roll)
 	player_place += roll
-	print('The player moved forward ', roll, ' places. They landed on: ', player_place) 
+	#print('The player moved forward ', roll, ' places. They landed on: ', player_place) 
 	place_text = _tile_chance_calculator('Reading Event', chance_landing_on_reading, 'Random Event', chance_landing_on_event, 'TAXMAN', chance_landing_on_taxman) 
 	print(place_text)
 	_tax_tracker()
-	print('Players current place is:', player_place)
+	#print('Players current place is:', player_place)
 	
 func _tax_tracker():
 	var tax_positions = []
@@ -42,7 +42,7 @@ func _tax_tracker():
 
 func _diceroll():
 	var roll = randi_range(1,6)
-	print('roll :', roll)
+	#print('roll :', roll)
 	return roll
 
 func _establish_game_board():
@@ -52,15 +52,15 @@ func _establish_game_board():
 	taxman_penalty = location_resource.taxman_penalty
 	number_of_taxman_locations = location_resource.number_of_taxman_locaions
 	total_points = (number_of_readings+number_of_random_events+number_of_taxman_locations)
-	print(location_name)
+	#print(location_name)
 	
 	chance_landing_on_event = int(float(number_of_random_events)/(total_points)*100)
 	chance_landing_on_reading = int(float(number_of_readings)/(total_points)*100)
 	chance_landing_on_taxman = int(float(number_of_taxman_locations)/(total_points)*100)
 	
-	print('The chance of landing on a random event is: %', chance_landing_on_event)
-	print('The chance of landing on a random reading is: %', chance_landing_on_reading)
-	print('The chance of landing on a taxman is: %', chance_landing_on_taxman)
+	#print('The chance of landing on a random event is: %', chance_landing_on_event)
+	#print('The chance of landing on a random reading is: %', chance_landing_on_reading)
+	#print('The chance of landing on a taxman is: %', chance_landing_on_taxman)
 
 
 func _tile_chance_calculator(tile_1, chance_1, tile_2, chance_2, tile_3, chance_3):
@@ -80,7 +80,7 @@ func _second_countdown(run, for_long):
 	while run:
 		t.start(0.25)
 		await t.timeout
-		print(count)
+		#print(count)
 		count +=1
 		if count == for_long:
 			run = false
