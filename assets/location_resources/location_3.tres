@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LocationResource" load_steps=2 format=3 uid="uid://drryc1nj3sg2n"]
+
+[ext_resource type="Script" path="res://scripts/location_resource.gd" id="1_1op2l"]
+
+[resource]
+script = ExtResource("1_1op2l")
+location_name = "CurseTown"
+number_of_readings = 17
+number_of_random_events = 8
+taxman_penalty = 5
+number_of_taxman_locaions = 2
