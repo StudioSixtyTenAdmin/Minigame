@@ -23,7 +23,7 @@ func _reset():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(t)
+	#print(t)
 	a = $fan_root.global_position
 	t += delta*2
 	$fan_root.global_position = lerp(a,b,t)

@@ -7,9 +7,13 @@ var client
 
 var client_id #= randi_range(1,5)
 var client_count = 0
+
+var event_id
+var event_count = 0
 var dialogue_count=0
 var client_scenario_running = true
 var past_clients = []
+var past_events = []
 
 signal card_selection_ready
 signal card_reading_options(option_a, option_b)
@@ -36,8 +40,23 @@ func _new_event():
 	$client_parent/Control/client.visible = false
 	$dialogue_box.visible = false
 	$random_event.visible = true
+	
+	#Ensure event hasn't happened before
+	var valid_event = false
+	while !valid_event:
+		if event_count >= $player_board.location_resource.number_of_random_events:
+			get_tree().quit()
+		
+		event_id = randi_range(1,$player_board.location_resource.number_of_random_events)
+		#print('checking client id: ',client_id)
+		if past_events.has(event_id):
+			valid_event= false
+		else:
+			valid_event= true
+	past_events.append(event_id)
+	
 	#Load Event
-	var event_path = 'res://assets/random_event_resources/event_'+str(randi_range(1,$player_board.location_resource.number_of_random_events))+'.tres'
+	var event_path = 'res://assets/random_event_resources/event_'+str(event_id)+'.tres'
 	#print(event_path)
 	var event_resource = ResourceLoader.load(event_path)
 	

@@ -4,6 +4,11 @@ extends Node
 # Whole script needs updated if any additional types of points are required
 
 @export var place_text = 'Reading Event'
+
+@export var reading_mod = 0
+@export var event_mod = 0
+@export var tax_mod = 0
+
 var location_name
 var number_of_readings
 var number_of_random_events
@@ -16,6 +21,11 @@ var chance_landing_on_reading
 var chance_landing_on_taxman
 var total_points
 
+#tile trackers
+var turns_since_reading = 0
+var turns_since_event = 0
+var turns_since_tax = 0
+
 func _ready():
 	_establish_game_board()
 	#_move_player()
@@ -24,14 +34,35 @@ func _input(event):
 	if event.is_action_pressed("nextRoll"):
 		_move_player()
 
+#func to track num of turns since last type of tile
+func _distance_tracker():
+	#reset distance == 0 if currently on said tile
+	if place_text == 'Reading Event':
+		turns_since_reading =0
+		turns_since_event +=1
+		turns_since_tax +=1
+	if place_text == 'Random Event':
+		turns_since_reading +=1
+		turns_since_event =0
+		turns_since_tax +=1
+	if place_text == 'TAXMAN':
+		turns_since_reading +=1
+		turns_since_event +=1
+		turns_since_tax =0
+	
+	#print('turns since Reading Event: ',turns_since_reading)
+	#print('turns since Random Event: ',turns_since_event)
+	#print('turns since TAXMAN: ',turns_since_tax)
+
 func _move_player():
 	var roll = _diceroll()
 	await _second_countdown(true,roll)
 	player_place += roll
 	#print('The player moved forward ', roll, ' places. They landed on: ', player_place) 
-	place_text = _tile_chance_calculator('Reading Event', chance_landing_on_reading, 'Random Event', chance_landing_on_event, 'TAXMAN', chance_landing_on_taxman) 
+	place_text = _tile_chance_calculator('Reading Event', chance_landing_on_reading,turns_since_reading, 'Random Event', chance_landing_on_event,turns_since_event, 'TAXMAN', chance_landing_on_taxman, turns_since_tax) 
 	print(place_text)
 	_tax_tracker()
+	_distance_tracker()
 	#print('Players current place is:', player_place)
 	
 func _tax_tracker():
@@ -62,15 +93,33 @@ func _establish_game_board():
 	#print('The chance of landing on a random reading is: %', chance_landing_on_reading)
 	#print('The chance of landing on a taxman is: %', chance_landing_on_taxman)
 
-
-func _tile_chance_calculator(tile_1, chance_1, tile_2, chance_2, tile_3, chance_3):
+#Works the % chance for landing on each type of tile
+func _tile_chance_calculator(tile_1, chance_1, mod_1, tile_2, chance_2, mod_2, tile_3, chance_3, mod_3):
+	#create array for storing chances
 	var total_chances = []
-	for nums in chance_1:
+	
+	#reading chance Modifier
+	mod_1 = mod_1*reading_mod
+	
+	#event chance Modifier
+	mod_2 = mod_2*event_mod
+	
+	#tax chance Modifier
+	mod_3 = mod_3*tax_mod
+	
+	var chance_total = chance_1+mod_1+chance_2+mod_2+chance_3+mod_3
+	print('----------------NEW TURN-----------------')
+	print('total chance for reading: ', int((float(chance_1+mod_1)/chance_total)*100) )
+	print('total chance for event: ', int((float(chance_2+mod_2)/chance_total)*100) )
+	print('total chance for tax: ', int((float(chance_3+mod_3)/chance_total)*100) )
+	
+	for nums in chance_1+mod_1:
 		total_chances.push_back(tile_1)
-	for nums in chance_2:
+	for nums in chance_2+mod_2:
 		total_chances.push_back(tile_2)
-	for nums in chance_3:
+	for nums in chance_3+mod_3:
 		total_chances.push_back(tile_3)
+	
 	return total_chances.pick_random()
 
 func _second_countdown(run, for_long):

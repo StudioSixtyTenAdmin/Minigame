@@ -7,8 +7,6 @@ res://scenes/cards/curves/curve6.tres
 res://scenes/tar_root_scene.tscn
 res://scenes/dialogue_box.tscn
 res://scenes/player_board.tscn
-res://assets/location_resources/location_1.tres
-res://scripts/dialogue_box.gd
-res://scenes/cards/3d_card_root.tscn
 res://scenes/cards/3d_card_root.gd
 res://scenes/reading_scene.tscn
+res://assets/location_resources/location_1.tres
