@@ -6,3 +6,5 @@
 [node name="player_board" type="Node"]
 script = ExtResource("1_43lhk")
 location_resource = ExtResource("2_o78r0")
+reading_mod = 2
+event_mod = 3

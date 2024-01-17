@@ -7,9 +7,13 @@ var client
 
 var client_id #= randi_range(1,5)
 var client_count = 0
+
+var event_id
+var event_count = 0
 var dialogue_count=0
 var client_scenario_running = true
 var past_clients = []
+var past_events = []
 
 signal card_selection_ready
 signal card_reading_options(option_a, option_b)
@@ -18,28 +22,79 @@ signal sel_done
 
 var selection_choice
 
-
 func _ready():
-	_new_client()
-	
-func _new_client():
+	turn()
+
+func turn():
+	dialogue_count = 0
+	$dialogue_box.visible = false
+	$random_event.visible = false
+	await $player_board._move_player()
+	if $player_board.place_text == 'Reading Event':
+		_new_client()
+	if $player_board.place_text == 'Random Event' or $player_board.place_text == 'TAXMAN':
+		_new_event()
+
+#Write a func to spit out random event
+func _new_event():
 	$client_parent/Control/client.visible = false
 	$dialogue_box.visible = false
+	$random_event.visible = true
+	
+	#Ensure event hasn't happened before
+	var valid_event = false
+	while !valid_event:
+		if event_count >= $player_board.location_resource.number_of_random_events:
+			get_tree().quit()
+		
+		event_id = randi_range(1,$player_board.location_resource.number_of_random_events)
+		#print('checking client id: ',client_id)
+		if past_events.has(event_id):
+			valid_event= false
+		else:
+			valid_event= true
+	past_events.append(event_id)
+	
+	#Load Event
+	var event_path = 'res://assets/random_event_resources/event_'+str(event_id)+'.tres'
+	#print(event_path)
+	var event_resource = ResourceLoader.load(event_path)
+	
+	#Little timeout for a pause between clients
+	var t = Timer.new()
+	self.add_child(t)
+	t.start(1)
+	await t.timeout
+	$dialogue_box.visible = true
+	
+	t.queue_free()
+	$dialogue_box._random_event(event_resource.event_text)
+	
+	#Update Values from Event
+	$reputation_bar.value += event_resource.rep_change
+	$karma_bar.value += event_resource.karma_change
+	$gold_bar.value += event_resource.gold_change
+
+func _new_client():
+	print('running NEW CLIENT')
+	$client_parent/Control/client.visible = false
+	$dialogue_box.visible = false
+	$dialogue_box.event = false
 	
 	client_count+=1
 	var valid_client = false
 	while !valid_client:
-		if client_count >= 17:	
+		if client_count >= $player_board.location_resource.number_of_readings:
 			get_tree().quit()
 		
-		client_id = randi_range(1,17)
-		print('checking client id: ',client_id)
+		client_id = randi_range(1,$player_board.location_resource.number_of_readings)
+		#print('checking client id: ',client_id)
 		if past_clients.has(client_id):
 			valid_client= false
 		else:
 			valid_client= true
 	past_clients.append(client_id)
-	print('client ID: ', client_id)
+	#print('client ID: ', client_id)
 	client = $client_parent/Control/client
 	client._update_client()
 	#card_reading_options.emit($Tar_Root_Scene/reading_scene/reading_scene/AspectRatioContainer2/card.upright_reading,$Tar_Root_Scene/reading_scene/reading_scene/AspectRatioContainer2/card.reversed_reading,)
@@ -56,10 +111,11 @@ func _new_client():
 	_dialogue_tree(1)
 	
 func _dialogue_tree(dialogue_count):
-	#if dialogue_count==0:
-	#	$dialogue_box._next_text(client.client_resource.client_context)
 	if dialogue_count==1:
 		$dialogue_box._next_text(client.client_resource.question)
+		print('adding +1 to count.')
+		$dialogue_box.count += 1
+		print('New count:', $dialogue_box.count)
 	if dialogue_count==2:
 		card_selection_ready.emit()
 
@@ -129,10 +185,12 @@ func _reaction_calculator(card, position):
 		#spiritual
 		if client.client_resource.reason == 2:
 			final_reaction = card.reversed_spiritual
+			
+	print('adding +1 to count.')
+	$dialogue_box.count += 1
+	print('New count:', $dialogue_box.count)
+	
 	return final_reaction
-
-
-
 
 func _next_text():
 	$dialogue_box._next_text(client.client_resource.question)
@@ -170,8 +228,9 @@ func _on_button_pressed():
 	#get_parent().paused = true
 	get_parent().visible = false
 
-func _process(delta):
-	
-	if $gold_slider.value <= 0:
-		remove_child(get_node('Tar_Root_Scene'))
-	
+#Demo fail state
+#func _process(delta):
+#	
+#	if $gold_slider.value <= 0:
+#		remove_child(get_node('Tar_Root_Scene'))
+#	

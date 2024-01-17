@@ -1,3 +1,5 @@
+RichTextLabel
+Label
 Sprite2D
 TextureProgressBar
 AnimatedSprite2D
@@ -5,7 +7,6 @@ Control
 Container
 TextureButton
 AudioStreamPlayer
-Label
 Button
 OptionButton
 HSlider

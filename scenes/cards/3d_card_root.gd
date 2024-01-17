@@ -23,17 +23,19 @@ func _reset():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#print(t)
 	a = $fan_root.global_position
 	t += delta*2
-	#$Camera3D.global_position = lerp(a,b,t)
 	$fan_root.global_position = lerp(a,b,t)
 	if($fan_root.global_position.distance_to(b))<0.05:
 		a = b
 	if move_card:
-		current_card.position.y += delta*50
+		current_card.position.y += t*2
+		print(current_card.position.y)
 		for child in $fan_root.get_children():
 			if child != current_card:
-				child.position.y -= delta*50
+				child.position.y -= t*2
+				print(child.position.y)
 
 func _on_area_3d_mouse_entered():
 	#print('middle')
@@ -103,7 +105,6 @@ func _on_area_3d_5_mouse_entered():
 	$fan_root/Sprite3D3.position.z = 0
 	$fan_root/Sprite3D4.position.z = 0
 	$fan_root/Sprite3D5.position.z = 0.85
-	print($Camera3D.global_position)
 	#$Camera3D.target.position.x = 2
 
 func _input(input):
@@ -115,3 +116,7 @@ func _input(input):
 		print('timeout')
 		move_card = false
 		card_selected.emit()
+		_reset()
+		
+	if input.is_action_pressed("nextRoll"):
+		click_ready = true
