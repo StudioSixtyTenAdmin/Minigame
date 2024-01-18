@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_ok338")
-location_name = "Hometown"
-number_of_readings = 17
-number_of_random_events = 8
+location_name = "Frogland"
+number_of_readings = 10
+number_of_random_events = 3
 taxman_penalty = 5
-number_of_taxman_locaions = 2
+number_of_taxman_locaions = 5

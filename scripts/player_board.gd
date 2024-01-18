@@ -26,6 +26,9 @@ var turns_since_reading = 0
 var turns_since_event = 0
 var turns_since_tax = 0
 
+#location switching
+var ready_to_move = false
+
 func _ready():
 	_establish_game_board()
 	#_move_player()
@@ -63,7 +66,13 @@ func _move_player():
 	print(place_text)
 	_tax_tracker()
 	_distance_tracker()
-	#print('Players current place is:', player_place)
+	print(player_place)
+	
+	#Max number of spaces moved before
+	#you have the choice to move
+	#the choice to move \/
+	if player_place >= 25:
+		ready_to_move = true
 	
 func _tax_tracker():
 	var tax_positions = []

@@ -14,8 +14,8 @@ signal card_selected
 
 func _reset():
 	$fan_root._zero_position()
-	var a = $fan_root.global_position
-	var b = $fan_root.target.global_position
+	a = $fan_root.global_position
+	b = $fan_root.target.global_position
 	t = 0
 	current_card = $fan_root/Sprite3D
 	move_card = false

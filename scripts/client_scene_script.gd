@@ -25,15 +25,26 @@ var selection_choice
 func _ready():
 	turn()
 
+func _new_location(location_resource):
+	var loc_path = "res://assets/location_resources/"+location_resource+".tres"
+	$player_board.location_resource = load(loc_path)
+	$player_board._establish_game_board()
+
 func turn():
 	dialogue_count = 0
 	$dialogue_box.visible = false
 	$random_event.visible = false
 	await $player_board._move_player()
-	if $player_board.place_text == 'Reading Event':
+	if $player_board.place_text == 'Reading Event' and !$player_board.ready_to_move:
 		_new_client()
-	if $player_board.place_text == 'Random Event' or $player_board.place_text == 'TAXMAN':
+	if $player_board.place_text == 'Random Event' and !$player_board.ready_to_move or $player_board.place_text == 'TAXMAN' and !$player_board.ready_to_move :
 		_new_event()
+	if $player_board.ready_to_move:
+		print('READY TO MOVE READY TO MOVE READY TO MOVE')
+		print('... moving from: ',$player_board.location_resource.location_name)
+		print('... to... ')
+		_new_location('location_2')
+		print('... we have now moved to: ', $player_board.location_resource.location_name)
 
 #Write a func to spit out random event
 func _new_event():

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_ixdta")
 location_name = "Swamp"
-number_of_readings = 17
-number_of_random_events = 8
+number_of_readings = 5
+number_of_random_events = 4
 taxman_penalty = 5
-number_of_taxman_locaions = 2
+number_of_taxman_locaions = 3
