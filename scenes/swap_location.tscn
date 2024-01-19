@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://rarlbqc70a5v"]
+
+[ext_resource type="Script" path="res://scenes/swap_location.gd" id="1_7hegn"]
+[ext_resource type="Theme" uid="uid://dyhggra4gad0m" path="res://assets/text_dialogue/main_theme.tres" id="1_7uwyh"]
+
+[node name="swap_location" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7hegn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = 148.0
+offset_top = 144.0
+offset_right = 536.0
+offset_bottom = 376.0
+theme = ExtResource("1_7uwyh")
+text = "You now have the opportunity to progress to the next location.
+
+Pay 10 Gold to pack up and move?"
+
+[node name="remain" type="Button" parent="."]
+layout_mode = 2
+offset_left = 144.0
+offset_top = 384.0
+offset_right = 536.0
+offset_bottom = 584.0
+theme = ExtResource("1_7uwyh")
+text = "Remain where you are for now.."
+
+[node name="progress" type="Button" parent="."]
+layout_mode = 2
+offset_left = 144.0
+offset_top = 592.0
+offset_right = 537.0
+offset_bottom = 792.0
+theme = ExtResource("1_7uwyh")
+text = "Progress to the next location!"
+
+[connection signal="pressed" from="remain" to="." method="_on_remain_pressed"]
+[connection signal="pressed" from="progress" to="." method="_on_progress_pressed"]
