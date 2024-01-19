@@ -1,4 +1,6 @@
+Button
 RichTextLabel
+AspectRatioContainer
 Label
 Sprite2D
 TextureProgressBar
@@ -7,9 +9,6 @@ Control
 Container
 TextureButton
 AudioStreamPlayer
-Button
 OptionButton
 HSlider
 VBoxContainer
-Tree
-MenuButton

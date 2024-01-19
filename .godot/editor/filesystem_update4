@@ -8,3 +8,6 @@ res://scenes/player_board.tscn
 res://scenes/tar_root_scene.tscn
 res://scenes/dialogue_box.tscn
 res://scenes/Menu_Select.tscn
+res://assets/text_dialogue/main_theme.tres
+res://scenes/swap_location.gd
+res://scenes/swap_location.tscn

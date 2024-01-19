@@ -1,12 +1,16 @@
 extends Control
 
+var swap_location = preload('res://scenes/swap_location.tscn')
+
 var price_setting = false
 signal price_set
- 
+
 var client 
 
 var client_id #= randi_range(1,5)
 var client_count = 0
+
+var location_count = 2
 
 var event_id
 var event_count = 0
@@ -37,14 +41,46 @@ func turn():
 	await $player_board._move_player()
 	if $player_board.place_text == 'Reading Event' and !$player_board.ready_to_move:
 		_new_client()
+		
+		
 	if $player_board.place_text == 'Random Event' and !$player_board.ready_to_move or $player_board.place_text == 'TAXMAN' and !$player_board.ready_to_move :
 		_new_event()
+		
+		
 	if $player_board.ready_to_move:
-		print('READY TO MOVE READY TO MOVE READY TO MOVE')
+		_move_scenario()
+		
+
+func _move_scenario():
+	$client_parent/Control/client.visible = false
+	$dialogue_box.visible = false
+	$random_event.visible = false
+	
+	print('READY TO MOVE READY TO MOVE READY TO MOVE')
+	add_child(swap_location.instantiate())
+	var are_we_moving = await $swap_location.location_move_choice
+	
+	print(are_we_moving)
+	#Present Player with choice to move location!
+	if !are_we_moving:
+		print('WE SHALL REMAIN')
+		$player_board.ready_to_move = false
+		$player_board.player_place = 0
+		
+	if are_we_moving:
+	#If they choose to move! The following applies
 		print('... moving from: ',$player_board.location_resource.location_name)
 		print('... to... ')
-		_new_location('location_2')
-		print('... we have now moved to: ', $player_board.location_resource.location_name)
+		_new_location('location_'+str(location_count))
+		$player_board.ready_to_move = false
+		$player_board.player_place = 0
+		event_count = 0
+		$gold_bar.value -= 10
+		
+		print('... we have now moved to: ', $player_board.location_resource.location_name)	
+	
+	remove_child(get_node('swap_location'))
+	turn()
 
 #Write a func to spit out random event
 func _new_event():
