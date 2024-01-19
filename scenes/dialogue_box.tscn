@@ -80,7 +80,7 @@ script = ExtResource("3_6jh5h")
 [node name="PauseTimer" type="Timer" parent="dialogue_window"]
 one_shot = true
 
-[node name="text_continue" type="Button" parent="."]
+[node name="text_continue_main" type="Button" parent="."]
 visible = false
 layout_direction = 1
 layout_mode = 2
@@ -93,7 +93,28 @@ size_flags_vertical = 8
 theme = ExtResource("2_54ov5")
 text = "Continue              "
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="text_continue"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="text_continue_main"]
+position = Vector2(176, 24)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_s5wig")
+animation = &"continue"
+autoplay = "continue"
+frame_progress = 0.823897
+
+[node name="text_continue_sub" type="Button" parent="."]
+visible = false
+layout_direction = 1
+layout_mode = 2
+offset_left = 392.0
+offset_top = 400.0
+offset_right = 620.0
+offset_bottom = 452.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("2_54ov5")
+text = "Continue              "
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="text_continue_sub"]
 position = Vector2(176, 24)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_s5wig")
@@ -106,4 +127,5 @@ frame_progress = 0.823897
 [connection signal="pause_requested" from="dialogue_window/PauseCalculator" to="." method="_on_pause_calculator_pause_requested"]
 [connection signal="tag_value" from="dialogue_window/PauseCalculator" to="." method="_on_pause_calculator_tag_value"]
 [connection signal="timeout" from="dialogue_window/PauseTimer" to="." method="_on_pause_timer_timeout"]
-[connection signal="pressed" from="text_continue" to="." method="_on_text_continue_pressed"]
+[connection signal="pressed" from="text_continue_main" to="." method="_on_text_continue_main_pressed"]
+[connection signal="pressed" from="text_continue_sub" to="." method="_on_text_continue_sub_pressed"]

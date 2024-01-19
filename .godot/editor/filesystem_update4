@@ -11,3 +11,5 @@ res://scenes/Menu_Select.tscn
 res://assets/text_dialogue/main_theme.tres
 res://scenes/swap_location.gd
 res://scenes/swap_location.tscn
+res://assets/client_resources/client_1.tres
+res://scripts/dialogue_box.gd

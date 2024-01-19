@@ -43,12 +43,31 @@ func _random_event(message):
 	#event = true
 	#count = 0
 	_update_message(message)
-	
-	
-func _next_text(message):
-	_update_message(message)
 
-func _on_text_continue_pressed():
+func break_into_sentences(paragraph: String) -> Array:
+	# Define the delimiter for sentences (assuming sentences end with a period)
+	var delimiter = "."
+
+	# Split the paragraph into an array of sentences based on the delimiter
+	var sentences = paragraph.split(delimiter)
+
+	# Remove empty strings and trim whitespace from each sentence
+	for i in range(sentences.size()):
+		sentences[i] = sentences[i].strip_edges()
+
+	return sentences
+
+func _next_text(message):
+	print(message)
+	for sentance in break_into_sentences(message):
+		print(sentance)
+		$text_continue_sub.visible = false
+		await _update_message(sentance)
+		$text_continue_sub.visible = true
+		await _on_text_continue_sub_pressed()
+		$text_continue_sub.visible = false
+
+func _on_text_continue_main_pressed():
 	print('count:',count)
 	
 	#Event is occuring
@@ -72,7 +91,7 @@ func _on_text_continue_pressed():
 		print('Setting Count == 1')
 		count = 1
 	
-	$text_continue.visible = false
+	$text_continue_main.visible = false
 	await text_ready
 	
 	
@@ -100,7 +119,7 @@ func _on_type_typer_timeout():
 		type_timer.stop()
 		emit_signal("message_completed")
 		if show_continue == true:
-			$text_continue.visible = true
+			$text_continue_main.visible = true
 		text_ready.emit()
 
 # Called when the voice player finishes playing the voice clip
@@ -128,4 +147,8 @@ func _on_pause_calculator_tag_value(x):
 func _on_client_scene_price_set():
 	print('price is set')
 	_change_show_continue(true)
-	$text_continue.visible = true
+	$text_continue_main.visible = true
+
+
+func _on_text_continue_sub_pressed():
+	pass # Replace with function body.
