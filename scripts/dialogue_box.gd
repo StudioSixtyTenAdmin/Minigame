@@ -46,7 +46,7 @@ func _random_event(message):
 
 func break_into_sentences(paragraph: String) -> Array:
 	# Define the delimiter for sentences (assuming sentences end with a period)
-	var delimiter = "."
+	var delimiter = "+"
 
 	# Split the paragraph into an array of sentences based on the delimiter
 	var sentences = paragraph.split(delimiter)
@@ -58,8 +58,13 @@ func break_into_sentences(paragraph: String) -> Array:
 	return sentences
 
 func _next_text(message):
-	print(message)
-	for sentance in break_into_sentences(message):
+	#print(message)
+	
+	var sentance_array = break_into_sentences(message)
+	print(sentance_array)
+	
+	
+	for sentance in sentance_array:
 		print(sentance)
 		$text_continue_sub.visible = false
 		await _update_message(sentance)
