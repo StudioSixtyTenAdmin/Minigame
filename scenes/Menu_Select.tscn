@@ -69,17 +69,27 @@ size_flags_vertical = 3
 text = "Open Settings"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
+[node name="Volume" type="Label" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Volume - 100"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/VBoxContainer"]
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 value = 100.0
+
+[node name="TextSpeed" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Text Speed"
+horizontal_alignment = 1
+
+[node name="TextSpeedSlider" type="HSlider" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+min_value = 1.0
+max_value = 6.0
+value = 2.0
 
 [node name="Label" type="Label" parent="."]
 offset_left = 304.0

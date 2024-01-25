@@ -23,6 +23,9 @@ var event = false
 
 var true_text_length = 0
 
+#type speed
+#var type_speed = get_node()
+
 #Load Dialogue Text
 
 func _change_show_continue(changed_to):
@@ -40,8 +43,6 @@ func _set_price():
 #	_update_message("[wave]Florian[/wave], a [b]young[/b] labourer, [wave]seeks your counsel[/wave],{p=0.5} the baker has offered him an apprenticeship, but he has his sights set on another position.")
 
 func _random_event(message):
-	#event = true
-	#count = 0
 	_next_text(message)
 
 func break_into_sentences(paragraph: String) -> Array:
@@ -53,14 +54,19 @@ func break_into_sentences(paragraph: String) -> Array:
 
 	# Initialize an array to hold the delimiters
 	var sentence_delimiters = []
+	
+	# Loop through paragraph to check all instances of any delimeter
+	for letter in paragraph:
+		for delimiter in delimiters:
+			if letter == delimiter:
+				sentence_delimiters.push_back(delimiter)
 
 	# Replace all delimiters with a unique delimiter and store the original delimiters
-	for delimiter in delimiters:
-		sentence_delimiters.append(delimiter)
+	for delimiter in delimiters:		
 		var temp_paragraph = paragraph.replace(delimiter, "<DELIM>")
 		if temp_paragraph != paragraph:
 			paragraph = temp_paragraph
-
+	print(sentence_delimiters)
 	# Split the paragraph into sentences based on the unique delimiter
 	var temp_sentences = paragraph.split("<DELIM>")
 
@@ -74,28 +80,18 @@ func break_into_sentences(paragraph: String) -> Array:
 	return sentences
 
 func _next_text(message):
-	#print(message)
 	
 	var sentance_array = break_into_sentences(message)
-	#print('Start Array')
-	#print(sentance_array)
-	#print('End Array')
-	
-	
+
 	for sentance in sentance_array:
-		print(sentance)
-		
 		#one path if this isn't the last sentance in paragraph
 		if sentance != sentance_array[sentance_array.size()-1]:
-			print('ping')
-			
 			$text_continue_sub.visible = false
 			$text_continue_main.visible = false
 			_update_message(sentance)
 			await text_ready
 			$text_continue_sub.visible = true
 			$text_continue_main.visible = false
-			print('ding')
 			await $text_continue_sub.pressed
 			$text_continue_sub.visible = false
 			$text_continue_main.visible = false
@@ -103,23 +99,17 @@ func _next_text(message):
 		
 		#another path if it is the last sentance in paragraph
 		if sentance == sentance_array[sentance_array.size()-1]:
-			
-			print('pong')
-			
 			$text_continue_sub.visible = false
 			$text_continue_main.visible = false
 			_update_message(sentance)
 			await text_ready
 			$text_continue_sub.visible = false
 			$text_continue_main.visible = true
-			print('dong')
 			#await $text_continue_main.pressed
 			#$text_continue_sub.visible = false
 			#$text_continue_main.visible = false
 
-func _on_text_continue_main_pressed():
-	print('count:',count)
-	
+func _on_text_continue_main_pressed():	
 	#Event is occuring
 	#if count == 0:
 	#	get_parent().turn()
@@ -138,22 +128,33 @@ func _on_text_continue_main_pressed():
 	#Reading Ends Here
 	if count ==3:
 		get_parent().turn()
-		print('Setting Count == 1')
 		count = 1
 	
 	$text_continue_main.visible = false
 	await text_ready
 	
-	
-	#count+=1
-	#print('Adding +1 to count. New count:', count)
-	
+
+func convert_type_speed(parent_speed):
+	if parent_speed == 1:
+		return 0.05
+	if parent_speed == 2:
+		return 0.04
+	if parent_speed == 3:
+		return 0.02
+	if parent_speed == 4:
+		return 0.01
+	if parent_speed == 5:
+		return 0.005
+	if parent_speed == 6:
+		return 0.002
+
 func _update_message(message: String):
 	# Pause detection logic
 	content.bbcode_text = _calc.extract_pauses_from_string(message)
 	content.visible_characters = 0
 	await true_text_length
 	
+	type_timer.wait_time = convert_type_speed(get_parent().get_parent().get_parent().typespeed)
 	type_timer.start()
 	
 	playing_voice = true
@@ -163,17 +164,17 @@ func _update_message(message: String):
 func _on_type_typer_timeout():
 	_calc.check_at_position(content.visible_characters)
 	if content.visible_characters < content.text.length() - true_text_length:
-		print('invisible')
+		
 		$text_continue_sub.visible = false
 		$text_continue_main.visible = false
 		content.visible_characters +=1
 	else:
-		print('visible')
+		
 		playing_voice = false
 		type_timer.stop()
 		emit_signal("message_completed")
 		#if show_continue == true:
-		#	$text_continue_main.visible = true
+		#$text_continue_main.visible = true
 		text_ready.emit()
 
 # Called when the voice player finishes playing the voice clip
@@ -196,7 +197,6 @@ func _on_pause_timer_timeout():
 
 func _on_pause_calculator_tag_value(x):
 	true_text_length = x
-	#print ('Output:',true_text_length)
 
 #func _on_client_scene_price_set():
 #	print('price is set')

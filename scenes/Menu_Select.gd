@@ -1,10 +1,13 @@
 extends Node2D
 
-var volume_value = 100
 var settings_visible = false
 var main_scene = preload('res://scenes/tar_root_scene.tscn')#
 var running_scene
 var game_started = false
+
+# Settings Variables
+@export var volume_value = 100
+@export var typespeed = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,10 +18,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	volume_value = $VBoxContainer/VBoxContainer/HSlider.value
-	$VBoxContainer/VBoxContainer/Label.text = str("Volume - ", str($VBoxContainer/VBoxContainer/HSlider.value))
+	volume_value = $VBoxContainer/VBoxContainer/VolumeSlider.value
+	$VBoxContainer/VBoxContainer/Volume.text = str("Volume - ", str($VBoxContainer/VBoxContainer/VolumeSlider.value))
 	#volume_text = ("Volume - ", str($VBoxContainer/VBoxContainer/HSlider.value))
 	$VBoxContainer/VBoxContainer.visible = settings_visible
+	typespeed = $VBoxContainer/VBoxContainer/TextSpeedSlider.value
 
 
 func _on_button_3_pressed():

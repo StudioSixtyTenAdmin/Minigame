@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwhbq7hxokivu"]
+[gd_scene load_steps=5 format=3 uid="uid://bwhbq7hxokivu"]
 
 [ext_resource type="Texture2D" uid="uid://mkwy52w63hnx" path="res://assets/ui_art/Background_tex_v002.png" id="1_0phca"]
 [ext_resource type="PackedScene" uid="uid://bkgg2b2f7xs4x" path="res://scenes/client_scene.tscn" id="1_8j0fc"]
 [ext_resource type="PackedScene" uid="uid://5kcjgt0r5u6l" path="res://scenes/reading_scene.tscn" id="2_x01og"]
+[ext_resource type="Texture2D" uid="uid://dai426721u8do" path="res://assets/ui_art/UI_Frame_overlay.png" id="4_lbpx7"]
 
 [node name="Tar_Root_Scene" type="Node2D"]
 process_mode = 1
@@ -23,6 +24,12 @@ offset_bottom = 1280.0
 
 [node name="reading_scene" parent="." instance=ExtResource("2_x01og")]
 visible = false
+
+[node name="background_image2" type="Sprite2D" parent="."]
+visible = false
+visibility_layer = 8
+texture = ExtResource("4_lbpx7")
+centered = false
 
 [connection signal="card_reading_options" from="client_scene_" to="reading_scene" method="_on_client_scene__card_reading_options"]
 [connection signal="card_selection_ready" from="client_scene_" to="reading_scene" method="_on_client_scene__card_selection_ready"]
