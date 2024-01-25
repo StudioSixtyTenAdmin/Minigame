@@ -42,18 +42,34 @@ func _set_price():
 func _random_event(message):
 	#event = true
 	#count = 0
-	_update_message(message)
+	_next_text(message)
 
 func break_into_sentences(paragraph: String) -> Array:
-	# Define the delimiter for sentences (assuming sentences end with a period)
-	var delimiter = "+"
+	# Define the delimiters for sentences
+	var delimiters = [".", "!", "?", "…"]
 
-	# Split the paragraph into an array of sentences based on the delimiter
-	var sentences = paragraph.split(delimiter)
+	# Initialize an array to hold the sentences
+	var sentences = []
 
-	# Remove empty strings and trim whitespace from each sentence
-	for i in range(sentences.size()):
-		sentences[i] = sentences[i].strip_edges()
+	# Initialize an array to hold the delimiters
+	var sentence_delimiters = []
+
+	# Replace all delimiters with a unique delimiter and store the original delimiters
+	for delimiter in delimiters:
+		sentence_delimiters.append(delimiter)
+		var temp_paragraph = paragraph.replace(delimiter, "<DELIM>")
+		if temp_paragraph != paragraph:
+			paragraph = temp_paragraph
+
+	# Split the paragraph into sentences based on the unique delimiter
+	var temp_sentences = paragraph.split("<DELIM>")
+
+	# Add the original delimiter back to the end of each sentence
+	for i in range(temp_sentences.size() - 1):
+		var sentence = temp_sentences[i].strip_edges()
+		if sentence != "":
+			sentence += sentence_delimiters[i]
+			sentences.append(sentence)
 
 	return sentences
 
@@ -61,16 +77,45 @@ func _next_text(message):
 	#print(message)
 	
 	var sentance_array = break_into_sentences(message)
-	print(sentance_array)
+	#print('Start Array')
+	#print(sentance_array)
+	#print('End Array')
 	
 	
 	for sentance in sentance_array:
 		print(sentance)
-		$text_continue_sub.visible = false
-		await _update_message(sentance)
-		$text_continue_sub.visible = true
-		await _on_text_continue_sub_pressed()
-		$text_continue_sub.visible = false
+		
+		#one path if this isn't the last sentance in paragraph
+		if sentance != sentance_array[sentance_array.size()-1]:
+			print('ping')
+			
+			$text_continue_sub.visible = false
+			$text_continue_main.visible = false
+			_update_message(sentance)
+			await text_ready
+			$text_continue_sub.visible = true
+			$text_continue_main.visible = false
+			print('ding')
+			await $text_continue_sub.pressed
+			$text_continue_sub.visible = false
+			$text_continue_main.visible = false
+		
+		
+		#another path if it is the last sentance in paragraph
+		if sentance == sentance_array[sentance_array.size()-1]:
+			
+			print('pong')
+			
+			$text_continue_sub.visible = false
+			$text_continue_main.visible = false
+			_update_message(sentance)
+			await text_ready
+			$text_continue_sub.visible = false
+			$text_continue_main.visible = true
+			print('dong')
+			#await $text_continue_main.pressed
+			#$text_continue_sub.visible = false
+			#$text_continue_main.visible = false
 
 func _on_text_continue_main_pressed():
 	print('count:',count)
@@ -118,13 +163,17 @@ func _update_message(message: String):
 func _on_type_typer_timeout():
 	_calc.check_at_position(content.visible_characters)
 	if content.visible_characters < content.text.length() - true_text_length:
+		print('invisible')
+		$text_continue_sub.visible = false
+		$text_continue_main.visible = false
 		content.visible_characters +=1
 	else:
+		print('visible')
 		playing_voice = false
 		type_timer.stop()
 		emit_signal("message_completed")
-		if show_continue == true:
-			$text_continue_main.visible = true
+		#if show_continue == true:
+		#	$text_continue_main.visible = true
 		text_ready.emit()
 
 # Called when the voice player finishes playing the voice clip
@@ -149,10 +198,10 @@ func _on_pause_calculator_tag_value(x):
 	true_text_length = x
 	#print ('Output:',true_text_length)
 
-func _on_client_scene_price_set():
-	print('price is set')
-	_change_show_continue(true)
-	$text_continue_main.visible = true
+#func _on_client_scene_price_set():
+#	print('price is set')
+#	_change_show_continue(true)
+#	$text_continue_main.visible = true
 
 
 func _on_text_continue_sub_pressed():
