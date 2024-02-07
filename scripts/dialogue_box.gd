@@ -111,8 +111,8 @@ func _next_text(message):
 
 func _on_text_continue_main_pressed():	
 	#Event is occuring
-	#if count == 0:
-	#	get_parent().turn()
+	#if count == 0:/0/
+	#	get_parent(0).turn()
 	
 	if count == 1:
 		get_parent().turn()
@@ -133,6 +133,14 @@ func _on_text_continue_main_pressed():
 	$text_continue_main.visible = false
 	await text_ready
 	
+
+func _process(_delta):
+	$dialogue_window/DialogueVoicePlayer.volume_db = convert_range((get_parent().get_parent().get_parent().volume_value))
+	#print($dialogue_window/DialogueVoicePlayer.volume_db)
+
+#update volume correctly
+func convert_range(volume):
+	return (-40 + (volume / 100.0) * 30)
 
 func convert_type_speed(parent_speed):
 	if parent_speed == 1:

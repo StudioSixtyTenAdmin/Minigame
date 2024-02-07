@@ -118,9 +118,7 @@ func _new_event():
 	$dialogue_box._random_event(event_resource.event_text)
 	
 	#Update Values from Event
-	$reputation_bar.value += event_resource.rep_change
-	$karma_bar.value += event_resource.karma_change
-	$gold_bar.value += event_resource.gold_change
+	_update_bars(event_resource.rep_change,event_resource.karma_change,event_resource.gold_change)
 
 func _new_client():
 	print('running NEW CLIENT')
@@ -178,36 +176,101 @@ func _dialogue_tree(dialogue_count):
 			var result = _reaction_calculator(card_node,'upright')
 			
 			if result == 0:
+				await _update_bars(randi_range(1,10), randi_range(1,10), randi_range(1,10))
 				$dialogue_box._next_text(client.client_resource.reaction_positive)
-				$reputation_bar.value += randi_range(8,20)
-				$karma_bar.value += randi_range(8,20)
-				$gold_bar.value += randi_range(8,20)
 			
 			if result == 1 or result == 2:
+				await _update_bars(randi_range(-1,-10), randi_range(-1,-10), randi_range(-1,-10))
 				$dialogue_box._next_text(client.client_resource.reaction_negative)
-				$reputation_bar.value -= randi_range(1,10)
-				$karma_bar.value -= randi_range(1,10)
-				$gold_bar.value -= randi_range(1,10)
 			
 		if selection_choice == 'b':
 			var result = _reaction_calculator(card_node,'reversed')
 			
 			if result == 0:
+				await _update_bars(randi_range(1,10), randi_range(1,10), randi_range(1,10))
 				$dialogue_box._next_text(client.client_resource.reaction_positive)
-				$reputation_bar.value += randi_range(8,20)
-				$karma_bar.value += randi_range(8,20)
-				$gold_bar.value += randi_range(8,20)
+				#$reputation_bar.value += randi_range(8,20)
+				#$karma_bar.value += randi_range(8,20)
+				#$gold_bar.value += randi_range(8,20)
 			
 			if result == 1 or result == 2:
+				
+				await _update_bars(randi_range(-1,-10), randi_range(-1,-10), randi_range(-1,-10))
 				$dialogue_box._next_text(client.client_resource.reaction_negative)
-				$reputation_bar.value -= randi_range(1,10)
-				$karma_bar.value -= randi_range(1,10)
-				$gold_bar.value -= randi_range(1,10)
-		
+				#$reputation_bar.value -= randi_range(1,10)
+				#$karma_bar.value -= randi_range(1,10)
+				#$gold_bar.value -= randi_range(1,10)
+	
+	
+	
 	#if dialogue_count==3:
 	#	$dialogue_box._next_text(client.client_resource.reaction_positive)
 	dialogue_count+=1
 	
+
+#function to incrementally update various resource meters
+func _update_bars(new_reputation, new_karma, new_gold):
+	
+	var t_1 = Timer.new()
+	var t_2 = Timer.new()
+	var t_3 = Timer.new()
+	add_child(t_1)
+	add_child(t_2)
+	add_child(t_3)
+	
+	
+	if new_reputation >=1:
+		for i in new_reputation:
+			$reputation_bar.value += 1
+			print('rep',$reputation_bar.value)
+			t_1.start(0.03)
+			await t_1.timeout
+	
+	if new_karma >=1: 
+		for i in new_karma:
+			$karma_bar.value += 1
+			print('kar',$karma_bar.value)
+			t_2.start(0.03)
+			await t_2.timeout
+	
+	if new_gold >= 1:
+		for i in new_gold:
+			$gold_bar.value += 1
+			print('gold',$gold_bar.value)
+			t_3.start(0.03)
+			await t_3.timeout
+
+	if new_reputation <=-1:
+		var neg_new_reputation = abs(new_reputation)
+		for i in new_reputation:
+			$reputation_bar.value -= 1
+			print('rep',$reputation_bar.value)
+			t_1.start(0.03)
+			await t_1.timeout
+	
+	if new_karma <=-1:
+		var neg_new_karma = abs(new_karma)
+		for i in new_karma:
+			$karma_bar.value -= 1
+			print('kar',$karma_bar.value)
+			t_2.start(0.03)
+			await t_2.timeout
+	
+	if new_gold <=-1:
+		var neg_new_gold = abs(new_gold)
+		for i in neg_new_gold:
+			$gold_bar.value -= 1
+			print('gold',$gold_bar.value)
+			t_3.start(0.03)
+			await t_3.timeout
+
+
+		
+	t_1.queue_free()
+	t_1.queue_free()
+	t_1.queue_free()
+
+
 func _reaction_calculator(card, position):
 	var final_reaction
 	if position == 'upright':
