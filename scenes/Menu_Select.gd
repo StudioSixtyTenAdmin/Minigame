@@ -54,3 +54,18 @@ func _on_start_pressed():
 
 func _on_resume_pressed():
 	get_node('Tar_Root_Scene').visible = true
+
+func _endgame(result):
+	#win if result = TRUE
+	game_started = false
+	$VBoxContainer/Start.text = 'New Game'
+	$VBoxContainer/Resume.visible = false
+	
+	if !result:
+		print('GAMEOVERGAMEOVERGAMEOVER')
+		remove_child(running_scene)
+		$PopupMenuFail.visible = true
+	if result:
+		print('winwinwinwinwinwinwinwin')
+		remove_child(running_scene)
+		$PopupMenuWin.visible = true

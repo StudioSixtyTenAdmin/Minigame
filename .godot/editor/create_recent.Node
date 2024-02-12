@@ -1,3 +1,5 @@
+PopupMenu
+Popup
 Sprite2D
 RichTextLabel
 Button
@@ -11,4 +13,3 @@ TextureButton
 AudioStreamPlayer
 OptionButton
 HSlider
-VBoxContainer

@@ -14,3 +14,4 @@ res://scenes/reading_scene.tscn
 res://scenes/cards/card_root.tscn
 res://assets/text_dialogue/main_theme.tres
 res://scripts/reading_scene.gd
+res://scenes/Menu_Select.gd

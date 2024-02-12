@@ -26,6 +26,12 @@ signal sel_done
 
 var selection_choice
 
+#win and fail state bools. If either endstate is reached, signal emits (true if win)
+var endgame = false
+var endgame_win 
+
+var happy = false
+
 func _ready():
 	turn()
 
@@ -35,6 +41,11 @@ func _new_location(location_resource):
 	$player_board._establish_game_board()
 
 func turn():
+	#Check right away to see if they've won or lost
+	if endgame:
+		get_parent().get_parent()._endgame(endgame_win)
+	
+	
 	dialogue_count = 0
 	$dialogue_box.visible = false
 	$random_event.visible = false
@@ -156,7 +167,6 @@ func _new_client():
 	
 func _dialogue_tree(dialogue_count):
 	var final_reaction
-	var happy = false
 	
 	if dialogue_count==1:
 		$dialogue_box._next_text(client.client_resource.question)
@@ -200,6 +210,7 @@ func _dialogue_tree(dialogue_count):
 			var result = _reaction_calculator(card_node,'upright')
 			
 			if result == 0:
+				print('happyhappy')
 				happy = true
 				$dialogue_box._texture_swap(false)
 				final_reaction = client.client_resource.reaction_positive
@@ -208,6 +219,8 @@ func _dialogue_tree(dialogue_count):
 				#$dialogue_box._next_text(client.client_resource.reaction_positive)
 			
 			if result == 1 or result == 2:
+				print('sadsad')
+				happy = false
 				$dialogue_box._texture_swap(false)
 				final_reaction = client.client_resource.reaction_positive
 				$dialogue_box._next_text(flavour_text_upright)
@@ -221,6 +234,7 @@ func _dialogue_tree(dialogue_count):
 			var result = _reaction_calculator(card_node,'reversed')
 			
 			if result == 0:
+				print('happyhappy')
 				happy = true
 				#final_reaction = client.client_resource.reaction_positive
 				$dialogue_box._texture_swap(false)
@@ -229,6 +243,8 @@ func _dialogue_tree(dialogue_count):
 				#$dialogue_box._next_text(client.client_resource.reaction_positive)
 			
 			if result == 1 or result == 2:
+				print('sadsad')
+				happy = false
 				#final_reaction = client.client_resource.reaction_positive
 				$dialogue_box._texture_swap(false)
 				$dialogue_box._next_text(flavour_text_reversed)
@@ -247,11 +263,11 @@ func _dialogue_tree(dialogue_count):
 		print("Final reaction will be, ", client.client_resource.reaction_positive)
 		
 		if happy:
-			await _update_bars(randi_range(1,10), randi_range(1,10), randi_range(1,10))
+			await _update_bars(randi_range(10,30), randi_range(10,30), randi_range(10,30))
 			$dialogue_box._texture_swap(true)
 			$dialogue_box._next_text(client.client_resource.reaction_positive)
 		if !happy:
-			await _update_bars(randi_range(-1,-10), randi_range(-1,-10), randi_range(-1,-10))
+			await _update_bars(randi_range(-5,-25), randi_range(-5,-25), randi_range(-5,-25))
 			$dialogue_box._texture_swap(true)
 			$dialogue_box._next_text(client.client_resource.reaction_positive)
 		
@@ -272,6 +288,10 @@ func _update_bars(new_reputation, new_karma, new_gold):
 	add_child(t_1)
 	add_child(t_2)
 	add_child(t_3)
+	
+	print('new_rep ',new_reputation)
+	print('new_karma ',new_karma)
+	print('new_gold ',new_gold)
 	
 	
 	if new_reputation >=1:
@@ -297,7 +317,7 @@ func _update_bars(new_reputation, new_karma, new_gold):
 
 	if new_reputation <=-1:
 		var neg_new_reputation = abs(new_reputation)
-		for i in new_reputation:
+		for i in neg_new_reputation:
 			$reputation_bar.value -= 1
 			print('rep',$reputation_bar.value)
 			t_1.start(0.03)
@@ -305,7 +325,7 @@ func _update_bars(new_reputation, new_karma, new_gold):
 	
 	if new_karma <=-1:
 		var neg_new_karma = abs(new_karma)
-		for i in new_karma:
+		for i in neg_new_karma:
 			$karma_bar.value -= 1
 			print('kar',$karma_bar.value)
 			t_2.start(0.03)
@@ -324,6 +344,14 @@ func _update_bars(new_reputation, new_karma, new_gold):
 	t_1.queue_free()
 	t_1.queue_free()
 	t_1.queue_free()
+
+	#Here we'll have a victory state calculator - Flag get's raised when Reputation == 100
+	if $reputation_bar.value >= 100:
+		endgame = true
+		endgame_win = true
+	if $gold_bar.value <= 0:
+		endgame = true
+		endgame_win = false
 
 func _card_flavour_calculator(card):
 	var card_flavour
@@ -403,10 +431,3 @@ func _on_button_pressed():
 	print('Hide!')
 	#get_parent().paused = true
 	get_parent().visible = false
-
-#Demo fail state
-#func _process(delta):
-#	
-#	if $gold_slider.value <= 0:
-#		remove_child(get_node('Tar_Root_Scene'))
-#	
