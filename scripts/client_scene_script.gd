@@ -142,7 +142,6 @@ func _new_client():
 	#print('client ID: ', client_id)
 	client = $client_parent/Control/client
 	client._update_client()
-	#card_reading_options.emit($Tar_Root_Scene/reading_scene/reading_scene/AspectRatioContainer2/card.upright_reading,$Tar_Root_Scene/reading_scene/reading_scene/AspectRatioContainer2/card.reversed_reading,)
 	
 	#Little timeout for a pause between clients
 	var t = Timer.new()
@@ -156,17 +155,42 @@ func _new_client():
 	_dialogue_tree(1)
 	
 func _dialogue_tree(dialogue_count):
+	var final_reaction
+	var happy = false
+	
 	if dialogue_count==1:
 		$dialogue_box._next_text(client.client_resource.question)
-		print('adding +1 to count.')
+		print('early adding +1 to count.')
 		$dialogue_box.count += 1
 		print('New count:', $dialogue_box.count)
+		
+
+
 	if dialogue_count==2:
 		card_selection_ready.emit()
-
 		var card_node = $"../reading_scene/reading_scene/AspectRatioContainer2/card"
 
 		card_reading_options.emit(card_node.reading_upright,card_node.reading_reversed)
+		var flavour = _card_flavour_calculator(card_node)
+		var flavour_text_upright
+		var flavour_text_reversed
+		
+		if flavour == 'moral':
+			flavour_text_upright = card_node.upright_moral
+			flavour_text_reversed = card_node.reversed_moral
+			
+		if flavour == 'business/political':
+			flavour_text_upright = card_node.upright_bus_pol
+			flavour_text_reversed = card_node.reversed_bus_pol
+			
+		if flavour == 'love':
+			flavour_text_upright = card_node.upright_love
+			flavour_text_reversed = card_node.reversed_love
+			
+		if flavour == 'natural':
+			flavour_text_upright = card_node.upright_nature
+			flavour_text_reversed = card_node.reversed_nature
+		
 		print('card selection ready')
 		await sel_done
 	
@@ -176,35 +200,66 @@ func _dialogue_tree(dialogue_count):
 			var result = _reaction_calculator(card_node,'upright')
 			
 			if result == 0:
-				await _update_bars(randi_range(1,10), randi_range(1,10), randi_range(1,10))
-				$dialogue_box._next_text(client.client_resource.reaction_positive)
+				happy = true
+				$dialogue_box._texture_swap(false)
+				final_reaction = client.client_resource.reaction_positive
+				$dialogue_box._next_text(flavour_text_upright)
+				#await _update_bars(randi_range(1,10), randi_range(1,10), randi_range(1,10))
+				#$dialogue_box._next_text(client.client_resource.reaction_positive)
 			
 			if result == 1 or result == 2:
-				await _update_bars(randi_range(-1,-10), randi_range(-1,-10), randi_range(-1,-10))
-				$dialogue_box._next_text(client.client_resource.reaction_negative)
+				$dialogue_box._texture_swap(false)
+				final_reaction = client.client_resource.reaction_positive
+				$dialogue_box._next_text(flavour_text_upright)
+				#await _update_bars(randi_range(-1,-10), randi_range(-1,-10), randi_range(-1,-10))
+				#$dialogue_box._next_text(client.client_resource.reaction_negative)
 			
+			
+
+
 		if selection_choice == 'b':
 			var result = _reaction_calculator(card_node,'reversed')
 			
 			if result == 0:
-				await _update_bars(randi_range(1,10), randi_range(1,10), randi_range(1,10))
-				$dialogue_box._next_text(client.client_resource.reaction_positive)
-				#$reputation_bar.value += randi_range(8,20)
-				#$karma_bar.value += randi_range(8,20)
-				#$gold_bar.value += randi_range(8,20)
+				happy = true
+				#final_reaction = client.client_resource.reaction_positive
+				$dialogue_box._texture_swap(false)
+				$dialogue_box._next_text(flavour_text_reversed)
+				#await _update_bars(randi_range(1,10), randi_range(1,10), randi_range(1,10))
+				#$dialogue_box._next_text(client.client_resource.reaction_positive)
 			
 			if result == 1 or result == 2:
-				
-				await _update_bars(randi_range(-1,-10), randi_range(-1,-10), randi_range(-1,-10))
-				$dialogue_box._next_text(client.client_resource.reaction_negative)
-				#$reputation_bar.value -= randi_range(1,10)
-				#$karma_bar.value -= randi_range(1,10)
-				#$gold_bar.value -= randi_range(1,10)
+				#final_reaction = client.client_resource.reaction_positive
+				$dialogue_box._texture_swap(false)
+				$dialogue_box._next_text(flavour_text_reversed)
+				#await _update_bars(randi_range(-1,-10), randi_range(-1,-10), randi_range(-1,-10))
+				#$dialogue_box._next_text(client.client_resource.reaction_negative)
+			
+		
+		print('mid adding +1 to count.')
+		$dialogue_box.count += 1
+		print('New count:', $dialogue_box.count)
 	
+	#final Dialogue
 	
-	
-	#if dialogue_count==3:
-	#	$dialogue_box._next_text(client.client_resource.reaction_positive)
+	if dialogue_count==3:
+		print('Client is happy?: ', happy)
+		print("Final reaction will be, ", client.client_resource.reaction_positive)
+		
+		if happy:
+			await _update_bars(randi_range(1,10), randi_range(1,10), randi_range(1,10))
+			$dialogue_box._texture_swap(true)
+			$dialogue_box._next_text(client.client_resource.reaction_positive)
+		if !happy:
+			await _update_bars(randi_range(-1,-10), randi_range(-1,-10), randi_range(-1,-10))
+			$dialogue_box._texture_swap(true)
+			$dialogue_box._next_text(client.client_resource.reaction_positive)
+		
+		print('last adding +1 to count.')
+		$dialogue_box.count += 1
+		print('New count:', $dialogue_box.count)
+		
+		
 	dialogue_count+=1
 	
 
@@ -270,7 +325,22 @@ func _update_bars(new_reputation, new_karma, new_gold):
 	t_1.queue_free()
 	t_1.queue_free()
 
+func _card_flavour_calculator(card):
+	var card_flavour
+	if client.client_resource.theme == 0:
+		print('moral')
+		return 'moral'
+	if client.client_resource.theme == 1:
+		print('business/political')
+		return 'business/political'
+	if client.client_resource.theme == 2:
+		print('love')
+		return 'love'
+	if client.client_resource.theme == 3:
+		print('natural')
+		return 'natural'
 
+#outputs reaction of client
 func _reaction_calculator(card, position):
 	var final_reaction
 	if position == 'upright':
@@ -295,10 +365,6 @@ func _reaction_calculator(card, position):
 		#spiritual
 		if client.client_resource.reason == 2:
 			final_reaction = card.reversed_spiritual
-			
-	print('adding +1 to count.')
-	$dialogue_box.count += 1
-	print('New count:', $dialogue_box.count)
 	
 	return final_reaction
 

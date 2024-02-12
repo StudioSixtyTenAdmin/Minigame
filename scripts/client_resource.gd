@@ -11,6 +11,7 @@ class_name ClientResource
 
 #Resource Dropdown List
 @export_enum('Validation', 'Practical', 'Spiritual') var reason : int
+@export_enum('Moral', 'Business/Politics', 'Love', 'Natural') var theme : int
 
 @export var question: String 
 #var client_context: 

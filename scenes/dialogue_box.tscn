@@ -2,8 +2,8 @@
 
 [ext_resource type="AudioStream" uid="uid://bfho13w7qkoej" path="res://assets/DialogueBeep.wav" id="1_7s8pr"]
 [ext_resource type="Script" path="res://scripts/dialogue_box.gd" id="1_o8t3u"]
+[ext_resource type="Texture2D" uid="uid://csad6m5woe7b8" path="res://assets/ui_art/client-speechbox.png" id="2_6g5u5"]
 [ext_resource type="Theme" uid="uid://dyhggra4gad0m" path="res://assets/text_dialogue/main_theme.tres" id="2_54ov5"]
-[ext_resource type="Texture2D" uid="uid://c2ydl6ugj263q" path="res://assets/ui_art/speech-bubble-v4.png" id="2_ry3m0"]
 [ext_resource type="Script" path="res://scenes/PauseCalculator.gd" id="3_6jh5h"]
 [ext_resource type="Script" path="res://scenes/DialogueVoicePlayer.gd" id="3_s3i34"]
 [ext_resource type="Texture2D" uid="uid://bl2s1d75njanb" path="res://assets/ui_art/continue_button_01_v001.png" id="4_7wcq3"]
@@ -33,9 +33,11 @@ animations = [{
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_o8t3u")
 
 [node name="dialogue_window" type="PanelContainer" parent="."]
@@ -45,19 +47,18 @@ anchor_left = 0.5
 anchor_top = 0.72
 anchor_right = 0.5
 anchor_bottom = 0.725
-offset_left = -20.9
-offset_top = 11.888
-offset_right = 374.1
-offset_bottom = 200.888
+offset_left = -174.0
+offset_top = -89.6
+offset_right = 176.0
+offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Speech-bubble-v3" type="Sprite2D" parent="dialogue_window"]
-position = Vector2(208.9, 63.312)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_ry3m0")
+[node name="Sprite2D" type="Sprite2D" parent="dialogue_window"]
+position = Vector2(174, -192)
+texture = ExtResource("2_6g5u5")
 
 [node name="dialogue_text" type="RichTextLabel" parent="dialogue_window"]
 layout_mode = 2
@@ -84,10 +85,10 @@ one_shot = true
 visible = false
 layout_direction = 1
 layout_mode = 2
-offset_left = 392.0
-offset_top = 400.0
-offset_right = 620.0
-offset_bottom = 452.0
+offset_left = 384.0
+offset_top = 1096.0
+offset_right = 616.0
+offset_bottom = 1150.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource("2_54ov5")
@@ -105,10 +106,10 @@ frame_progress = 0.823897
 visible = false
 layout_direction = 1
 layout_mode = 2
-offset_left = 392.0
-offset_top = 400.0
-offset_right = 620.0
-offset_bottom = 452.0
+offset_left = 384.0
+offset_top = 1096.0
+offset_right = 616.0
+offset_bottom = 1150.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource("2_54ov5")

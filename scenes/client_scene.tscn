@@ -1,14 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://bkgg2b2f7xs4x"]
+[gd_scene load_steps=25 format=3 uid="uid://bkgg2b2f7xs4x"]
 
 [ext_resource type="PackedScene" uid="uid://dhj7wm20ug320" path="res://scenes/clients/client_root.tscn" id="1_bgsk8"]
 [ext_resource type="Script" path="res://scripts/client_scene_script.gd" id="1_gd6md"]
 [ext_resource type="Script" path="res://scripts/client_script.gd" id="2_jrrs3"]
 [ext_resource type="Theme" uid="uid://dyhggra4gad0m" path="res://assets/text_dialogue/main_theme.tres" id="2_nocis"]
+[ext_resource type="Texture2D" uid="uid://b70oug2l76rx1" path="res://assets/ui_art/confessionbooth-overlay.png" id="2_pr0by"]
 [ext_resource type="Resource" uid="uid://c8d87b4hcdkke" path="res://assets/client_resources/client_1.tres" id="3_0wk6q"]
-[ext_resource type="Texture2D" uid="uid://d2j11m4tcrdog" path="res://assets/ui_art/Frame_mid_v001.png" id="6_gjuts"]
+[ext_resource type="Texture2D" uid="uid://c6baas8jhsd7g" path="res://assets/ui_art/reader-table-overlay.png" id="6_hhvfn"]
 [ext_resource type="PackedScene" uid="uid://3qxknx1wgh4u" path="res://scenes/dialogue_box.tscn" id="6_wapug"]
 [ext_resource type="Texture2D" uid="uid://cvyq1ahcwhwfk" path="res://assets/ui_art/karma-empty.png" id="7_1hctx"]
-[ext_resource type="Texture2D" uid="uid://gvip7l4rggq6" path="res://assets/ui_art/Foreground__tex_v001.png" id="7_m621b"]
 [ext_resource type="Texture2D" uid="uid://ck4et34s76k4p" path="res://assets/ui_art/karma-full.png" id="8_ru5ip"]
 [ext_resource type="Texture2D" uid="uid://fewfoio1fn11" path="res://assets/ui_art/karma-icon-1.png" id="9_ip3oo"]
 [ext_resource type="Texture2D" uid="uid://2h30d56jmjeh" path="res://assets/ui_art/reputation-empty.png" id="9_v7ny2"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://cscrf2gsg25vw" path="res://assets/ui_art/gold-icon-2.png" id="13_jh872"]
 [ext_resource type="Texture2D" uid="uid://dmy5ohxuk8c3n" path="res://assets/ui_art/reputation_icon.png" id="19_l75sk"]
 [ext_resource type="PackedScene" uid="uid://dt3ap5pj3gt4w" path="res://scenes/player_board.tscn" id="20_gnm8i"]
+[ext_resource type="Texture2D" uid="uid://mqypvfdrmsbe" path="res://assets/ui_art/header-emptyresources.png" id="21_4fia8"]
+[ext_resource type="Texture2D" uid="uid://c184veloyrqsl" path="res://assets/ui_art/random-event.png" id="22_k3pn3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i0w7o"]
 animations = [{
@@ -59,6 +61,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gd6md")
 
+[node name="overlay" type="Sprite2D" parent="."]
+texture = ExtResource("2_pr0by")
+centered = false
+
 [node name="client_parent" type="AspectRatioContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -79,24 +85,44 @@ script = ExtResource("2_jrrs3")
 client_resource = ExtResource("3_0wk6q")
 
 [node name="foreground" type="Sprite2D" parent="."]
-texture = ExtResource("7_m621b")
+texture = ExtResource("6_hhvfn")
 centered = false
 
-[node name="overlay" type="Sprite2D" parent="."]
-texture = ExtResource("6_gjuts")
-centered = false
+[node name="Header-emptyresources" type="Sprite2D" parent="."]
+position = Vector2(360, 616)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("21_4fia8")
+
+[node name="gold_bar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = 56.0
+offset_right = 2255.0
+offset_bottom = 4449.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+value = 40.0
+fill_mode = 3
+texture_under = ExtResource("11_p73ih")
+texture_progress = ExtResource("12_kpjt0")
 
 [node name="karma_bar" type="TextureProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.05
 anchor_bottom = 0.5
-offset_left = 56.0
-offset_top = 304.0
-offset_right = 2631.0
-offset_bottom = 4697.0
+offset_left = 72.0
+offset_top = 64.0
+offset_right = 2647.0
+offset_bottom = 4457.0
 grow_vertical = 2
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.9, 0.9)
 value = 70.0
 fill_mode = 3
 texture_under = ExtResource("7_1hctx")
@@ -115,40 +141,15 @@ scale = Vector2(0.2, 0.2)
 texture_under = ExtResource("9_v7ny2")
 texture_progress = ExtResource("10_3qprt")
 
-[node name="gold_bar" type="TextureProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.05
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -88.0
-offset_top = 304.0
-offset_right = 2487.0
-offset_bottom = 4697.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(0.2, 0.2)
-value = 40.0
-fill_mode = 3
-texture_under = ExtResource("11_p73ih")
-texture_progress = ExtResource("12_kpjt0")
-
-[node name="dialogue_box" parent="." instance=ExtResource("6_wapug")]
-visible = false
-layout_mode = 1
-offset_left = -24.0
-offset_top = 704.0
-offset_right = 376.0
-offset_bottom = 904.0
-
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(184, 192)
 scale = Vector2(0.2, 0.19)
 sprite_frames = SubResource("SpriteFrames_i0w7o")
 autoplay = "default"
 
 [node name="Label3" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -166,6 +167,7 @@ text = "Karma
 "
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -199,11 +201,19 @@ theme = ExtResource("2_nocis")
 text = "Reputation"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(536, 192)
 scale = Vector2(0.2, 0.19)
 sprite_frames = SubResource("SpriteFrames_fmm83")
 autoplay = "default"
 frame_progress = 0.579177
+
+[node name="random_event" type="Sprite2D" parent="."]
+position = Vector2(360, 672)
+texture = ExtResource("22_k3pn3")
+
+[node name="dialogue_box" parent="." instance=ExtResource("6_wapug")]
+layout_mode = 1
 
 [node name="gold_slider" type="HSlider" parent="."]
 visible = false
@@ -270,17 +280,6 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("19_l75sk")
 
 [node name="player_board" parent="." instance=ExtResource("20_gnm8i")]
-
-[node name="random_event" type="RichTextLabel" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 280.0
-offset_top = 184.0
-offset_right = 464.0
-offset_bottom = 288.0
-theme = ExtResource("2_nocis")
-bbcode_enabled = true
-text = "[wave]Random Event![/wave]"
 
 [connection signal="price_set" from="." to="dialogue_box" method="_on_client_scene_price_set"]
 [connection signal="choose_price" from="dialogue_box" to="." method="_on_dialogue_box_choose_price"]

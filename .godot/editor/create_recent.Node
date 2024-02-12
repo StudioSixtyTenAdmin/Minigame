@@ -1,8 +1,8 @@
-Button
+Sprite2D
 RichTextLabel
+Button
 AspectRatioContainer
 Label
-Sprite2D
 TextureProgressBar
 AnimatedSprite2D
 Control

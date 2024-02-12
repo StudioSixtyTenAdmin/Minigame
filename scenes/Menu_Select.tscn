@@ -3,11 +3,13 @@
 [ext_resource type="Script" path="res://scenes/Menu_Select.gd" id="1_e218o"]
 [ext_resource type="Texture2D" uid="uid://cdah7g0gh0w8n" path="res://assets/logo_art/Arcana_White.png" id="2_dd1ic"]
 [ext_resource type="Texture2D" uid="uid://duj8wglcnlpbw" path="res://assets/ui_art/Main_menu_screen_No_logo_000.png" id="2_onfr0"]
-[ext_resource type="Texture2D" uid="uid://cuyh40yo86f5b" path="res://assets/ui_art/button-1.png" id="2_qikd2"]
 [ext_resource type="AudioStream" uid="uid://byiv3leiy6f0e" path="res://assets/audio/Prelude.wav" id="3_uihmt"]
+[ext_resource type="Texture2D" uid="uid://bwy1y2ev1px74" path="res://assets/ui_art/main-menu.png" id="3_w2jyh"]
 
 [node name="Menu_Select" type="Node2D"]
 script = ExtResource("1_e218o")
+volume_value = 50
+typespeed = 6
 
 [node name="MainMenuScreenNoLogo000" type="Sprite2D" parent="."]
 position = Vector2(360, 640)
@@ -26,25 +28,24 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(360, 675)
+texture = ExtResource("3_w2jyh")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.634
 anchor_bottom = 0.5
-offset_left = 25.0
-offset_top = 615.0
-offset_right = 695.0
-offset_bottom = 890.0
+offset_left = 180.0
+offset_top = 561.0
+offset_right = 540.0
+offset_bottom = 850.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(335, -368)
-scale = Vector2(0.5, 0.650272)
-texture = ExtResource("2_qikd2")
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -73,6 +74,7 @@ layout_mode = 2
 
 [node name="Volume" type="Label" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Volume - 100"
 horizontal_alignment = 1
 
@@ -82,6 +84,7 @@ value = 100.0
 
 [node name="TextSpeed" type="Label" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Text Speed"
 horizontal_alignment = 1
 

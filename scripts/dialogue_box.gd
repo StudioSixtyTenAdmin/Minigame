@@ -20,12 +20,18 @@ var textLength
 var playing_voice = false
 var show_continue = true
 var event = false
+var client_texture = preload('res://assets/ui_art/client-speechbox.png')
+var reader_texture = preload('res://assets/ui_art/reader-speechbox-v2.png')
 
 var true_text_length = 0
 
-#type speed
-#var type_speed = get_node()
-
+#Texture Swap
+func _texture_swap(client_speaks):
+	print('Swapping texture')
+	if client_speaks:
+		$dialogue_window/Sprite2D.set_texture(client_texture)
+	if !client_speaks:
+		$dialogue_window/Sprite2D.set_texture(reader_texture)
 #Load Dialogue Text
 
 func _change_show_continue(changed_to):
@@ -122,11 +128,12 @@ func _on_text_continue_main_pressed():
 		event = false
 		get_parent()._dialogue_tree(2)
 	
-	#if count ==4:
-	#	get_parent()._dialogue_tree(3)
+	
+	if count ==3:
+		get_parent()._dialogue_tree(3)
 	
 	#Reading Ends Here
-	if count ==3:
+	if count == 4:
 		get_parent().turn()
 		count = 1
 	
@@ -169,6 +176,7 @@ func _update_message(message: String):
 	voice_player.play_play(0)
 	
 	#FIX WHY THE HELL THE TIMER ISN'T WORKING
+
 func _on_type_typer_timeout():
 	_calc.check_at_position(content.visible_characters)
 	if content.visible_characters < content.text.length() - true_text_length:

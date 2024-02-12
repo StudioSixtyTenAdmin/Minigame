@@ -9,12 +9,22 @@ var count = 0
 
 var reading_upright
 var reading_reversed
+
 var upright_validation
 var upright_practical
 var upright_spiritual
 var reversed_validation
 var reversed_practical
 var reversed_spiritual
+
+var upright_love
+var reversed_love
+var upright_bus_pol
+var reversed_bus_pol
+var upright_nature
+var reversed_nature
+var upright_moral
+var reversed_moral
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -52,6 +62,14 @@ func _new_card():
 	reversed_practical = card_resource.reversed_practical
 	reversed_spiritual = card_resource.reversed_spiritual
 	
+	upright_love = card_resource.upright_love
+	reversed_love = card_resource.reversed_love
+	upright_bus_pol = card_resource.upright_bus_pol
+	reversed_bus_pol = card_resource.reversed_bus_pol
+	upright_nature = card_resource.upright_nature
+	reversed_nature = card_resource.reversed_nature
+	upright_moral = card_resource.upright_moral
+	reversed_moral = card_resource.reversed_moral
 	
 	numby_poo = randi_range(1,21)
 

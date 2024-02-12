@@ -8,6 +8,7 @@ client_id = 17
 read_this_run = false
 client_name = "Simon: The Beggar"
 reason = 2
+theme = 2
 question = "Sire, I have no means to pay you, but I beseech you to help me! I left my home many seasons hence, will your cards tell me if my father has forgiven me? I am so weary."
 reaction_positive = "Your words are a salve to my soul sire!"
 reaction_negative = "I feared as much, thank you sire... "

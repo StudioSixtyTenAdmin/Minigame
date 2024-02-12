@@ -20,8 +20,9 @@ func _on_d_card_root_card_selected():
 
 
 func _on_client_scene__card_reading_options(option_a, option_b):
-	$reading_scene/AspectRatioContainer/UI/OptionA/RichTextLabel.text = option_a
-	$reading_scene/AspectRatioContainer/UI/OptionB/RichTextLabel.text = option_b
+
+	$reading_scene/OptionA/RichTextLabel.text = option_a
+	$reading_scene/OptionB/RichTextLabel.text = option_b
 
 
 func _on_client_scene__card_selection_ready():
