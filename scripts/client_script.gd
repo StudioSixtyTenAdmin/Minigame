@@ -36,4 +36,6 @@ func _update_client():
 	var reaction_b = client_resource.reaction_positive
 	#get_child(0).texture = ImageTexture.create_from_image(client_portrait)
 	get_child(0).texture = client_portrait
+	$reaction_happy.visible = false
+	$reaction_angry.visible = false
 	print('Client Loaded')

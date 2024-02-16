@@ -28,7 +28,7 @@ var selection_choice
 
 #win and fail state bools. If either endstate is reached, signal emits (true if win)
 var endgame = false
-var endgame_win 
+var endgame_win
 
 var happy = false
 
@@ -126,6 +126,7 @@ func _new_event():
 	$dialogue_box.visible = true
 	
 	t.queue_free()
+	$dialogue_box/name_tag.visible = false
 	$dialogue_box._random_event(event_resource.event_text)
 	
 	#Update Values from Event
@@ -154,6 +155,7 @@ func _new_client():
 	client = $client_parent/Control/client
 	client._update_client()
 	
+	
 	#Little timeout for a pause between clients
 	var t = Timer.new()
 	self.add_child(t)
@@ -161,10 +163,43 @@ func _new_client():
 	await t.timeout
 	$client_parent/Control/client.visible = true
 	$dialogue_box.visible = true
+	$dialogue_box/name_tag.visible = true
+	$dialogue_box/name_tag/name_tag_text.text = client.client_resource.client_name
 	
 	t.queue_free()
 	_dialogue_tree(1)
 	
+
+func _reader_fade(in_true):
+	print('READDXER',in_true)
+	var t_4 = Timer.new()
+	var t_5 = Timer.new()
+	add_child(t_4)
+	add_child(t_5)
+	
+	if in_true:
+		print('CutIn Modulate starting: ', $cut_in.modulate.a)
+		$dialogue_box/name_tag.visible = false
+		$cut_in.visible = true
+		while $cut_in.modulate.a <= 1:
+			$cut_in.modulate.a += 0.1
+			t_4.start(0.003)
+			await t_4.timeout
+			
+	if !in_true:
+		print('CutIn Modulate starting: ', $cut_in.modulate.a)
+		$cut_in.visible = false
+		while $cut_in.modulate.a >= 0:
+			$cut_in.modulate.a -= 0.1
+			t_4.start(0.003)
+			await t_5.timeout
+		
+		$dialogue_box/name_tag.visible = true
+	
+	t_4.queue_free()
+	t_5.queue_free()
+
+
 func _dialogue_tree(dialogue_count):
 	var final_reaction
 	
@@ -215,6 +250,7 @@ func _dialogue_tree(dialogue_count):
 				$dialogue_box._texture_swap(false)
 				final_reaction = client.client_resource.reaction_positive
 				$dialogue_box._next_text(flavour_text_upright)
+				_reader_fade(true)
 				#await _update_bars(randi_range(1,10), randi_range(1,10), randi_range(1,10))
 				#$dialogue_box._next_text(client.client_resource.reaction_positive)
 			
@@ -224,6 +260,7 @@ func _dialogue_tree(dialogue_count):
 				$dialogue_box._texture_swap(false)
 				final_reaction = client.client_resource.reaction_positive
 				$dialogue_box._next_text(flavour_text_upright)
+				_reader_fade(true)
 				#await _update_bars(randi_range(-1,-10), randi_range(-1,-10), randi_range(-1,-10))
 				#$dialogue_box._next_text(client.client_resource.reaction_negative)
 			
@@ -239,6 +276,7 @@ func _dialogue_tree(dialogue_count):
 				#final_reaction = client.client_resource.reaction_positive
 				$dialogue_box._texture_swap(false)
 				$dialogue_box._next_text(flavour_text_reversed)
+				_reader_fade(true)
 				#await _update_bars(randi_range(1,10), randi_range(1,10), randi_range(1,10))
 				#$dialogue_box._next_text(client.client_resource.reaction_positive)
 			
@@ -248,6 +286,7 @@ func _dialogue_tree(dialogue_count):
 				#final_reaction = client.client_resource.reaction_positive
 				$dialogue_box._texture_swap(false)
 				$dialogue_box._next_text(flavour_text_reversed)
+				_reader_fade(true)
 				#await _update_bars(randi_range(-1,-10), randi_range(-1,-10), randi_range(-1,-10))
 				#$dialogue_box._next_text(client.client_resource.reaction_negative)
 			
@@ -261,13 +300,16 @@ func _dialogue_tree(dialogue_count):
 	if dialogue_count==3:
 		print('Client is happy?: ', happy)
 		print("Final reaction will be, ", client.client_resource.reaction_positive)
+		_reader_fade(false)
 		
 		if happy:
 			await _update_bars(randi_range(10,30), randi_range(10,30), randi_range(10,30))
+			$client_parent/Control/client/reaction_happy.visible = true
 			$dialogue_box._texture_swap(true)
 			$dialogue_box._next_text(client.client_resource.reaction_positive)
 		if !happy:
 			await _update_bars(randi_range(-5,-25), randi_range(-5,-25), randi_range(-5,-25))
+			$client_parent/Control/client/reaction_angry.visible = true
 			$dialogue_box._texture_swap(true)
 			$dialogue_box._next_text(client.client_resource.reaction_positive)
 		
@@ -342,8 +384,8 @@ func _update_bars(new_reputation, new_karma, new_gold):
 
 		
 	t_1.queue_free()
-	t_1.queue_free()
-	t_1.queue_free()
+	t_2.queue_free()
+	t_3.queue_free()
 
 	#Here we'll have a victory state calculator - Flag get's raised when Reputation == 100
 	if $reputation_bar.value >= 100:

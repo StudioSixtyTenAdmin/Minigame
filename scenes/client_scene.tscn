@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bkgg2b2f7xs4x"]
+[gd_scene load_steps=26 format=3 uid="uid://bkgg2b2f7xs4x"]
 
 [ext_resource type="PackedScene" uid="uid://dhj7wm20ug320" path="res://scenes/clients/client_root.tscn" id="1_bgsk8"]
 [ext_resource type="Script" path="res://scripts/client_scene_script.gd" id="1_gd6md"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c6baas8jhsd7g" path="res://assets/ui_art/reader-table-overlay.png" id="6_hhvfn"]
 [ext_resource type="PackedScene" uid="uid://3qxknx1wgh4u" path="res://scenes/dialogue_box.tscn" id="6_wapug"]
 [ext_resource type="Texture2D" uid="uid://cvyq1ahcwhwfk" path="res://assets/ui_art/karma-empty.png" id="7_1hctx"]
+[ext_resource type="Texture2D" uid="uid://qv36gpbmcu3o" path="res://assets/ui_art/reader-cutin-01.png" id="8_q10uc"]
 [ext_resource type="Texture2D" uid="uid://ck4et34s76k4p" path="res://assets/ui_art/karma-full.png" id="8_ru5ip"]
 [ext_resource type="Texture2D" uid="uid://fewfoio1fn11" path="res://assets/ui_art/karma-icon-1.png" id="9_ip3oo"]
 [ext_resource type="Texture2D" uid="uid://2h30d56jmjeh" path="res://assets/ui_art/reputation-empty.png" id="9_v7ny2"]
@@ -18,10 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://dajh87snoy0ym" path="res://assets/ui_art/gold-icon-1.png" id="12_40bmd"]
 [ext_resource type="Texture2D" uid="uid://mvbqsi0dg7b" path="res://assets/ui_art/gold-full.png" id="12_kpjt0"]
 [ext_resource type="Texture2D" uid="uid://cscrf2gsg25vw" path="res://assets/ui_art/gold-icon-2.png" id="13_jh872"]
+[ext_resource type="Texture2D" uid="uid://dfs8yt6svojwm" path="res://assets/ui_art/crunch-randomevent.png" id="19_8f0o4"]
 [ext_resource type="Texture2D" uid="uid://dmy5ohxuk8c3n" path="res://assets/ui_art/reputation_icon.png" id="19_l75sk"]
 [ext_resource type="PackedScene" uid="uid://dt3ap5pj3gt4w" path="res://scenes/player_board.tscn" id="20_gnm8i"]
 [ext_resource type="Texture2D" uid="uid://mqypvfdrmsbe" path="res://assets/ui_art/header-emptyresources.png" id="21_4fia8"]
-[ext_resource type="Texture2D" uid="uid://c184veloyrqsl" path="res://assets/ui_art/random-event.png" id="22_k3pn3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i0w7o"]
 animations = [{
@@ -89,6 +90,7 @@ texture = ExtResource("6_hhvfn")
 centered = false
 
 [node name="Header-emptyresources" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(360, 616)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("21_4fia8")
@@ -209,8 +211,15 @@ autoplay = "default"
 frame_progress = 0.579177
 
 [node name="random_event" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(360, 672)
-texture = ExtResource("22_k3pn3")
+texture = ExtResource("19_8f0o4")
+
+[node name="cut_in" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(360, 640)
+texture = ExtResource("8_q10uc")
 
 [node name="dialogue_box" parent="." instance=ExtResource("6_wapug")]
 layout_mode = 1

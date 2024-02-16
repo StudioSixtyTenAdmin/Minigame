@@ -1,15 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://3qxknx1wgh4u"]
+[gd_scene load_steps=13 format=3 uid="uid://3qxknx1wgh4u"]
 
 [ext_resource type="AudioStream" uid="uid://bfho13w7qkoej" path="res://assets/DialogueBeep.wav" id="1_7s8pr"]
 [ext_resource type="Script" path="res://scripts/dialogue_box.gd" id="1_o8t3u"]
-[ext_resource type="Texture2D" uid="uid://csad6m5woe7b8" path="res://assets/ui_art/client-speechbox.png" id="2_6g5u5"]
 [ext_resource type="Theme" uid="uid://dyhggra4gad0m" path="res://assets/text_dialogue/main_theme.tres" id="2_54ov5"]
+[ext_resource type="Texture2D" uid="uid://b6oftcofrjp7u" path="res://assets/ui_art/client-speechbox-3.png" id="2_nev2p"]
 [ext_resource type="Script" path="res://scenes/PauseCalculator.gd" id="3_6jh5h"]
 [ext_resource type="Script" path="res://scenes/DialogueVoicePlayer.gd" id="3_s3i34"]
 [ext_resource type="Texture2D" uid="uid://bl2s1d75njanb" path="res://assets/ui_art/continue_button_01_v001.png" id="4_7wcq3"]
 [ext_resource type="Texture2D" uid="uid://cod0hrfwts3wb" path="res://assets/ui_art/continue_button_02_v001.png" id="5_0nmhf"]
 [ext_resource type="Texture2D" uid="uid://bg0l1kxni1e4f" path="res://assets/ui_art/continue_button_03_v001.png" id="6_mwmn1"]
 [ext_resource type="Texture2D" uid="uid://4hdxpc1mf2em" path="res://assets/ui_art/continue_button_04_v001.png" id="7_4gpob"]
+[ext_resource type="Texture2D" uid="uid://bnw4j2k12pkq3" path="res://assets/ui_art/nametag-1.png" id="11_84ups"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s5wig"]
 animations = [{
@@ -36,29 +37,34 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -24.0
+offset_right = -24.0
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o8t3u")
+metadata/_edit_vertical_guides_ = [-672.0]
 
 [node name="dialogue_window" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(350, 170)
 layout_mode = 2
 anchor_left = 0.5
 anchor_top = 0.72
 anchor_right = 0.5
 anchor_bottom = 0.725
-offset_left = -174.0
-offset_top = -89.6
-offset_right = 176.0
-offset_bottom = 144.0
+offset_left = -224.0
+offset_top = -73.6
+offset_right = 256.0
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="dialogue_window"]
-position = Vector2(174, -192)
-texture = ExtResource("2_6g5u5")
+position = Vector2(240, 24)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_nev2p")
 
 [node name="dialogue_text" type="RichTextLabel" parent="dialogue_window"]
 layout_mode = 2
@@ -122,6 +128,21 @@ sprite_frames = SubResource("SpriteFrames_s5wig")
 animation = &"continue"
 autoplay = "continue"
 frame_progress = 0.823897
+
+[node name="name_tag" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(560, 736)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("11_84ups")
+
+[node name="name_tag_text" type="RichTextLabel" parent="name_tag"]
+offset_left = -140.0
+offset_top = -30.0
+offset_right = 340.0
+offset_bottom = 170.0
+theme = ExtResource("2_54ov5")
+theme_override_font_sizes/normal_font_size = 37
+text = "Richard"
 
 [connection signal="finished" from="dialogue_window/DialogueVoicePlayer" to="." method="_on_dialogue_voice_player_finished"]
 [connection signal="timeout" from="dialogue_window/TypeTimer" to="." method="_on_type_typer_timeout"]

@@ -1,8 +1,61 @@
-[gd_scene format=3 uid="uid://dhj7wm20ug320"]
+[gd_scene load_steps=8 format=3 uid="uid://dhj7wm20ug320"]
+
+[ext_resource type="Texture2D" uid="uid://d0a6tjhtwhxc4" path="res://assets/client_portraits/client_4_portrait.png" id="1_7dtxc"]
+[ext_resource type="Texture2D" uid="uid://bbgbappfa0nnp" path="res://assets/ui_art/emote-happy-f1.png" id="2_5d4vy"]
+[ext_resource type="Texture2D" uid="uid://bnoasojmnlq4t" path="res://assets/ui_art/emote-happy-f2.png" id="3_jexgh"]
+[ext_resource type="Texture2D" uid="uid://dmoga52yigtkd" path="res://assets/ui_art/emote-angry-f1.png" id="4_nmpw1"]
+[ext_resource type="Texture2D" uid="uid://chpubhsv8gfip" path="res://assets/ui_art/emote-angry-f2.png" id="5_dqpnt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ncils"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5d4vy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jexgh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3u7b3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nmpw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dqpnt")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 4.0
+}]
 
 [node name="client" type="Node2D"]
+visible = false
 
 [node name="GboxClientPortrait1" type="Sprite2D" parent="."]
 visibility_layer = 4
 position = Vector2(0, 400)
 scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_7dtxc")
+
+[node name="reaction_happy" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(168, 288)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_ncils")
+autoplay = "default"
+frame_progress = 0.947944
+
+[node name="reaction_angry" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-144, 208)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_3u7b3")
+animation = &"angry"
+autoplay = "angry"
+frame_progress = 0.528062
