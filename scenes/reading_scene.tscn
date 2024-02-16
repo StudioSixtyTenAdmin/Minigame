@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://5kcjgt0r5u6l"]
+[gd_scene load_steps=11 format=3 uid="uid://5kcjgt0r5u6l"]
 
 [ext_resource type="Script" path="res://scripts/reading_scene.gd" id="1_vmx3t"]
 [ext_resource type="PackedScene" uid="uid://c4i3ln83xm7gp" path="res://scenes/cards/card_root.tscn" id="2_uafhp"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dg2fqpkhj10q" path="res://assets/ui_art/TestIcon1.PNG" id="6_6b7gs"]
 [ext_resource type="Texture2D" uid="uid://ccleorkwx7c3v" path="res://assets/ui_art/TestIcon2.PNG" id="7_1uhqr"]
 [ext_resource type="Texture2D" uid="uid://dynd1kugfctqn" path="res://assets/ui_art/TestIcon3.PNG" id="8_k7gnn"]
+[ext_resource type="Texture2D" uid="uid://dcn66ocnttfy7" path="res://assets/ui_art/blank.png" id="10_ukchh"]
 
 [node name="reading_scene_root" type="Node3D"]
 script = ExtResource("1_vmx3t")
@@ -179,8 +180,17 @@ ok_button_text = "Confirm"
 dialog_text = "Reverse Text Full Description"
 dialog_autowrap = true
 
+[node name="fade" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.45098)
+position = Vector2(360, 640)
+texture = ExtResource("10_ukchh")
+
 [connection signal="card_selected" from="SubViewportContainer/SubViewport/threed_card_root" to="." method="_on_d_card_root_card_selected"]
 [connection signal="pressed" from="reading_scene/OptionA" to="." method="_on_option_a_pressed"]
 [connection signal="pressed" from="reading_scene/OptionB" to="." method="_on_option_b_pressed"]
+[connection signal="canceled" from="Upright_Confirm" to="." method="_on_upright_confirm_canceled"]
 [connection signal="confirmed" from="Upright_Confirm" to="." method="_on_upright_confirmed"]
+[connection signal="canceled" from="Reverse_Confirm" to="." method="_on_upright_confirm_canceled"]
 [connection signal="confirmed" from="Reverse_Confirm" to="." method="_on_reverse_confirmed"]

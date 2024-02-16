@@ -1,8 +1,8 @@
-ConfirmationDialog
 Container
+Sprite2D
+ConfirmationDialog
 RichTextLabel
 PopupPanel
-Sprite2D
 AnimatedSprite2D
 PopupMenu
 Popup
@@ -12,4 +12,3 @@ Label
 TextureProgressBar
 Control
 TextureButton
-AudioStreamPlayer

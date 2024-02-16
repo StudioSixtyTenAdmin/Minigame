@@ -39,6 +39,7 @@ func _on_client_scene__card_selection_ready():
 
 
 func _on_option_a_pressed():
+	$fade.visible = true
 	$Upright_Confirm.visible = true
 	#finish_reading_scene.emit('a')
 	#print('reading a')
@@ -47,6 +48,7 @@ func _on_option_a_pressed():
 
 
 func _on_option_b_pressed():
+	$fade.visible = true
 	$Reverse_Confirm.visible = true
 	#finish_reading_scene.emit('b')
 	#print('reading b')
@@ -57,9 +59,15 @@ func _on_reverse_confirmed():
 	finish_reading_scene.emit('a')
 	print('reading a')
 	$reading_scene.visible = false
+	$fade.visible = false
 
 
 func _on_upright_confirmed():
 	finish_reading_scene.emit('b')
 	print('reading b')
 	$reading_scene.visible = false
+	$fade.visible = false
+
+
+func _on_upright_confirm_canceled():
+	$fade.visible = false
