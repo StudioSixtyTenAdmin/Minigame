@@ -237,7 +237,9 @@ func _dialogue_tree(dialogue_count):
 			flavour_text_reversed = card_node.reversed_nature
 		
 		print('card selection ready')
+		$dialogue_box.visible = false
 		await sel_done
+		$dialogue_box.visible = true
 	
 		print('signal received - selection is: ',selection_choice)
 		
@@ -248,7 +250,7 @@ func _dialogue_tree(dialogue_count):
 				print('happyhappy')
 				happy = true
 				$dialogue_box._texture_swap(false)
-				final_reaction = client.client_resource.reaction_positive
+				#final_reaction = client.client_resource.reaction_positive
 				$dialogue_box._next_text(flavour_text_upright)
 				_reader_fade(true)
 				#await _update_bars(randi_range(1,10), randi_range(1,10), randi_range(1,10))
@@ -258,7 +260,7 @@ func _dialogue_tree(dialogue_count):
 				print('sadsad')
 				happy = false
 				$dialogue_box._texture_swap(false)
-				final_reaction = client.client_resource.reaction_positive
+				#final_reaction = client.client_resource.reaction_negative
 				$dialogue_box._next_text(flavour_text_upright)
 				_reader_fade(true)
 				#await _update_bars(randi_range(-1,-10), randi_range(-1,-10), randi_range(-1,-10))
@@ -273,8 +275,8 @@ func _dialogue_tree(dialogue_count):
 			if result == 0:
 				print('happyhappy')
 				happy = true
-				#final_reaction = client.client_resource.reaction_positive
 				$dialogue_box._texture_swap(false)
+				#final_reaction = client.client_resource.reaction_positive
 				$dialogue_box._next_text(flavour_text_reversed)
 				_reader_fade(true)
 				#await _update_bars(randi_range(1,10), randi_range(1,10), randi_range(1,10))
@@ -283,8 +285,8 @@ func _dialogue_tree(dialogue_count):
 			if result == 1 or result == 2:
 				print('sadsad')
 				happy = false
-				#final_reaction = client.client_resource.reaction_positive
 				$dialogue_box._texture_swap(false)
+				#final_reaction = client.client_resource.reaction_negative
 				$dialogue_box._next_text(flavour_text_reversed)
 				_reader_fade(true)
 				#await _update_bars(randi_range(-1,-10), randi_range(-1,-10), randi_range(-1,-10))
@@ -311,7 +313,7 @@ func _dialogue_tree(dialogue_count):
 			await _update_bars(randi_range(-5,-25), randi_range(-5,-25), randi_range(-5,-25))
 			$client_parent/Control/client/reaction_angry.visible = true
 			$dialogue_box._texture_swap(true)
-			$dialogue_box._next_text(client.client_resource.reaction_positive)
+			$dialogue_box._next_text(client.client_resource.reaction_negative)
 		
 		print('last adding +1 to count.')
 		$dialogue_box.count += 1

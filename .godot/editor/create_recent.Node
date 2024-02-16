@@ -1,6 +1,9 @@
+ConfirmationDialog
+Container
+RichTextLabel
+PopupPanel
 Sprite2D
 AnimatedSprite2D
-RichTextLabel
 PopupMenu
 Popup
 Button
@@ -8,7 +11,5 @@ AspectRatioContainer
 Label
 TextureProgressBar
 Control
-Container
 TextureButton
 AudioStreamPlayer
-OptionButton

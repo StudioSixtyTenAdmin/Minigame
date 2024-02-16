@@ -20,9 +20,10 @@ func _on_d_card_root_card_selected():
 
 
 func _on_client_scene__card_reading_options(option_a, option_b):
-
 	$reading_scene/OptionA/RichTextLabel.text = option_a
 	$reading_scene/OptionB/RichTextLabel.text = option_b
+	$Upright_Confirm.dialog_text = option_a
+	$Reverse_Confirm.dialog_text = option_b
 
 
 func _on_client_scene__card_selection_ready():
@@ -38,13 +39,27 @@ func _on_client_scene__card_selection_ready():
 
 
 func _on_option_a_pressed():
-	finish_reading_scene.emit('a')
-	print('reading a')
-	$reading_scene.visible = false
+	$Upright_Confirm.visible = true
+	#finish_reading_scene.emit('a')
+	#print('reading a')
+	#$reading_scene.visible = false
 	
 
 
 func _on_option_b_pressed():
+	$Reverse_Confirm.visible = true
+	#finish_reading_scene.emit('b')
+	#print('reading b')
+	#$reading_scene.visible = false
+
+
+func _on_reverse_confirmed():
+	finish_reading_scene.emit('a')
+	print('reading a')
+	$reading_scene.visible = false
+
+
+func _on_upright_confirmed():
 	finish_reading_scene.emit('b')
 	print('reading b')
 	$reading_scene.visible = false
