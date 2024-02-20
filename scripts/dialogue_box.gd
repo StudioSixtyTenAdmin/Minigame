@@ -21,7 +21,7 @@ var playing_voice = false
 var show_continue = true
 var event = false
 var client_texture = preload('res://assets/ui_art/client-speechbox-3.png')
-var reader_texture = preload('res://assets/ui_art/reader-speechbox-v2.png')
+var reader_texture = preload('res://assets/ui_art/client-speechbox-3.png')
 
 var true_text_length = 0
 

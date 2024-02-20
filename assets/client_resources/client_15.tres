@@ -6,11 +6,12 @@
 script = ExtResource("1_36uea")
 client_id = 15
 read_this_run = false
-client_name = "Petra: The Assistant Herbalist"
+client_name = "Petra"
+client_subtitle = "The Assistant Herbalist"
 reason = 2
 theme = 1
 question = "Hail Reader. I wish to avail of your service. A towns-woman has asked me to procure some herbs for her. Dangerous herbs in the wrong hands, does she wish to use them for ill?"
 reaction_positive = "I thank thee Reader, I will pray upon the matter."
 reaction_negative = "Alas and alack… my suspicions were correct. My thanks"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/client_5_portrait.png"
+portrait_path = "res://assets/client_portraits/clientimage-petra-v02.png"

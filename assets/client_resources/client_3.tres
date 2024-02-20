@@ -6,11 +6,12 @@
 script = ExtResource("1_kobh7")
 client_id = 3
 read_this_run = false
-client_name = "Arthur: The Astronomer"
+client_name = "Arthur"
+client_subtitle = "The Astronomer"
 reason = 1
 theme = 1
 question = "I have it on good authority that your readings are insightful and true. Another Meister is using trickery to steal and discredit my work; how can I prevent this treachery?"
 reaction_positive = "You have given me sound advice, thank you!"
 reaction_negative = "By jove, I knew it! I will have my revenge…"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/client_3_portrait.png"
+portrait_path = "res://assets/client_portraits/clientimage-Arthur-v02.png"

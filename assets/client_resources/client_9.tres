@@ -6,11 +6,12 @@
 script = ExtResource("1_hu83q")
 client_id = 9
 read_this_run = false
-client_name = "Florian: The Hired Hand"
+client_name = "Florian"
+client_subtitle = "The Hired Hand"
 reason = 1
 theme = 1
 question = "Sir, the baker has offered to apprentice me, but the blacksmith has no sons and is fond of me. If I were to apprentice for him, I could inherit everything. What do the cards say?"
 reaction_positive = "Your counsel has been most valuable sire!"
 reaction_negative = "You have given me much to ponder, my thanks sire!"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/client_5_portrait.png"
+portrait_path = "res://assets/client_portraits/clientimage-florian-v02.png"

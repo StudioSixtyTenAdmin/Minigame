@@ -6,10 +6,12 @@
 script = ExtResource("1_b67h3")
 client_id = 4
 read_this_run = false
-client_name = "Leif: The Mathematician’s Apprentice"
+client_name = "Leif"
+client_subtitle = "The Mathematician’s Apprentice"
 reason = 2
+theme = 0
 question = "Sire, I beseech you to help me! I overheard my meister disclose a dastardly plan. He is stealing the work of another, whatever am I to do?"
 reaction_positive = "I will think carefully on what you have told me."
 reaction_negative = "Thank you Sire, I must tread very carefully."
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/client_4_portrait.png"
+portrait_path = "res://assets/client_portraits/clientimage-leif-v02.png"

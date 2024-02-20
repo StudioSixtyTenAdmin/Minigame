@@ -5,6 +5,7 @@ class_name ClientResource
 #checkbox to mark if this client has come up so far this run
 @export var read_this_run: bool
 @export var client_name: String
+@export var client_subtitle: String
 #@export var card_profile: String
 #@export var keywords_upright: String
 #@export var keywords_reversed: String

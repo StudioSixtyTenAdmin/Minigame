@@ -6,10 +6,12 @@
 script = ExtResource("1_jq5sn")
 client_id = 1
 read_this_run = false
-client_name = "Brenna: The Clairvoyant"
+client_name = "Brenna"
+client_subtitle = "The Clairvoyant"
 reason = 2
+theme = 0
 question = "Sir, my spirit-guides have brought me to your hearth this evening. I believe your cards hold an important message for me."
 reaction_positive = "I thank thee sir, you have given me much to think about."
 reaction_negative = "Thank you for your counsel sir, I will be watchful!"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/client_1_portrait.png"
+portrait_path = "res://assets/client_portraits/clientimage-brenna-v02.png"

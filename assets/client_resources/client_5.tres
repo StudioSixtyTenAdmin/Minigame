@@ -6,11 +6,12 @@
 script = ExtResource("1_20yri")
 client_id = 5
 read_this_run = false
-client_name = "Orvyn: The Playwright"
+client_name = "Orvyn"
+client_subtitle = "The Playwright"
 reason = 2
 theme = 1
 question = "Greetings my good fellow, I would like to engage your services for a most delicate matter… I have been stricken with a case of writer’s block, my well is dry! What can I do?"
 reaction_positive = "You have been most helpful good sir, I will be guided by your wisdom!"
 reaction_negative = "Ugh, I may as well have thrown my gold down the well. You blaggard!"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/client_5_portrait.png"
+portrait_path = "res://assets/client_portraits/clientimage-orvyn-v02.png"

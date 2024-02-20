@@ -305,12 +305,16 @@ func _dialogue_tree(dialogue_count):
 		_reader_fade(false)
 		
 		if happy:
+			$dialogue_box.visible = false
 			await _update_bars(randi_range(10,30), randi_range(10,30), randi_range(10,30))
+			$dialogue_box.visible = true
 			$client_parent/Control/client/reaction_happy.visible = true
 			$dialogue_box._texture_swap(true)
 			$dialogue_box._next_text(client.client_resource.reaction_positive)
 		if !happy:
+			$dialogue_box.visible = false
 			await _update_bars(randi_range(-5,-25), randi_range(-5,-25), randi_range(-5,-25))
+			$dialogue_box.visible = true
 			$client_parent/Control/client/reaction_angry.visible = true
 			$dialogue_box._texture_swap(true)
 			$dialogue_box._next_text(client.client_resource.reaction_negative)

@@ -50,14 +50,14 @@ anchors_preset = -1
 anchor_left = 0.1
 anchor_top = 0.6
 anchor_right = 0.441
-anchor_bottom = 1.0
+anchor_bottom = 0.922
 grow_horizontal = 2
 grow_vertical = 2
 clip_text = true
 
 [node name="Sprite2D" type="Sprite2D" parent="reading_scene/OptionA"]
-position = Vector2(120, 248)
-scale = Vector2(0.6, 0.6)
+position = Vector2(120, 200)
+scale = Vector2(0.6, 0.5)
 texture = ExtResource("4_clkuw")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="reading_scene/OptionA"]
@@ -66,7 +66,7 @@ anchors_preset = -1
 anchor_left = 0.1
 anchor_top = 0.08
 anchor_right = 0.956
-anchor_bottom = 0.546
+anchor_bottom = 0.5
 offset_left = -8.552
 offset_top = 87.04
 offset_right = -8.71713
@@ -96,15 +96,15 @@ anchors_preset = -1
 anchor_left = 0.588
 anchor_top = 0.602
 anchor_right = 0.935
-anchor_bottom = 1.0
+anchor_bottom = 0.922
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 13
 size_flags_vertical = 9
 
 [node name="Sprite2D" type="Sprite2D" parent="reading_scene/OptionB"]
-position = Vector2(120.64, 245.44)
-scale = Vector2(0.6, 0.6)
+position = Vector2(120.64, 200)
+scale = Vector2(0.6, 0.5)
 texture = ExtResource("4_clkuw")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="reading_scene/OptionB"]
@@ -113,7 +113,7 @@ anchors_preset = -1
 anchor_left = 0.1
 anchor_top = 0.08
 anchor_right = 0.969
-anchor_bottom = 0.523
+anchor_bottom = 0.537
 offset_left = -15.984
 offset_top = 84.2448
 offset_right = -16.095
@@ -158,13 +158,21 @@ grow_vertical = 2
 position = Vector2(0, -160)
 scale = Vector2(0.8, 0.8)
 
+[node name="fade" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0.45098)
+position = Vector2(360, 640)
+texture = ExtResource("10_ukchh")
+
 [node name="Upright_Confirm" type="ConfirmationDialog" parent="."]
 transparent_bg = true
 mode = 3
 title = "Upright Reading"
 initial_position = 1
-size = Vector2i(238, 100)
+size = Vector2i(300, 175)
 borderless = true
+theme = ExtResource("4_3y8xl")
 ok_button_text = "Confirm"
 dialog_text = "Upright Text Full Description"
 dialog_autowrap = true
@@ -174,23 +182,135 @@ transparent_bg = true
 mode = 3
 title = "Upright Reading"
 initial_position = 1
-size = Vector2i(240, 100)
+size = Vector2i(300, 175)
 borderless = true
+theme = ExtResource("4_3y8xl")
 ok_button_text = "Confirm"
 dialog_text = "Reverse Text Full Description"
 dialog_autowrap = true
 
-[node name="fade" type="Sprite2D" parent="."]
+[node name="Dialogue_Confirmation_Box_rev" type="AspectRatioContainer" parent="."]
 visible = false
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(1, 1, 1, 0.45098)
-position = Vector2(360, 640)
-texture = ExtResource("10_ukchh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.003, 1.01109)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Dialogue_Confirmation_Box_rev"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Dialogue_Confirmation_Box_rev/AspectRatioContainer"]
+position = Vector2(173.923, 221.419)
+scale = Vector2(1, 0.851406)
+texture = ExtResource("4_clkuw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialogue_Confirmation_Box_rev/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="hint_1" type="Sprite2D" parent="Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer"]
+position = Vector2(106.264, -63.9799)
+texture = ExtResource("6_6b7gs")
+
+[node name="hint_2" type="Sprite2D" parent="Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer"]
+position = Vector2(178.264, -63.9799)
+texture = ExtResource("7_1uhqr")
+
+[node name="hint_3" type="Sprite2D" parent="Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer"]
+position = Vector2(242.264, -63.9799)
+texture = ExtResource("8_k7gnn")
+
+[node name="full_text" type="RichTextLabel" parent="Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer"]
+custom_minimum_size = Vector2(350, 500)
+layout_mode = 2
+theme = ExtResource("4_3y8xl")
+text = "TESTESTEST
+"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Confirm" type="Button" parent="Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Confirm"
+
+[node name="Cancel" type="Button" parent="Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cancel"
+
+[node name="Dialogue_Confirmation_Box_up" type="AspectRatioContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.003, 1.01109)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Dialogue_Confirmation_Box_up"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Dialogue_Confirmation_Box_up/AspectRatioContainer"]
+position = Vector2(173.923, 221.419)
+scale = Vector2(1, 0.851406)
+texture = ExtResource("4_clkuw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialogue_Confirmation_Box_up/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="hint_1" type="Sprite2D" parent="Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer"]
+position = Vector2(106.264, -63.9799)
+texture = ExtResource("6_6b7gs")
+
+[node name="hint_2" type="Sprite2D" parent="Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer"]
+position = Vector2(178.264, -63.9799)
+texture = ExtResource("7_1uhqr")
+
+[node name="hint_3" type="Sprite2D" parent="Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer"]
+position = Vector2(242.264, -63.9799)
+texture = ExtResource("8_k7gnn")
+
+[node name="full_text" type="RichTextLabel" parent="Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer"]
+custom_minimum_size = Vector2(350, 500)
+layout_mode = 2
+theme = ExtResource("4_3y8xl")
+text = "TESTESTEST
+"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Confirm" type="Button" parent="Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Confirm"
+
+[node name="Cancel" type="Button" parent="Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cancel"
 
 [connection signal="card_selected" from="SubViewportContainer/SubViewport/threed_card_root" to="." method="_on_d_card_root_card_selected"]
 [connection signal="pressed" from="reading_scene/OptionA" to="." method="_on_option_a_pressed"]
 [connection signal="pressed" from="reading_scene/OptionB" to="." method="_on_option_b_pressed"]
-[connection signal="canceled" from="Upright_Confirm" to="." method="_on_upright_confirm_canceled"]
-[connection signal="confirmed" from="Upright_Confirm" to="." method="_on_upright_confirmed"]
-[connection signal="canceled" from="Reverse_Confirm" to="." method="_on_upright_confirm_canceled"]
-[connection signal="confirmed" from="Reverse_Confirm" to="." method="_on_reverse_confirmed"]
+[connection signal="pressed" from="Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/HBoxContainer/Confirm" to="." method="_on_reverse_confirmed"]
+[connection signal="pressed" from="Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_upright_confirm_canceled"]
+[connection signal="pressed" from="Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer/HBoxContainer/Confirm" to="." method="_on_upright_confirmed"]
+[connection signal="pressed" from="Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_upright_confirm_canceled"]

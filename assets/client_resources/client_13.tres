@@ -6,11 +6,12 @@
 script = ExtResource("1_5k8ts")
 client_id = 13
 read_this_run = false
-client_name = "Maurice: The Innkeeper"
+client_name = "Maurice"
+client_subtitle = "The Innkeeper"
 reason = 1
 theme = 2
 question = "I’ve served you at the inn many times, now it is me who is seeking your service! My wife has been suffering a dire malaise for a full moon cycle. Our children are but babes, will she recover?"
 reaction_positive = "Thank you sir."
 reaction_negative = "You damned scoundrel, you are nothing but a charlatan!"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/client_5_portrait.png"
+portrait_path = "res://assets/client_portraits/clientimage-maurice-v02.png"

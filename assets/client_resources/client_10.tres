@@ -6,10 +6,12 @@
 script = ExtResource("1_xtdav")
 client_id = 10
 read_this_run = false
-client_name = "Vera: The Healer"
+client_name = "Vera"
+client_subtitle = "The Healer"
 reason = 1
+theme = 0
 question = "I have come to ask for your help. I fear the inquisitor has a malintent towards me.I have seen him, watching me as I forage. I fear his intent, should I take my son and leave this place?"
 reaction_positive = "Are you certain? Thank you sir, I am safe!"
 reaction_negative = "I appreciate your candour sir, I must make haste."
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/client_5_portrait.png"
+portrait_path = "res://assets/client_portraits/clientimage-vera-v02.png"

@@ -137,11 +137,11 @@ texture = ExtResource("11_84ups")
 
 [node name="name_tag_text" type="RichTextLabel" parent="name_tag"]
 offset_left = -140.0
-offset_top = -30.0
+offset_top = -20.0
 offset_right = 340.0
-offset_bottom = 170.0
+offset_bottom = 190.0
 theme = ExtResource("2_54ov5")
-theme_override_font_sizes/normal_font_size = 37
+theme_override_font_sizes/normal_font_size = 41
 text = "Richard"
 
 [connection signal="finished" from="dialogue_window/DialogueVoicePlayer" to="." method="_on_dialogue_voice_player_finished"]

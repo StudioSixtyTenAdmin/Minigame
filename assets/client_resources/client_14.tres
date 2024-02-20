@@ -6,11 +6,12 @@
 script = ExtResource("1_bh2uw")
 client_id = 14
 read_this_run = false
-client_name = "Gregory: The Brewer"
+client_name = "Gregory"
+client_subtitle = "The Brewer"
 reason = 1
 theme = 1
 question = "Will you read the cards and help me sir? The honey harvest has been very meagre, the bees are unhappy, there will be insufficient mead. What can be done to bolster the harvest?"
 reaction_positive = "Hail, there will be mead!"
 reaction_negative = "You have dealt a most auspicious omen, I pray thee are mistaken!"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/client_5_portrait.png"
+portrait_path = "res://assets/client_portraits/clientimage-gregory-v02.png"

@@ -24,6 +24,8 @@ func _on_client_scene__card_reading_options(option_a, option_b):
 	$reading_scene/OptionB/RichTextLabel.text = option_b
 	$Upright_Confirm.dialog_text = option_a
 	$Reverse_Confirm.dialog_text = option_b
+	$Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer/full_text.text = option_a
+	$Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/full_text.text = option_b
 
 
 func _on_client_scene__card_selection_ready():
@@ -40,7 +42,7 @@ func _on_client_scene__card_selection_ready():
 
 func _on_option_a_pressed():
 	$fade.visible = true
-	$Upright_Confirm.visible = true
+	$Dialogue_Confirmation_Box_up.visible = true
 	#finish_reading_scene.emit('a')
 	#print('reading a')
 	#$reading_scene.visible = false
@@ -49,7 +51,7 @@ func _on_option_a_pressed():
 
 func _on_option_b_pressed():
 	$fade.visible = true
-	$Reverse_Confirm.visible = true
+	$Dialogue_Confirmation_Box_rev.visible = true
 	#finish_reading_scene.emit('b')
 	#print('reading b')
 	#$reading_scene.visible = false
@@ -59,6 +61,7 @@ func _on_reverse_confirmed():
 	finish_reading_scene.emit('a')
 	print('reading a')
 	$reading_scene.visible = false
+	$Dialogue_Confirmation_Box_rev.visible = false
 	$fade.visible = false
 
 
@@ -66,8 +69,11 @@ func _on_upright_confirmed():
 	finish_reading_scene.emit('b')
 	print('reading b')
 	$reading_scene.visible = false
+	$Dialogue_Confirmation_Box_up.visible = false
 	$fade.visible = false
 
 
 func _on_upright_confirm_canceled():
+	$Dialogue_Confirmation_Box_rev.visible = false
+	$Dialogue_Confirmation_Box_up.visible = false
 	$fade.visible = false

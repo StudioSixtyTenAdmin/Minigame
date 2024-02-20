@@ -6,11 +6,12 @@
 script = ExtResource("1_m2wf6")
 client_id = 11
 read_this_run = false
-client_name = "Martha: The Death Nurse"
+client_name = "Martha"
+client_subtitle = "The Death Nurse"
 reason = 1
 theme = 3
 question = "I deal in death, I fear it has cast an ill-omen upon me. Ask the cards how I can restore my crop?"
 reaction_positive = "Do you suppose me a fool, sir, unable to work my land? The only foolishness was seeking answers here."
 reaction_negative = "A horse-shoe… death and destruction are in my home and you think a horse-shoe will save me. Be damned!"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/client_5_portrait.png"
+portrait_path = "res://assets/client_portraits/clientimage-martha-v02.png"

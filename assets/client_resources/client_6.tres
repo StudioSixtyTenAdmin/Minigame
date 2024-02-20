@@ -6,11 +6,12 @@
 script = ExtResource("1_lf8cb")
 client_id = 6
 read_this_run = false
-client_name = "Regina: The Playwright’s Maid/Nurse"
+client_name = "Regina"
+client_subtitle = "The Playwright’s Nurse"
 reason = 0
 theme = 2
 question = "Sire, my mother has a hex upon her, I beseech you to tell me how to help her!"
 reaction_positive = "Sire, thank you. I will act upon your words!"
 reaction_negative = "There must be something I can do, I beseech you!"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/client_5_portrait.png"
+portrait_path = "res://assets/client_portraits/clientimage-regina-v02.png"

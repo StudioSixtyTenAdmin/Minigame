@@ -6,10 +6,12 @@
 script = ExtResource("1_ybqc1")
 client_id = 2
 read_this_run = false
-client_name = "Daegal: The Monk"
+client_name = "Daegal"
+client_subtitle = "The Monk"
 reason = 1
+theme = 0
 question = "Sire, I seek your counsel on a most serious and… sacred matter. Madam Brenna has the ear of the Grand Meister, and her an occultist. Has she bewitched him?"
 reaction_positive = "My thanks, I shall continue to monitor her movements."
 reaction_negative = "You scoundrel, are you in cahoots with the witch?"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/client_2_portrait.png"
+portrait_path = "res://assets/client_portraits/clientimage-daegal-v02.png"
