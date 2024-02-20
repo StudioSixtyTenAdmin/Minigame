@@ -31,11 +31,9 @@ func _process(delta):
 		a = b
 	if move_card:
 		current_card.position.y += t*2
-		print(current_card.position.y)
 		for child in $fan_root.get_children():
 			if child != current_card:
 				child.position.y -= t*2
-				print(child.position.y)
 
 func _on_area_3d_mouse_entered():
 	#print('middle')

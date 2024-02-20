@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1mqv6qiw0eli"
-path="res://.godot/imported/clientimage-greggory-v02.png-800eabff8e1c578518b77ef96c398027.ctex"
+uid="uid://cmq1mav51yx6p"
+path="res://.godot/imported/gold-overlay-v02.png-36fa72383bc1bc4efef6f47398aa941c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/client_portraits/clientimage-greggory-v02.png"
-dest_files=["res://.godot/imported/clientimage-greggory-v02.png-800eabff8e1c578518b77ef96c398027.ctex"]
+source_file="res://assets/ui_art/gold-overlay-v02.png"
+dest_files=["res://.godot/imported/gold-overlay-v02.png-36fa72383bc1bc4efef6f47398aa941c.ctex"]
 
 [params]
 

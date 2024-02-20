@@ -19,11 +19,14 @@ func _on_d_card_root_card_selected():
 	$SubViewportContainer.visible = false
 
 
-func _on_client_scene__card_reading_options(option_a, option_b):
-	$reading_scene/OptionA/RichTextLabel.text = option_a
-	$reading_scene/OptionB/RichTextLabel.text = option_b
-	$Upright_Confirm.dialog_text = option_a
-	$Reverse_Confirm.dialog_text = option_b
+func _on_client_scene__card_reading_options(option_a, option_b, up_key_1, up_key_2, up_key_3, rev_key_1, rev_key_2, rev_key_3):
+	$reading_scene/OptionA/keyword_1.text = "[center]"+up_key_1+"[/center]"
+	$reading_scene/OptionA/keyword_2.text = "[center]"+up_key_2+"[/center]"
+	$reading_scene/OptionA/keyword_3.text = "[center]"+up_key_3+"[/center]"
+	$reading_scene/OptionB/keyword_1.text = "[center]"+rev_key_1+"[/center]"
+	$reading_scene/OptionB/keyword_2.text = "[center]"+rev_key_2+"[/center]"
+	$reading_scene/OptionB/keyword_3.text = "[center]"+rev_key_3+"[/center]"
+	
 	$Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer/full_text.text = option_a
 	$Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/full_text.text = option_b
 

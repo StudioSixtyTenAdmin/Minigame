@@ -20,7 +20,7 @@ var past_clients = []
 var past_events = []
 
 signal card_selection_ready
-signal card_reading_options(option_a, option_b)
+signal card_reading_options(option_a, option_b, up_key_1, up_key_2, up_key_3, rev_key_1, rev_key_2, rev_key_3)
 
 signal sel_done
 
@@ -114,9 +114,11 @@ func _new_event():
 	past_events.append(event_id)
 	
 	#Load Event
+	print('Loading Event - Event ID:', event_id)
 	var event_path = 'res://assets/random_event_resources/event_'+str(event_id)+'.tres'
 	#print(event_path)
 	var event_resource = ResourceLoader.load(event_path)
+	print('Event Text: ',event_resource.event_text)
 	
 	#Little timeout for a pause between clients
 	var t = Timer.new()
@@ -174,30 +176,30 @@ func _reader_fade(in_true):
 	print('READDXER',in_true)
 	var t_4 = Timer.new()
 	var t_5 = Timer.new()
-	add_child(t_4)
-	add_child(t_5)
 	
 	if in_true:
 		print('CutIn Modulate starting: ', $cut_in.modulate.a)
 		$dialogue_box/name_tag.visible = false
 		$cut_in.visible = true
+		add_child(t_4)
 		while $cut_in.modulate.a <= 1:
 			$cut_in.modulate.a += 0.1
 			t_4.start(0.003)
 			await t_4.timeout
+		t_4.queue_free()
 			
 	if !in_true:
 		print('CutIn Modulate starting: ', $cut_in.modulate.a)
-		$cut_in.visible = false
+		add_child(t_5)
 		while $cut_in.modulate.a >= 0:
 			$cut_in.modulate.a -= 0.1
-			t_4.start(0.003)
+			t_5.start(0.003)
 			await t_5.timeout
+		t_5.queue_free()
+		$cut_in.visible = false
 		
 		$dialogue_box/name_tag.visible = true
 	
-	t_4.queue_free()
-	t_5.queue_free()
 
 
 func _dialogue_tree(dialogue_count):
@@ -215,7 +217,7 @@ func _dialogue_tree(dialogue_count):
 		card_selection_ready.emit()
 		var card_node = $"../reading_scene/reading_scene/AspectRatioContainer2/card"
 
-		card_reading_options.emit(card_node.reading_upright,card_node.reading_reversed)
+		card_reading_options.emit(card_node.reading_upright,card_node.reading_reversed, card_node.upright_keyword_1, card_node.upright_keyword_2, card_node.upright_keyword_3, card_node.reversed_keyword_1, card_node.reversed_keyword_2, card_node.reversed_keyword_3)
 		var flavour = _card_flavour_calculator(card_node)
 		var flavour_text_upright
 		var flavour_text_reversed
@@ -345,21 +347,21 @@ func _update_bars(new_reputation, new_karma, new_gold):
 	if new_reputation >=1:
 		for i in new_reputation:
 			$reputation_bar.value += 1
-			print('rep',$reputation_bar.value)
+			#print('rep',$reputation_bar.value)
 			t_1.start(0.03)
 			await t_1.timeout
 	
 	if new_karma >=1: 
 		for i in new_karma:
 			$karma_bar.value += 1
-			print('kar',$karma_bar.value)
+			#print('kar',$karma_bar.value)
 			t_2.start(0.03)
 			await t_2.timeout
 	
 	if new_gold >= 1:
 		for i in new_gold:
 			$gold_bar.value += 1
-			print('gold',$gold_bar.value)
+			#print('gold',$gold_bar.value)
 			t_3.start(0.03)
 			await t_3.timeout
 
@@ -367,7 +369,7 @@ func _update_bars(new_reputation, new_karma, new_gold):
 		var neg_new_reputation = abs(new_reputation)
 		for i in neg_new_reputation:
 			$reputation_bar.value -= 1
-			print('rep',$reputation_bar.value)
+			#print('rep',$reputation_bar.value)
 			t_1.start(0.03)
 			await t_1.timeout
 	
@@ -375,7 +377,7 @@ func _update_bars(new_reputation, new_karma, new_gold):
 		var neg_new_karma = abs(new_karma)
 		for i in neg_new_karma:
 			$karma_bar.value -= 1
-			print('kar',$karma_bar.value)
+			#print('kar',$karma_bar.value)
 			t_2.start(0.03)
 			await t_2.timeout
 	
@@ -383,7 +385,7 @@ func _update_bars(new_reputation, new_karma, new_gold):
 		var neg_new_gold = abs(new_gold)
 		for i in neg_new_gold:
 			$gold_bar.value -= 1
-			print('gold',$gold_bar.value)
+			#print('gold',$gold_bar.value)
 			t_3.start(0.03)
 			await t_3.timeout
 

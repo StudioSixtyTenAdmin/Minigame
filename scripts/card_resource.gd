@@ -12,6 +12,15 @@ class_name CardResource
 @export_enum('+', '-', '=') var reversed_practical: int
 @export_enum('+', '-', '=') var reversed_spiritual: int
 
+#Keywords
+@export var upright_keyword_1: String
+@export var upright_keyword_2: String
+@export var upright_keyword_3: String
+
+@export var reversed_keyword_1: String
+@export var reversed_keyword_2: String
+@export var reversed_keyword_3: String
+
 #Additional text for each theme
 @export var upright_love: String
 @export var reversed_love: String

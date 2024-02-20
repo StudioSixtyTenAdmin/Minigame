@@ -66,13 +66,15 @@ func break_into_sentences(paragraph: String) -> Array:
 		for delimiter in delimiters:
 			if letter == delimiter:
 				sentence_delimiters.push_back(delimiter)
+				
 
 	# Replace all delimiters with a unique delimiter and store the original delimiters
-	for delimiter in delimiters:		
+	for delimiter in delimiters:
 		var temp_paragraph = paragraph.replace(delimiter, "<DELIM>")
 		if temp_paragraph != paragraph:
 			paragraph = temp_paragraph
 	print(sentence_delimiters)
+	
 	# Split the paragraph into sentences based on the unique delimiter
 	var temp_sentences = paragraph.split("<DELIM>")
 
@@ -82,14 +84,14 @@ func break_into_sentences(paragraph: String) -> Array:
 		if sentence != "":
 			sentence += sentence_delimiters[i]
 			sentences.append(sentence)
-
+	
 	return sentences
 
 func _next_text(message):
-	
 	var sentance_array = break_into_sentences(message)
 
 	for sentance in sentance_array:
+		
 		#one path if this isn't the last sentance in paragraph
 		if sentance != sentance_array[sentance_array.size()-1]:
 			$text_continue_sub.visible = false
@@ -164,6 +166,7 @@ func convert_type_speed(parent_speed):
 		return 0.002
 
 func _update_message(message: String):
+	print('In Update Message: ', message)
 	# Pause detection logic
 	content.bbcode_text = _calc.extract_pauses_from_string(message)
 	content.visible_characters = 0

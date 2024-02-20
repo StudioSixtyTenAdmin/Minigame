@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bkgg2b2f7xs4x"]
+[gd_scene load_steps=20 format=3 uid="uid://bkgg2b2f7xs4x"]
 
 [ext_resource type="PackedScene" uid="uid://dhj7wm20ug320" path="res://scenes/clients/client_root.tscn" id="1_bgsk8"]
 [ext_resource type="Script" path="res://scripts/client_scene_script.gd" id="1_gd6md"]
@@ -8,49 +8,17 @@
 [ext_resource type="Resource" uid="uid://c8d87b4hcdkke" path="res://assets/client_resources/client_1.tres" id="3_0wk6q"]
 [ext_resource type="Texture2D" uid="uid://c6baas8jhsd7g" path="res://assets/ui_art/reader-table-overlay.png" id="6_hhvfn"]
 [ext_resource type="PackedScene" uid="uid://3qxknx1wgh4u" path="res://scenes/dialogue_box.tscn" id="6_wapug"]
-[ext_resource type="Texture2D" uid="uid://cvyq1ahcwhwfk" path="res://assets/ui_art/karma-empty.png" id="7_1hctx"]
+[ext_resource type="Texture2D" uid="uid://l8hullx64ye7" path="res://assets/ui_art/gold-empty-v03.png" id="7_1mkm6"]
+[ext_resource type="Texture2D" uid="uid://hs036yrd6q77" path="res://assets/ui_art/gold-full-v03.png" id="8_jobbe"]
 [ext_resource type="Texture2D" uid="uid://qv36gpbmcu3o" path="res://assets/ui_art/reader-cutin-01.png" id="8_q10uc"]
-[ext_resource type="Texture2D" uid="uid://ck4et34s76k4p" path="res://assets/ui_art/karma-full.png" id="8_ru5ip"]
-[ext_resource type="Texture2D" uid="uid://fewfoio1fn11" path="res://assets/ui_art/karma-icon-1.png" id="9_ip3oo"]
+[ext_resource type="Texture2D" uid="uid://driuwnkdnndar" path="res://assets/ui_art/karma-empty-v03.png" id="9_ms5pr"]
 [ext_resource type="Texture2D" uid="uid://2h30d56jmjeh" path="res://assets/ui_art/reputation-empty.png" id="9_v7ny2"]
 [ext_resource type="Texture2D" uid="uid://bqmhsa88dijpr" path="res://assets/ui_art/reputation-full.png" id="10_3qprt"]
-[ext_resource type="Texture2D" uid="uid://ctcasf6wkgvpe" path="res://assets/ui_art/karma-icon-2.png" id="10_xxcwo"]
-[ext_resource type="Texture2D" uid="uid://cn6al6j6ay3x" path="res://assets/ui_art/gold-empty.png" id="11_p73ih"]
-[ext_resource type="Texture2D" uid="uid://dajh87snoy0ym" path="res://assets/ui_art/gold-icon-1.png" id="12_40bmd"]
-[ext_resource type="Texture2D" uid="uid://mvbqsi0dg7b" path="res://assets/ui_art/gold-full.png" id="12_kpjt0"]
-[ext_resource type="Texture2D" uid="uid://cscrf2gsg25vw" path="res://assets/ui_art/gold-icon-2.png" id="13_jh872"]
+[ext_resource type="Texture2D" uid="uid://caxwt0ljw7x6q" path="res://assets/ui_art/karma-full-v03.png" id="10_o0qg4"]
+[ext_resource type="Texture2D" uid="uid://c0kje3g5jtu1v" path="res://assets/ui_art/karma-overlay-v03.png" id="18_nosq8"]
+[ext_resource type="Texture2D" uid="uid://drow33wjcavtv" path="res://assets/ui_art/gold-overlay-v03.png" id="19_1ewvl"]
 [ext_resource type="Texture2D" uid="uid://dfs8yt6svojwm" path="res://assets/ui_art/crunch-randomevent.png" id="19_8f0o4"]
-[ext_resource type="Texture2D" uid="uid://dmy5ohxuk8c3n" path="res://assets/ui_art/reputation_icon.png" id="19_l75sk"]
 [ext_resource type="PackedScene" uid="uid://dt3ap5pj3gt4w" path="res://scenes/player_board.tscn" id="20_gnm8i"]
-[ext_resource type="Texture2D" uid="uid://mqypvfdrmsbe" path="res://assets/ui_art/header-emptyresources.png" id="21_4fia8"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_i0w7o"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_ip3oo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_xxcwo")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_fmm83"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_40bmd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_jh872")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
 
 [node name="client_scene" type="Control"]
 visibility_layer = 2
@@ -63,6 +31,7 @@ grow_vertical = 2
 script = ExtResource("1_gd6md")
 
 [node name="overlay" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_pr0by")
 centered = false
 
@@ -89,12 +58,6 @@ client_resource = ExtResource("3_0wk6q")
 texture = ExtResource("6_hhvfn")
 centered = false
 
-[node name="Header-emptyresources" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(360, 616)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("21_4fia8")
-
 [node name="gold_bar" type="TextureProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -102,33 +65,43 @@ anchor_left = 1.0
 anchor_top = 0.05
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -320.0
-offset_top = 56.0
-offset_right = 2255.0
-offset_bottom = 4449.0
+offset_left = -288.625
+offset_top = 50.625
+offset_right = 2286.38
+offset_bottom = 4443.63
 grow_horizontal = 0
 grow_vertical = 2
-scale = Vector2(0.9, 0.9)
+scale = Vector2(0.25, 0.25)
 value = 40.0
 fill_mode = 3
-texture_under = ExtResource("11_p73ih")
-texture_progress = ExtResource("12_kpjt0")
+texture_under = ExtResource("7_1mkm6")
+texture_progress = ExtResource("8_jobbe")
 
 [node name="karma_bar" type="TextureProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.05
 anchor_bottom = 0.5
-offset_left = 72.0
-offset_top = 64.0
-offset_right = 2647.0
-offset_bottom = 4457.0
+offset_left = 103.375
+offset_top = 50.625
+offset_right = 2678.38
+offset_bottom = 4443.63
 grow_vertical = 2
-scale = Vector2(0.9, 0.9)
-value = 70.0
+scale = Vector2(0.25, 0.25)
+value = 25.0
 fill_mode = 3
-texture_under = ExtResource("7_1hctx")
-texture_progress = ExtResource("8_ru5ip")
+texture_under = ExtResource("9_ms5pr")
+texture_progress = ExtResource("10_o0qg4")
+
+[node name="Karma-overlay-v03" type="Sprite2D" parent="."]
+position = Vector2(176, 216)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("18_nosq8")
+
+[node name="Gold-overlay-v03" type="Sprite2D" parent="."]
+position = Vector2(539.375, 214.625)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("19_1ewvl")
 
 [node name="reputation_bar" type="TextureProgressBar" parent="."]
 layout_mode = 1
@@ -142,13 +115,6 @@ grow_horizontal = 2
 scale = Vector2(0.2, 0.2)
 texture_under = ExtResource("9_v7ny2")
 texture_progress = ExtResource("10_3qprt")
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(184, 192)
-scale = Vector2(0.2, 0.19)
-sprite_frames = SubResource("SpriteFrames_i0w7o")
-autoplay = "default"
 
 [node name="Label3" type="Label" parent="."]
 visible = false
@@ -202,14 +168,6 @@ grow_vertical = 0
 theme = ExtResource("2_nocis")
 text = "Reputation"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(536, 192)
-scale = Vector2(0.2, 0.19)
-sprite_frames = SubResource("SpriteFrames_fmm83")
-autoplay = "default"
-frame_progress = 0.579177
-
 [node name="random_event" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(360, 672)
@@ -222,7 +180,10 @@ position = Vector2(360, 640)
 texture = ExtResource("8_q10uc")
 
 [node name="dialogue_box" parent="." instance=ExtResource("6_wapug")]
+visible = false
 layout_mode = 1
+offset_top = 50.0
+offset_bottom = 50.0
 
 [node name="gold_slider" type="HSlider" parent="."]
 visible = false
@@ -281,12 +242,6 @@ offset_right = 64.0
 offset_bottom = 64.0
 text = "Main
 Menu"
-
-[node name="ReputationIcon" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(360, 120)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("19_l75sk")
 
 [node name="player_board" parent="." instance=ExtResource("20_gnm8i")]
 

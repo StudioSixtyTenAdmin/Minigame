@@ -10,6 +10,13 @@ var count = 0
 var reading_upright
 var reading_reversed
 
+var upright_keyword_1
+var upright_keyword_2
+var upright_keyword_3
+var reversed_keyword_1
+var reversed_keyword_2
+var reversed_keyword_3
+
 var upright_validation
 var upright_practical
 var upright_spiritual
@@ -54,6 +61,13 @@ func _new_card():
 	$Path2D/PathFollow2D/GboxCardImage1.texture = card_art
 	reading_upright = card_resource.upright_reading
 	reading_reversed = card_resource.reversed_reading
+	
+	upright_keyword_1 = card_resource.upright_keyword_1
+	upright_keyword_2 = card_resource.upright_keyword_2
+	upright_keyword_3 = card_resource.upright_keyword_3
+	reversed_keyword_1 = card_resource.reversed_keyword_1
+	reversed_keyword_2 = card_resource.reversed_keyword_2
+	reversed_keyword_3 = card_resource.reversed_keyword_3
 	
 	upright_validation = card_resource.upright_validation
 	upright_practical = card_resource.upright_practical

@@ -60,24 +60,6 @@ position = Vector2(120, 200)
 scale = Vector2(0.6, 0.5)
 texture = ExtResource("4_clkuw")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="reading_scene/OptionA"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.08
-anchor_right = 0.956
-anchor_bottom = 0.5
-offset_left = -8.552
-offset_top = 87.04
-offset_right = -8.71713
-offset_bottom = -0.488007
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme = ExtResource("4_3y8xl")
-text = "Upright"
-scroll_active = false
-
 [node name="hint_1" type="Sprite2D" parent="reading_scene/OptionA"]
 position = Vector2(48, 48)
 texture = ExtResource("6_6b7gs")
@@ -89,6 +71,48 @@ texture = ExtResource("7_1uhqr")
 [node name="hint_3" type="Sprite2D" parent="reading_scene/OptionA"]
 position = Vector2(192, 48)
 texture = ExtResource("8_k7gnn")
+
+[node name="keyword_1" type="RichTextLabel" parent="reading_scene/OptionA"]
+custom_minimum_size = Vector2(220, 120)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 80.0
+offset_right = 228.0
+offset_bottom = 200.0
+mouse_filter = 1
+theme = ExtResource("4_3y8xl")
+bbcode_enabled = true
+text = "TESTESTEST
+"
+fit_content = true
+
+[node name="keyword_2" type="RichTextLabel" parent="reading_scene/OptionA"]
+custom_minimum_size = Vector2(220, 120)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 184.0
+offset_right = 228.0
+offset_bottom = 304.0
+mouse_filter = 1
+theme = ExtResource("4_3y8xl")
+bbcode_enabled = true
+text = "TESTESTEST
+"
+fit_content = true
+
+[node name="keyword_3" type="RichTextLabel" parent="reading_scene/OptionA"]
+custom_minimum_size = Vector2(220, 120)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 280.0
+offset_right = 228.0
+offset_bottom = 400.0
+mouse_filter = 1
+theme = ExtResource("4_3y8xl")
+bbcode_enabled = true
+text = "TESTESTEST
+"
+fit_content = true
 
 [node name="OptionB" type="Button" parent="reading_scene"]
 layout_mode = 1
@@ -107,24 +131,6 @@ position = Vector2(120.64, 200)
 scale = Vector2(0.6, 0.5)
 texture = ExtResource("4_clkuw")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="reading_scene/OptionB"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.08
-anchor_right = 0.969
-anchor_bottom = 0.537
-offset_left = -15.984
-offset_top = 84.2448
-offset_right = -16.095
-offset_bottom = 38.3248
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme = ExtResource("4_3y8xl")
-text = "Reversed"
-scroll_active = false
-
 [node name="hint_1" type="Sprite2D" parent="reading_scene/OptionB"]
 position = Vector2(48.64, 45.44)
 texture = ExtResource("6_6b7gs")
@@ -136,6 +142,48 @@ texture = ExtResource("7_1uhqr")
 [node name="hint_3" type="Sprite2D" parent="reading_scene/OptionB"]
 position = Vector2(184.64, 45.44)
 texture = ExtResource("8_k7gnn")
+
+[node name="keyword_1" type="RichTextLabel" parent="reading_scene/OptionB"]
+custom_minimum_size = Vector2(220, 120)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 80.0
+offset_right = 228.0
+offset_bottom = 200.0
+mouse_filter = 1
+theme = ExtResource("4_3y8xl")
+bbcode_enabled = true
+text = "TESTESTEST
+"
+fit_content = true
+
+[node name="keyword_2" type="RichTextLabel" parent="reading_scene/OptionB"]
+custom_minimum_size = Vector2(220, 120)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 184.0
+offset_right = 228.0
+offset_bottom = 304.0
+mouse_filter = 1
+theme = ExtResource("4_3y8xl")
+bbcode_enabled = true
+text = "TESTESTEST
+"
+fit_content = true
+
+[node name="keyword_3" type="RichTextLabel" parent="reading_scene/OptionB"]
+custom_minimum_size = Vector2(220, 120)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 280.0
+offset_right = 228.0
+offset_bottom = 400.0
+mouse_filter = 1
+theme = ExtResource("4_3y8xl")
+bbcode_enabled = true
+text = "TESTESTEST
+"
+fit_content = true
 
 [node name="Background" type="ColorRect" parent="reading_scene"]
 visible = false

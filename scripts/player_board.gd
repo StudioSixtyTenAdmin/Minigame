@@ -66,7 +66,6 @@ func _move_player():
 	print(place_text)
 	_tax_tracker()
 	_distance_tracker()
-	print(player_place)
 	
 	#Max number of spaces moved before
 	#you have the choice to move
