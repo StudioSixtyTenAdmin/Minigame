@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_4snxk")
 event_id = 9
+event_alliance = "Negative"
 event_text = "You are arrested and questioned for heresy, no charge is brought but suspicion has cast doubt on your character."
 karma_change = -3
 gold_change = -3

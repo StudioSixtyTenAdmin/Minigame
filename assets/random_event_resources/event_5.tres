@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_jpwnc")
 event_id = 5
+event_alliance = "Positive"
 event_text = "You catch more fish than you can eat, you can sell the surplus at market."
 karma_change = 1
 gold_change = 3

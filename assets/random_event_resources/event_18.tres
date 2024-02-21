@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://ckdr3cnpscg8s"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_cq01k"]
+
+[resource]
+script = ExtResource("1_cq01k")
+event_id = 18
+event_alliance = "Neutral"
+event_text = "Walking home under a high moon, you see Meister Craven whispering with the Lord’s page."
+karma_change = 1
+gold_change = 0
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

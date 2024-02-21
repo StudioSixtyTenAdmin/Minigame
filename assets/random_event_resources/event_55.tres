@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://qvqi6k14m244"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_wtmmt"]
+
+[resource]
+script = ExtResource("1_wtmmt")
+event_id = 55
+event_alliance = "Positive"
+event_text = "Your nanny-goat has weaned it’s kid and is ready to be sold."
+karma_change = 2
+gold_change = 3
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

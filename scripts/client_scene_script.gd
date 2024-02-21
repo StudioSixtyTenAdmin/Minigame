@@ -164,6 +164,7 @@ func _new_client():
 	t.start(1)
 	await t.timeout
 	$client_parent/Control/client.visible = true
+	_client_fade(true)
 	$dialogue_box.visible = true
 	$dialogue_box/name_tag.visible = true
 	$dialogue_box/name_tag/name_tag_text.text = client.client_resource.client_name
@@ -172,8 +173,33 @@ func _new_client():
 	_dialogue_tree(1)
 	
 
+#Client Fade
+func _client_fade(in_true):
+	var t_4 = Timer.new()
+	var t_5 = Timer.new()
+	
+	if in_true:
+		print('client Modulate starting: ', $client_parent/Control/client/GboxClientPortrait1.modulate.a)
+		$client_parent/Control/client/GboxClientPortrait1.visible = true
+		add_child(t_4)
+		while $client_parent/Control/client/GboxClientPortrait1.modulate.a <= 1:
+			$client_parent/Control/client/GboxClientPortrait1.modulate.a += 0.1
+			t_4.start(0.003)
+			await t_4.timeout
+		t_4.queue_free()
+			
+	if !in_true:
+		print('CutIn Modulate starting: ', $client_parent/Control/client/GboxClientPortrait1.modulate.a)
+		add_child(t_5)
+		while $client_parent/Control/client/GboxClientPortrait1.modulate.a >= 0:
+			$client_parent/Control/client/GboxClientPortrait1.modulate.a -= 0.1
+			t_5.start(0.003)
+			await t_5.timeout
+		t_5.queue_free()
+		$client_parent/Control/client/GboxClientPortrait1.visible = false
+
+#Reader Fade
 func _reader_fade(in_true):
-	print('READDXER',in_true)
 	var t_4 = Timer.new()
 	var t_5 = Timer.new()
 	

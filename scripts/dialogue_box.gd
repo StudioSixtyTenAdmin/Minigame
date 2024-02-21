@@ -136,6 +136,7 @@ func _on_text_continue_main_pressed():
 	
 	#Reading Ends Here
 	if count == 4:
+		get_parent()._client_fade(false)
 		get_parent().turn()
 		count = 1
 	

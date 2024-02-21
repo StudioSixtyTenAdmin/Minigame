@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://pe88b65kipje"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_va24w"]
+
+[resource]
+script = ExtResource("1_va24w")
+event_id = 53
+event_alliance = "Neutral"
+event_text = "You have an overwhelming urge to climb the giant oak and as you sit in the canapy you're filled with deep joy"
+karma_change = 2
+gold_change = 0
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

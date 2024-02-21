@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://bcccdyhtkfgyi"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_fywpj"]
+
+[resource]
+script = ExtResource("1_fywpj")
+event_id = 43
+event_alliance = "Neutral"
+event_text = "You are followed by a young woman, she claims to have the gift and requests you teach her the ways of the tarot. "
+karma_change = 0
+gold_change = 0
+rep_change = 2
+karma_gain = false
+gold_gain = false
+rep_gain = false

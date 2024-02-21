@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://bomksn2uiwr0u"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_5uvv3"]
+
+[resource]
+script = ExtResource("1_5uvv3")
+event_id = 60
+event_alliance = "Positive"
+event_text = "The Minstrel has made a merry song, lauding your talents. Business will be brisk!"
+karma_change = 2
+gold_change = 4
+rep_change = 5
+karma_gain = false
+gold_gain = false
+rep_gain = false

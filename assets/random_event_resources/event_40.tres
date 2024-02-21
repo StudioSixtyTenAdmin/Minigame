@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://coru0n8dhx602"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_8obri"]
+
+[resource]
+script = ExtResource("1_8obri")
+event_id = 40
+event_alliance = "Negative"
+event_text = "You receive a scroll from the Ministry of Augur. You must renew your charter to practise."
+karma_change = -1
+gold_change = -2
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

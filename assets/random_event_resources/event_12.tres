@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_mh6ka")
 event_id = 12
+event_alliance = "Positive"
 event_text = "Spring has arrived after an arduous winter, the Spring Festival will be excellent for business!"
 karma_change = 2
 gold_change = 4

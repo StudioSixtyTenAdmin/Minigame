@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://crp3t8jmj2jdl"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_nd5if"]
+
+[resource]
+script = ExtResource("1_nd5if")
+event_id = 28
+event_alliance = "Positive"
+event_text = "On your daily walk you find a horseshoe, a positive omen and a saving of ¼ of your next smithy bill."
+karma_change = 1
+gold_change = 1
+rep_change = 1
+karma_gain = false
+gold_gain = false
+rep_gain = false

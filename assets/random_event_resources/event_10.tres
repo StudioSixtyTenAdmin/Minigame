@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_4snxk")
 event_id = 10
+event_alliance = "Negative"
 event_text = "The body of a stranger has been found, he had been enquiring after you in town… People are suspicious of you."
 karma_change = -2
 gold_change = -3

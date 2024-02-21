@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://bhf6owcgy0ku8"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_jqiem"]
+
+[resource]
+script = ExtResource("1_jqiem")
+event_id = 25
+event_alliance = "Negative"
+event_text = "There is an air of discontent among the townsfolk, they are hungry and rents are rising. A violent skirmish between the tenants and the sheriff's men leads to fire damage to your wagon"
+karma_change = -5
+gold_change = -4
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

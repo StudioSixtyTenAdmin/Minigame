@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://2h4chsqb6acc"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_jabny"]
+
+[resource]
+script = ExtResource("1_jabny")
+event_id = 31
+event_alliance = "Positive"
+event_text = "The repairs to your wagon are complete, costing less than expected."
+karma_change = 0
+gold_change = 1
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

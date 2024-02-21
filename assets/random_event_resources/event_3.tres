@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_8c14s")
 event_id = 3
+event_alliance = "Positive"
 event_text = "News of your skills is spreading, people of power are seeking your services."
 karma_change = 3
 gold_change = 2

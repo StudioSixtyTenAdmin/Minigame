@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://b7jrfhxlq2d45"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_8t7xo"]
+
+[resource]
+script = ExtResource("1_8t7xo")
+event_id = 46
+event_alliance = "Neutral"
+event_text = "You overhear the Baker tell the Innkeeper that he is increasing his prices."
+karma_change = 0
+gold_change = -1
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

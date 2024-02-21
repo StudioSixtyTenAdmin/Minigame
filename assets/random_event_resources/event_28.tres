@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://bko8fnj037cic"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_da4y2"]
+
+[resource]
+script = ExtResource("1_da4y2")
+event_id = 27
+event_alliance = "Neutral"
+event_text = "A friendly dog visits your wagon, leaving you with a sense of deep contentment."
+karma_change = 2
+gold_change = 0
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://pejfxooxpgk3"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_bung1"]
+
+[resource]
+script = ExtResource("1_bung1")
+event_id = 48
+event_alliance = "Neutral"
+event_text = "You see a rainbow which gives you a great sense of peace."
+karma_change = 1
+gold_change = 0
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

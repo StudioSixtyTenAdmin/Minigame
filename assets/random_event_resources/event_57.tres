@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://1x5g6mnaylt5"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_lbff5"]
+
+[resource]
+script = ExtResource("1_lbff5")
+event_id = 57
+event_alliance = "Positive"
+event_text = "You have been invited to meet the Grand-Meister, he has been impressed by your conduct."
+karma_change = 3
+gold_change = 1
+rep_change = 3
+karma_gain = false
+gold_gain = false
+rep_gain = false

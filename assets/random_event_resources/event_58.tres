@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://dxyxf3g1r5tfd"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_ud8rx"]
+
+[resource]
+script = ExtResource("1_ud8rx")
+event_id = 58
+event_alliance = "Positive"
+event_text = "There has been a bumper grain harvest and prices are low, you can fill your store for winter."
+karma_change = 3
+gold_change = 4
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

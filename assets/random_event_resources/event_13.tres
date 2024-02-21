@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_8c14s")
 event_id = 13
+event_alliance = "Neutral"
 event_text = "News of witch trials in the neighbouring villages has reached you. Vigilance is key."
 karma_change = -1
 gold_change = 0

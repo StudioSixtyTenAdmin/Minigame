@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://d2lytatp70qjv"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_c8ipo"]
+
+[resource]
+script = ExtResource("1_c8ipo")
+event_id = 61
+event_alliance = "Positive"
+event_text = "Your goat has fetched first prize at the Spring Fair."
+karma_change = 1
+gold_change = 3
+rep_change = 2
+karma_gain = false
+gold_gain = false
+rep_gain = false

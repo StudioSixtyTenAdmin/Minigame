@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://cprqc20320u0g"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_jgdh0"]
+
+[resource]
+script = ExtResource("1_jgdh0")
+event_id = 30
+event_alliance = "Negative"
+event_text = "An electrical storm has caused a fire in the woods, your store has been destroyed. None of your supplies can be saved!"
+karma_change = -1
+gold_change = -6
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

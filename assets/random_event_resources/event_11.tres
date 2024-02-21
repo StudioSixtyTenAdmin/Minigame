@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_w062a")
 event_id = 11
+event_alliance = "Negative"
 event_text = "The fish in your stew was contaminated, you have a violent fever!"
 karma_change = -4
 gold_change = -3

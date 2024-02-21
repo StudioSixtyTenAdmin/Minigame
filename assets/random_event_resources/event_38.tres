@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://06pwbm41x1vb"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_71o8g"]
+
+[resource]
+script = ExtResource("1_71o8g")
+event_id = 38
+event_alliance = "Neutral"
+event_text = "The Pardoner has come to town selling his relics and pardons, he will likely have news from afar."
+karma_change = 1
+gold_change = -1
+rep_change = 1
+karma_gain = false
+gold_gain = false
+rep_gain = false

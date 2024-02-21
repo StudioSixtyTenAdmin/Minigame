@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://cacvw5d4kr00a"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_hhquw"]
+
+[resource]
+script = ExtResource("1_hhquw")
+event_id = 33
+event_alliance = "Neutral"
+event_text = "While foraging, you meet an elderly man who shows you where sage grows readily. "
+karma_change = 1
+gold_change = 0
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

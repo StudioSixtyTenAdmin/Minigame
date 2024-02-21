@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://3cr434n4m5uk"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_nyi5v"]
+
+[resource]
+script = ExtResource("1_nyi5v")
+event_id = 54
+event_alliance = "Positive"
+event_text = "Spring has arrived after an arduous winter, the Spring Festival will be excellent for business!"
+karma_change = 2
+gold_change = 4
+rep_change = 3
+karma_gain = false
+gold_gain = false
+rep_gain = false

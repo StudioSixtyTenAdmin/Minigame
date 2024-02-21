@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://bdwq0tttcgsiw"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_hjmmt"]
+
+[resource]
+script = ExtResource("1_hjmmt")
+event_id = 50
+event_alliance = "Neutral"
+event_text = "You find a patch of lions mane mushrooms and prepare a delicious omlette."
+karma_change = 1
+gold_change = 0
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://c1kqcj8tpsxfi"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_m6ugv"]
+
+[resource]
+script = ExtResource("1_m6ugv")
+event_id = 44
+event_alliance = "Neutral"
+event_text = "You are fatigued after the Spring Festival, you must meditate for a spell before Reading."
+karma_change = 0
+gold_change = -2
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

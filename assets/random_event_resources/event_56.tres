@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://slcrrdrh3rk5"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_ftywu"]
+
+[resource]
+script = ExtResource("1_ftywu")
+event_id = 56
+event_alliance = "Positive"
+event_text = "The wound on your leg has healed well, you have no further need of the healer."
+karma_change = 2
+gold_change = 1
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

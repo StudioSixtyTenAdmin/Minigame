@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_4snxk")
 event_id = 7
+event_alliance = "Positive"
 event_text = "You have been invited as an honoured guest to the wedding of the Earl’s daughter, in thanks for your wise counsel."
 karma_change = 4
 gold_change = 0

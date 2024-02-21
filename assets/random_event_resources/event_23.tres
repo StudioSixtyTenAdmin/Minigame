@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://b1g775csvkx1u"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_g6rk0"]
+
+[resource]
+script = ExtResource("1_g6rk0")
+event_id = 23
+event_alliance = "Neutral"
+event_text = "You’ve caught the eye of the baker’s daughter, Helga, she is positively smitten!"
+karma_change = 0
+gold_change = 0
+rep_change = -1
+karma_gain = false
+gold_gain = false
+rep_gain = false

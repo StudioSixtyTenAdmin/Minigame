@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://c2cdmckmm3uix"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_6t6sv"]
+
+[resource]
+script = ExtResource("1_6t6sv")
+event_id = 39
+event_alliance = "Negative"
+event_text = "Your trusty steed has been stolen by bandits!"
+karma_change = -2
+gold_change = -4
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

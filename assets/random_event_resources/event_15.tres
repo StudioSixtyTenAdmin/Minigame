@@ -5,9 +5,10 @@
 [resource]
 script = ExtResource("1_jpwnc")
 event_id = 15
+event_alliance = "Negative"
 event_text = "You have been squatting on the Earl’s land. You receive a hefty rent bill."
-karma_change = -5
-gold_change = -10
+karma_change = -4
+gold_change = -3
 rep_change = -3
 karma_gain = false
 gold_gain = false

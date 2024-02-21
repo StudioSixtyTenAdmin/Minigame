@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://hi88t1jd1ian"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_2d6a2"]
+
+[resource]
+script = ExtResource("1_2d6a2")
+event_id = 51
+event_alliance = "Neutral"
+event_text = "The beekeeper gives you a jar of dandilion honey and a beeswax candle."
+karma_change = 0
+gold_change = 2
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

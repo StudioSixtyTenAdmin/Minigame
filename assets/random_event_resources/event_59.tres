@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://bomjmxu6bl303"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_0ombo"]
+
+[resource]
+script = ExtResource("1_0ombo")
+event_id = 59
+event_alliance = "Positive"
+event_text = "You find a rare and prized herb, you prepare a powerful elixir."
+karma_change = 3
+gold_change = 5
+rep_change = 2
+karma_gain = false
+gold_gain = false
+rep_gain = false

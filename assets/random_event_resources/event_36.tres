@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://dfxstsu1bihx4"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_k0tyt"]
+
+[resource]
+script = ExtResource("1_k0tyt")
+event_id = 35
+event_alliance = "Positive"
+event_text = "The bandit who damaged your wagon has been captured and paid a fine to you!"
+karma_change = 2
+gold_change = 3
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

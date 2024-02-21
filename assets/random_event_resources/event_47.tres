@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://dp8lxel6f878r"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_pqm5k"]
+
+[resource]
+script = ExtResource("1_pqm5k")
+event_id = 47
+event_alliance = "Neutral"
+event_text = "The Beekeeper asks if he can store a hive near your pitch, she is keen to make dandilion honey."
+karma_change = 2
+gold_change = 0
+rep_change = 0
+karma_gain = false
+gold_gain = false
+rep_gain = false

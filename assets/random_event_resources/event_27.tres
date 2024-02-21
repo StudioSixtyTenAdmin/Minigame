@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" load_steps=2 format=3 uid="uid://duw0t64purj7v"]
+
+[ext_resource type="Script" path="res://scripts/event_resource.gd" id="1_f888u"]
+
+[resource]
+script = ExtResource("1_f888u")
+event_id = 26
+event_alliance = "Positive"
+event_text = "A recent querent was so enthralled by their reading, they have left a gift of fine bread and mead."
+karma_change = 3
+gold_change = 1
+rep_change = 3
+karma_gain = false
+gold_gain = false
+rep_gain = false
