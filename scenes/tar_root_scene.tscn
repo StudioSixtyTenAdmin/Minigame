@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwhbq7hxokivu"]
 
-[ext_resource type="Texture2D" uid="uid://mkwy52w63hnx" path="res://assets/ui_art/Background_tex_v002.png" id="1_0phca"]
 [ext_resource type="PackedScene" uid="uid://bkgg2b2f7xs4x" path="res://scenes/client_scene.tscn" id="1_8j0fc"]
+[ext_resource type="Texture2D" uid="uid://cgqc0bd1fgkjd" path="res://assets/ui_art/Background_tex_v004.png" id="1_ix8j5"]
 [ext_resource type="PackedScene" uid="uid://5kcjgt0r5u6l" path="res://scenes/reading_scene.tscn" id="2_x01og"]
 [ext_resource type="Texture2D" uid="uid://dai426721u8do" path="res://assets/ui_art/UI_Frame_overlay.png" id="4_lbpx7"]
 
@@ -10,7 +10,7 @@ process_mode = 1
 
 [node name="background_image" type="Sprite2D" parent="."]
 visibility_layer = 8
-texture = ExtResource("1_0phca")
+texture = ExtResource("1_ix8j5")
 centered = false
 
 [node name="client_scene_" parent="." instance=ExtResource("1_8j0fc")]

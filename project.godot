@@ -22,7 +22,6 @@ window/size/viewport_width=720
 window/size/viewport_height=1280
 window/stretch/mode="viewport"
 window/handheld/orientation=1
-mouse_cursor/custom_image="res://assets/ui_art/cursor-1.png"
 
 [input]
 

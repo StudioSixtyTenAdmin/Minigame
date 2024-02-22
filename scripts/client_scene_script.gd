@@ -17,10 +17,16 @@ var event_count = 0
 var dialogue_count=0
 var client_scenario_running = true
 var past_clients = []
-var past_events = []
+#var past_events = []
+
+#Create Event Arrays
+var event_positive = []
+var event_neutral = []
+var event_negative = []
+
 
 signal card_selection_ready
-signal card_reading_options(option_a, option_b, up_key_1, up_key_2, up_key_3, rev_key_1, rev_key_2, rev_key_3)
+signal card_reading_options(option_a, option_b, up_key_1, up_key_2, up_key_3, rev_key_1, rev_key_2, rev_key_3, client_question)
 
 signal sel_done
 
@@ -33,6 +39,7 @@ var endgame_win
 var happy = false
 
 func _ready():
+	_sort_events()
 	turn()
 
 func _new_location(location_resource):
@@ -93,31 +100,94 @@ func _move_scenario():
 	remove_child(get_node('swap_location'))
 	turn()
 
+#Sort events into their respective arrays
+func _sort_events():
+	var number_of_events = 61
+	for event_id in number_of_events:
+		print(event_id)
+		var event_path = 'res://assets/random_event_resources/event_'+str(event_id+1)+'.tres'
+		var event_resource = ResourceLoader.load(event_path)
+		if event_resource.event_alliance == 'Positive':
+			event_positive.append(event_resource)
+		if event_resource.event_alliance == 'Neutral':
+			event_neutral.append(event_resource)
+		if event_resource.event_alliance == 'Negative':
+			event_negative.append(event_resource)
+
+#Checks Karma and determines if event should be Positive, Neutral or Negative
+func _karma_police():
+	var karma = $karma_bar.value
+	var good_chance: float
+	var neutral_chance: float
+	var negative_chance: float
+	
+	# If Karma is 'good'
+	if karma > 71 and karma <= 100:
+		good_chance = 0.8
+		neutral_chance = 0.1
+		negative_chance = 0.1
+	# If Karma is 'okay'
+	elif karma > 41 and karma <= 70:
+		good_chance = 0.1
+		neutral_chance = 0.8
+		negative_chance = 0.1
+	# If Karma is 'bad'
+	else:
+		good_chance = 0.1
+		neutral_chance = 0.1
+		negative_chance = 0.8
+	
+	var random_value = randf()
+	print(random_value)
+	print('good_chance', good_chance)
+	print('neutral_chance', neutral_chance)
+	print('negative_chance', negative_chance)
+		
+	# Check the ranges to determine which value to return
+	if random_value < good_chance:
+		return 'good'
+	elif random_value < good_chance + neutral_chance:
+		return 'neutral'
+	else:
+		return 'negative'
+
 #Write a func to spit out random event
 func _new_event():
+	print('karma is: ', $karma_bar.value)
+	
 	$client_parent/Control/client.visible = false
 	$dialogue_box.visible = false
-	$random_event.visible = true
+	_event_fade(true)
 	
-	#Ensure event hasn't happened before
-	var valid_event = false
-	while !valid_event:
-		if event_count >= $player_board.location_resource.number_of_random_events:
-			get_tree().quit()
-		
-		event_id = randi_range(1,$player_board.location_resource.number_of_random_events)
-		#print('checking client id: ',client_id)
-		if past_events.has(event_id):
-			valid_event= false
-		else:
-			valid_event= true
-	past_events.append(event_id)
+	var karma_outcome = _karma_police()
+	var event_resource
+	var random_index
+	var random_value
+	
+	if karma_outcome == 'good':
+		print('Event Positive Array Size: ', event_positive.size())
+		random_index = randi() % event_positive.size()
+		random_value = event_positive[random_index]
+		event_resource = random_value
+		event_positive.erase(event_resource)
+		print('Event Positive Array Size: ', event_positive.size())
+	if karma_outcome == 'neutral':
+		print('Event Neutral Array Size: ', event_neutral.size())
+		random_index = randi() % event_neutral.size()
+		random_value = event_neutral[random_index]
+		event_resource = random_value
+		event_neutral.erase(event_resource)
+		print('Event Neutral Array Size: ', event_neutral.size())
+	if karma_outcome == 'negative':
+		print('Event Negative Array Size: ', event_negative.size())
+		random_index = randi() % event_negative.size()
+		random_value = event_negative[random_index]
+		event_resource = random_value
+		event_negative.erase(event_resource)
+		print('Event Negative Array Size: ', event_negative.size())
 	
 	#Load Event
-	print('Loading Event - Event ID:', event_id)
-	var event_path = 'res://assets/random_event_resources/event_'+str(event_id)+'.tres'
-	#print(event_path)
-	var event_resource = ResourceLoader.load(event_path)
+	print('Loading Event - Event ID:', event_resource.event_id)
 	print('Event Text: ',event_resource.event_text)
 	
 	#Little timeout for a pause between clients
@@ -172,6 +242,30 @@ func _new_client():
 	t.queue_free()
 	_dialogue_tree(1)
 	
+#Event Fade
+func _event_fade(in_true):
+	var t_4 = Timer.new()
+	var t_5 = Timer.new()
+	
+	if in_true:
+		print('Event Modulate starting: ', $random_event.modulate.a)
+		$random_event.visible = true
+		add_child(t_4)
+		while $random_event.modulate.a <= 1:
+			$random_event.modulate.a += 0.1
+			t_4.start(0.003)
+			await t_4.timeout
+		t_4.queue_free()
+			
+	if !in_true:
+		print('Event Modulate starting: ', $random_event.modulate.a)
+		add_child(t_5)
+		while $random_event.modulate.a >= 0:
+			$random_event.modulate.a -= 0.1
+			t_5.start(0.003)
+			await t_5.timeout
+		t_5.queue_free()
+		$random_event.visible = false
 
 #Client Fade
 func _client_fade(in_true):
@@ -189,7 +283,7 @@ func _client_fade(in_true):
 		t_4.queue_free()
 			
 	if !in_true:
-		print('CutIn Modulate starting: ', $client_parent/Control/client/GboxClientPortrait1.modulate.a)
+		print('client Modulate starting: ', $client_parent/Control/client/GboxClientPortrait1.modulate.a)
 		add_child(t_5)
 		while $client_parent/Control/client/GboxClientPortrait1.modulate.a >= 0:
 			$client_parent/Control/client/GboxClientPortrait1.modulate.a -= 0.1
@@ -242,8 +336,8 @@ func _dialogue_tree(dialogue_count):
 	if dialogue_count==2:
 		card_selection_ready.emit()
 		var card_node = $"../reading_scene/reading_scene/AspectRatioContainer2/card"
-
-		card_reading_options.emit(card_node.reading_upright,card_node.reading_reversed, card_node.upright_keyword_1, card_node.upright_keyword_2, card_node.upright_keyword_3, card_node.reversed_keyword_1, card_node.reversed_keyword_2, card_node.reversed_keyword_3)
+		
+		card_reading_options.emit(card_node.reading_upright,card_node.reading_reversed, card_node.upright_keyword_1, card_node.upright_keyword_2, card_node.upright_keyword_3, card_node.reversed_keyword_1, card_node.reversed_keyword_2, card_node.reversed_keyword_3, client.client_resource.question, client.client_resource.client_name)
 		var flavour = _card_flavour_calculator(card_node)
 		var flavour_text_upright
 		var flavour_text_reversed

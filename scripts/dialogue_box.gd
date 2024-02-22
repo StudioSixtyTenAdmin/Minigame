@@ -123,6 +123,7 @@ func _on_text_continue_main_pressed():
 	#	get_parent(0).turn()
 	
 	if count == 1:
+		await get_parent()._event_fade(false)
 		get_parent().turn()
 	
 	if count == 2:

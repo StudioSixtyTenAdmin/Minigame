@@ -6,7 +6,7 @@
 script = ExtResource("1_hhquw")
 event_id = 33
 event_alliance = "Neutral"
-event_text = "While foraging, you meet an elderly man who shows you where sage grows readily. "
+event_text = "While foraging, you meet an elderly man who shows you where sage grows readily."
 karma_change = 1
 gold_change = 0
 rep_change = 0

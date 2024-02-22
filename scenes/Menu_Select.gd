@@ -69,3 +69,7 @@ func _endgame(result):
 		print('winwinwinwinwinwinwinwin')
 		remove_child(running_scene)
 		$PopupMenuWin.visible = true
+
+
+func _on_close_pressed():
+	$GameLose.visible = false

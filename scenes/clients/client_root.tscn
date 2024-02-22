@@ -1,10 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhj7wm20ug320"]
+[gd_scene load_steps=13 format=3 uid="uid://dhj7wm20ug320"]
 
 [ext_resource type="Texture2D" uid="uid://d0a6tjhtwhxc4" path="res://assets/client_portraits/client_4_portrait.png" id="1_7dtxc"]
 [ext_resource type="Texture2D" uid="uid://bbgbappfa0nnp" path="res://assets/ui_art/emote-happy-f1.png" id="2_5d4vy"]
+[ext_resource type="Shader" path="res://scenes/clients/client_root.gdshader" id="2_jc6ub"]
 [ext_resource type="Texture2D" uid="uid://bnoasojmnlq4t" path="res://assets/ui_art/emote-happy-f2.png" id="3_jexgh"]
+[ext_resource type="Texture2D" uid="uid://y1dhfl8fj21l" path="res://assets/client_portraits/client_1_portrait.png" id="3_oa0lj"]
 [ext_resource type="Texture2D" uid="uid://dmoga52yigtkd" path="res://assets/ui_art/emote-angry-f1.png" id="4_nmpw1"]
 [ext_resource type="Texture2D" uid="uid://chpubhsv8gfip" path="res://assets/ui_art/emote-angry-f2.png" id="5_dqpnt"]
+
+[sub_resource type="Gradient" id="Gradient_qvp5n"]
+offsets = PackedFloat32Array(0, 0.474916)
+colors = PackedColorArray(0, 0, 0, 1, 0.898039, 0.454902, 0.603922, 0.745098)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bci84"]
+gradient = SubResource("Gradient_qvp5n")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ftdbr"]
+shader = ExtResource("2_jc6ub")
+shader_parameter/intensity = 0.1
+shader_parameter/speed = 0.2
+shader_parameter/smoothness = 5.0
+shader_parameter/gradient = SubResource("GradientTexture2D_bci84")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ncils"]
 animations = [{
@@ -35,14 +51,18 @@ animations = [{
 }]
 
 [node name="client" type="Node2D"]
-visible = false
 
 [node name="GboxClientPortrait1" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
+visible = false
 visibility_layer = 4
 position = Vector2(0, 400)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_7dtxc")
+
+[node name="Sprite2D" type="Sprite2D" parent="GboxClientPortrait1"]
+material = SubResource("ShaderMaterial_ftdbr")
+scale = Vector2(3.56, 1)
+texture = ExtResource("3_oa0lj")
 
 [node name="reaction_happy" type="AnimatedSprite2D" parent="."]
 visible = false

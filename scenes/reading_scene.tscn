@@ -206,36 +206,21 @@ grow_vertical = 2
 position = Vector2(0, -160)
 scale = Vector2(0.8, 0.8)
 
+[node name="Button" type="Button" parent="reading_scene"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 672.0
+offset_right = 393.0
+offset_bottom = 703.0
+scale = Vector2(1.72, 1.98907)
+text = "View Client Question"
+
 [node name="fade" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(1, 1, 1, 0.45098)
 position = Vector2(360, 640)
 texture = ExtResource("10_ukchh")
-
-[node name="Upright_Confirm" type="ConfirmationDialog" parent="."]
-transparent_bg = true
-mode = 3
-title = "Upright Reading"
-initial_position = 1
-size = Vector2i(300, 175)
-borderless = true
-theme = ExtResource("4_3y8xl")
-ok_button_text = "Confirm"
-dialog_text = "Upright Text Full Description"
-dialog_autowrap = true
-
-[node name="Reverse_Confirm" type="ConfirmationDialog" parent="."]
-transparent_bg = true
-mode = 3
-title = "Upright Reading"
-initial_position = 1
-size = Vector2i(300, 175)
-borderless = true
-theme = ExtResource("4_3y8xl")
-ok_button_text = "Confirm"
-dialog_text = "Reverse Text Full Description"
-dialog_autowrap = true
 
 [node name="Dialogue_Confirmation_Box_rev" type="AspectRatioContainer" parent="."]
 visible = false
@@ -355,10 +340,62 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Cancel"
 
+[node name="Question_Recap" type="AspectRatioContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.003, 1.01109)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Question_Recap"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Question_Recap/AspectRatioContainer"]
+position = Vector2(173.923, 221.419)
+scale = Vector2(1, 0.851406)
+texture = ExtResource("4_clkuw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Question_Recap/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="Question_Recap/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_3y8xl")
+bbcode_enabled = true
+text = "TESTESTEST
+"
+fit_content = true
+
+[node name="full_text" type="RichTextLabel" parent="Question_Recap/AspectRatioContainer/VBoxContainer"]
+custom_minimum_size = Vector2(350, 400)
+layout_mode = 2
+theme = ExtResource("4_3y8xl")
+text = "TESTESTEST
+"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Question_Recap/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Return" type="Button" parent="Question_Recap/AspectRatioContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Return"
+
 [connection signal="card_selected" from="SubViewportContainer/SubViewport/threed_card_root" to="." method="_on_d_card_root_card_selected"]
 [connection signal="pressed" from="reading_scene/OptionA" to="." method="_on_option_a_pressed"]
 [connection signal="pressed" from="reading_scene/OptionB" to="." method="_on_option_b_pressed"]
+[connection signal="pressed" from="reading_scene/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/HBoxContainer/Confirm" to="." method="_on_reverse_confirmed"]
 [connection signal="pressed" from="Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_upright_confirm_canceled"]
 [connection signal="pressed" from="Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer/HBoxContainer/Confirm" to="." method="_on_upright_confirmed"]
 [connection signal="pressed" from="Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_upright_confirm_canceled"]
+[connection signal="pressed" from="Question_Recap/AspectRatioContainer/VBoxContainer/HBoxContainer/Return" to="." method="_on_return_pressed"]

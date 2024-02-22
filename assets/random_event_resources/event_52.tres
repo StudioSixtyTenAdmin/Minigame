@@ -6,7 +6,7 @@
 script = ExtResource("1_a6nmw")
 event_id = 52
 event_alliance = "Neutral"
-event_text = "A robin sits on your window ledge and sings a beautiful tune for you"
+event_text = "A robin sits on your window ledge and sings a beautiful tune for you."
 karma_change = 2
 gold_change = 0
 rep_change = 0

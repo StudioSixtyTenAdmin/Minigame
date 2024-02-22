@@ -6,7 +6,7 @@
 script = ExtResource("1_va24w")
 event_id = 53
 event_alliance = "Neutral"
-event_text = "You have an overwhelming urge to climb the giant oak and as you sit in the canapy you're filled with deep joy"
+event_text = "You have an overwhelming urge to climb the giant oak and as you sit in the canapy you're filled with deep joy."
 karma_change = 2
 gold_change = 0
 rep_change = 0

@@ -1,7 +1,10 @@
-AspectRatioContainer
-Control
 Sprite2D
+Control
 Button
+TextureButton
+Node2D
+AnimatedSprite2D
+AspectRatioContainer
 HBoxContainer
 RichTextLabel
 VBoxContainer
@@ -9,6 +12,3 @@ ReferenceRect
 Container
 ConfirmationDialog
 PopupPanel
-AnimatedSprite2D
-PopupMenu
-Popup

@@ -6,7 +6,7 @@
 script = ExtResource("1_fywpj")
 event_id = 43
 event_alliance = "Neutral"
-event_text = "You are followed by a young woman, she claims to have the gift and requests you teach her the ways of the tarot. "
+event_text = "You are followed by a young woman, she claims to have the gift and requests you teach her the ways of the tarot."
 karma_change = 0
 gold_change = 0
 rep_change = 2

@@ -52,10 +52,7 @@ func _distance_tracker():
 		turns_since_reading +=1
 		turns_since_event +=1
 		turns_since_tax =0
-	
-	#print('turns since Reading Event: ',turns_since_reading)
-	#print('turns since Random Event: ',turns_since_event)
-	#print('turns since TAXMAN: ',turns_since_tax)
+
 
 func _move_player():
 	var roll = _diceroll()
@@ -110,7 +107,7 @@ func _tile_chance_calculator(tile_1, chance_1, mod_1, tile_2, chance_2, mod_2, t
 	mod_1 = mod_1*reading_mod
 	
 	#event chance Modifier
-	mod_2 = mod_2*event_mod
+	mod_2 = mod_2*event_mod+1
 	
 	#tax chance Modifier
 	mod_3 = mod_3*tax_mod

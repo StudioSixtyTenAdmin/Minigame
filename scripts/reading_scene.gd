@@ -19,7 +19,7 @@ func _on_d_card_root_card_selected():
 	$SubViewportContainer.visible = false
 
 
-func _on_client_scene__card_reading_options(option_a, option_b, up_key_1, up_key_2, up_key_3, rev_key_1, rev_key_2, rev_key_3):
+func _on_client_scene__card_reading_options(option_a, option_b, up_key_1, up_key_2, up_key_3, rev_key_1, rev_key_2, rev_key_3, client_recap, client_name):
 	$reading_scene/OptionA/keyword_1.text = "[center]"+up_key_1+"[/center]"
 	$reading_scene/OptionA/keyword_2.text = "[center]"+up_key_2+"[/center]"
 	$reading_scene/OptionA/keyword_3.text = "[center]"+up_key_3+"[/center]"
@@ -29,6 +29,8 @@ func _on_client_scene__card_reading_options(option_a, option_b, up_key_1, up_key
 	
 	$Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer/full_text.text = option_a
 	$Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/full_text.text = option_b
+	$Question_Recap/AspectRatioContainer/VBoxContainer/full_text.text = client_recap
+	$Question_Recap/AspectRatioContainer/VBoxContainer/Name.text = "[center][wave]"+client_name+"[/wave][/center]"
 
 
 func _on_client_scene__card_selection_ready():
@@ -80,3 +82,13 @@ func _on_upright_confirm_canceled():
 	$Dialogue_Confirmation_Box_rev.visible = false
 	$Dialogue_Confirmation_Box_up.visible = false
 	$fade.visible = false
+
+
+func _on_button_pressed():
+	$fade.visible = true
+	$Question_Recap.visible = true
+
+
+func _on_return_pressed():
+	$fade.visible = false
+	$Question_Recap.visible = false

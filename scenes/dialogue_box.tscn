@@ -106,7 +106,7 @@ scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_s5wig")
 animation = &"continue"
 autoplay = "continue"
-frame_progress = 0.823897
+frame_progress = 0.0385602
 
 [node name="text_continue_sub" type="Button" parent="."]
 visible = false
