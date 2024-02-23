@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://d3kg6krvvq348"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_f1rf3"]
+
+[resource]
+script = ExtResource("1_f1rf3")
+client_id = 32
+read_this_run = false
+client_name = "Mabel"
+client_subtitle = "The Shepherdess"
+reason = 2
+theme = 0
+question = "Sire, three of my flock have been missing since the new moon. I have searched high and low, are they lost to me forever?"
+reaction_positive = "Oh gramercy my good man!"
+reaction_negative = "Hmmm I shall reserve my judgement."
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-mabel-v01.png"

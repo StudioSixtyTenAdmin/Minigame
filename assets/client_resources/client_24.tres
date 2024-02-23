@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://dtjmxjace2ykd"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_nahly"]
+
+[resource]
+script = ExtResource("1_nahly")
+client_id = 24
+read_this_run = false
+client_name = "Regina"
+client_subtitle = "The Playwright’s Nurse"
+reason = 0
+theme = 1
+question = "Good day Sir, I need your counsel! My master has been questioning me, it makes me feel uneasy. What is he seeking from me?"
+reaction_positive = "Sir, I thank you most wholeheartedly!"
+reaction_negative = "You have given me pause sir!"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-regina-v05.png"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://bb7b71d2geukw"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_cdn0a"]
+
+[resource]
+script = ExtResource("1_cdn0a")
+client_id = 30
+read_this_run = false
+client_name = "Merrywren"
+client_subtitle = "The Teacher"
+reason = 1
+theme = 1
+question = "This past three seasons, I have been teaching letters and numbers to a group of young girls. Is this the reason The Inquisitor is here? Should I cease?"
+reaction_positive = "I thank you, the girls thank you, we shall prevail!"
+reaction_negative = "Thank you my friend, I shall reevaluate our situation and conditions."
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-merrywren-v01.png"

@@ -1,8 +1,5 @@
 extends Node3D
 
-#@onready var a = $Camera3D.global_position
-#@onready var b = $Camera3D.target.global_position
-
 @onready var a = $fan_root.global_position
 @onready var b = $fan_root.target.global_position
 
@@ -23,9 +20,8 @@ func _reset():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#print(t)
 	a = $fan_root.global_position
-	t += delta*2
+	t = min(t + delta*2, 1)
 	$fan_root.global_position = lerp(a,b,t)
 	if($fan_root.global_position.distance_to(b))<0.05:
 		a = b
@@ -34,6 +30,7 @@ func _process(delta):
 		for child in $fan_root.get_children():
 			if child != current_card:
 				child.position.y -= t*2
+
 
 func _on_area_3d_mouse_entered():
 	#print('middle')
@@ -47,7 +44,6 @@ func _on_area_3d_mouse_entered():
 	$fan_root/Sprite3D3.position.z = 0
 	$fan_root/Sprite3D4.position.z = 0
 	$fan_root/Sprite3D5.position.z = 0
-	#$Camera3D.target.position.x = 0
 
 func _on_area_3d_2_mouse_entered():
 	#print('mid_left')

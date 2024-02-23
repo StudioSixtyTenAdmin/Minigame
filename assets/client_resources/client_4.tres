@@ -14,4 +14,4 @@ question = "Sire, I beseech you to help me! I overheard my meister disclose a da
 reaction_positive = "I will think carefully on what you have told me."
 reaction_negative = "Thank you Sire, I must tread very carefully."
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/clientimage-leif-v02.png"
+portrait_path = "res://assets/client_portraits/clientimage-leif-v05.png"

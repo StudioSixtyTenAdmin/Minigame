@@ -14,4 +14,4 @@ question = "Will you read the cards and help me sir? The honey harvest has been 
 reaction_positive = "Hail, there will be mead!"
 reaction_negative = "You have dealt a most auspicious omen, I pray thee are mistaken!"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/clientimage-gregory-v02.png"
+portrait_path = "res://assets/client_portraits/clientimage-gregory-v05.png"

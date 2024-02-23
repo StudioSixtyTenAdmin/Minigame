@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://b6kda2nqxgfm"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_44x3k"]
+
+[resource]
+script = ExtResource("1_44x3k")
+client_id = 36
+read_this_run = false
+client_name = "Maurice"
+client_subtitle = "The Innkeeper"
+reason = 1
+theme = 0
+question = "Sir I have witnessed something most perplexing and I am lost as to what to do! The Inquisitor came to my Inn before dawn and took a guest by force, The Alchemist… He was visiting from Bastone, should I warn others or hold my peace?"
+reaction_positive = "Thank you my good sir, you’ve given me good counsel!"
+reaction_negative = "Nothing but vagary… you’ve wasted my time!"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-maurice-v05.png"

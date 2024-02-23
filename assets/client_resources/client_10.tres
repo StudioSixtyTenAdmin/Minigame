@@ -14,4 +14,4 @@ question = "I have come to ask for your help. I fear the inquisitor has a malint
 reaction_positive = "Are you certain? Thank you sir, I am safe!"
 reaction_negative = "I appreciate your candour sir, I must make haste."
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/clientimage-vera-v02.png"
+portrait_path = "res://assets/client_portraits/clientimage-vera-v05.png"

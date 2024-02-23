@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://ccnobb3w135qt"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_vvk5f"]
+
+[resource]
+script = ExtResource("1_vvk5f")
+client_id = 35
+read_this_run = false
+client_name = "Job"
+client_subtitle = "The Arable Farmer"
+reason = 0
+theme = 0
+question = "I have had an offer, it is a dangerous mission but the rewards are rich. What do your cards predict for me?"
+reaction_positive = "You have given me balanced wisdom Reader, thank you."
+reaction_negative = "I must consider this most carefully!"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-job-v01.png"

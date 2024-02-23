@@ -2,6 +2,12 @@ extends Node3D
 
 signal finish_reading_scene(selection)
 @onready var threed_card_root = $SubViewportContainer/SubViewport/threed_card_root
+var icon_advice_yes = preload('res://assets/ui_art/icon-advice-yes-v01.png')
+var icon_advice_no = preload('res://assets/ui_art/icon-advice-no-v01.png')
+var icon_spiritual_yes = preload('res://assets/ui_art/icon-spiritual-yes-v01.png')
+var icon_spiritual_no = preload('res://assets/ui_art/icon-spiritual-no-v01.png')
+var icon_validation_yes = preload('res://assets/ui_art/icon-validation-yes-v01.png')
+var icon_validation_no = preload('res://assets/ui_art/icon-validation-no-v01.png')
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,7 +25,16 @@ func _on_d_card_root_card_selected():
 	$SubViewportContainer.visible = false
 
 
-func _on_client_scene__card_reading_options(option_a, option_b, up_key_1, up_key_2, up_key_3, rev_key_1, rev_key_2, rev_key_3, client_recap, client_name):
+func _on_client_scene__card_reading_options(  card_node, client_recap, client_name, client_subtitle):
+	var option_a = card_node.reading_upright
+	var option_b = card_node.reading_reversed
+	var up_key_1 = card_node.upright_keyword_1
+	var up_key_2 = card_node.upright_keyword_2
+	var up_key_3 = card_node.upright_keyword_3
+	var rev_key_1 = card_node.reversed_keyword_1
+	var rev_key_2 = card_node.reversed_keyword_2
+	var rev_key_3 = card_node.reversed_keyword_3
+	
 	$reading_scene/OptionA/keyword_1.text = "[center]"+up_key_1+"[/center]"
 	$reading_scene/OptionA/keyword_2.text = "[center]"+up_key_2+"[/center]"
 	$reading_scene/OptionA/keyword_3.text = "[center]"+up_key_3+"[/center]"
@@ -31,6 +46,49 @@ func _on_client_scene__card_reading_options(option_a, option_b, up_key_1, up_key
 	$Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/full_text.text = option_b
 	$Question_Recap/AspectRatioContainer/VBoxContainer/full_text.text = client_recap
 	$Question_Recap/AspectRatioContainer/VBoxContainer/Name.text = "[center][wave]"+client_name+"[/wave][/center]"
+	$Question_Recap/AspectRatioContainer/VBoxContainer/Name2.text = "[center][wave]"+client_subtitle+"[/wave][/center]"
+	
+	#Set Icons
+	$Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer/hint_3.texture = icon_validation_no
+	$reading_scene/OptionA/hint_3.texture = icon_validation_no
+	
+	$Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/hint_3.texture = icon_validation_no
+	$reading_scene/OptionB/hint_3.texture = icon_validation_no
+	
+	$Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer/hint_1.texture = icon_advice_no
+	$reading_scene/OptionA/hint_1.texture = icon_advice_no
+	$Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/hint_1.texture = icon_advice_no
+	$reading_scene/OptionB/hint_1.texture = icon_advice_no
+	
+	$Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer/hint_2.texture = icon_spiritual_no
+	$reading_scene/OptionA/hint_2.texture = icon_spiritual_no
+	
+	$Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/hint_2.texture = icon_spiritual_no
+	$reading_scene/OptionB/hint_2.texture = icon_spiritual_no
+	
+	
+	#Adjust Icons
+	if card_node.upright_validation == 0:
+		$Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer/hint_3.texture = icon_validation_yes
+		$reading_scene/OptionA/hint_3.texture = icon_validation_yes
+	if card_node.reversed_validation == 0:
+		$Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/hint_3.texture = icon_validation_yes
+		$reading_scene/OptionB/hint_3.texture = icon_validation_yes
+		
+	if card_node.upright_practical == 0:
+		$Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer/hint_1.texture = icon_advice_yes
+		$reading_scene/OptionA/hint_1.texture = icon_advice_yes
+	if card_node.reversed_practical == 0:
+		$Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/hint_1.texture = icon_advice_yes
+		$reading_scene/OptionB/hint_1.texture = icon_advice_yes
+		
+	if card_node.upright_spiritual == 0:
+		$Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer/hint_2.texture = icon_spiritual_yes
+		$reading_scene/OptionA/hint_2.texture = icon_spiritual_yes
+	if card_node.reversed_spiritual == 0:
+		$Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer/hint_2.texture = icon_spiritual_yes
+		$reading_scene/OptionB/hint_2.texture = icon_spiritual_yes
+		
 
 
 func _on_client_scene__card_selection_ready():
@@ -63,16 +121,16 @@ func _on_option_b_pressed():
 
 
 func _on_reverse_confirmed():
-	finish_reading_scene.emit('a')
-	print('reading a')
+	finish_reading_scene.emit('b')
+	print('reading b')
 	$reading_scene.visible = false
 	$Dialogue_Confirmation_Box_rev.visible = false
 	$fade.visible = false
 
 
 func _on_upright_confirmed():
-	finish_reading_scene.emit('b')
-	print('reading b')
+	finish_reading_scene.emit('a')
+	print('reading a')
 	$reading_scene.visible = false
 	$Dialogue_Confirmation_Box_up.visible = false
 	$fade.visible = false

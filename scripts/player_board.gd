@@ -67,7 +67,7 @@ func _move_player():
 	#Max number of spaces moved before
 	#you have the choice to move
 	#the choice to move \/
-	if player_place >= 10:
+	if player_place >= 10000000:
 		ready_to_move = true
 	
 func _tax_tracker():

@@ -60,12 +60,14 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_7dtxc")
 
 [node name="Sprite2D" type="Sprite2D" parent="GboxClientPortrait1"]
+modulate = Color(1, 1, 1, 0.172549)
 material = SubResource("ShaderMaterial_ftdbr")
 scale = Vector2(3.56, 1)
 texture = ExtResource("3_oa0lj")
 
 [node name="reaction_happy" type="AnimatedSprite2D" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(168, 288)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_ncils")
@@ -74,6 +76,7 @@ frame_progress = 0.947944
 
 [node name="reaction_angry" type="AnimatedSprite2D" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(-144, 208)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_3u7b3")

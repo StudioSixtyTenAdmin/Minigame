@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://cn046fpfptv2d"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_lyr4y"]
+
+[resource]
+script = ExtResource("1_lyr4y")
+client_id = 18
+read_this_run = false
+client_name = "Vera"
+client_subtitle = "The Healer"
+reason = 1
+theme = 0
+question = "Help! At daybreak I was visited by guards and instructed to attend to an injured man. He whispered a message to me, passing it on will put me in grave danger! Remaining silent could put others in grave danger, what do your cards say?"
+reaction_positive = "Thank you sire, I must keep my counsel close!"
+reaction_negative = "You’ve given me fair warning Reader, I will be on guard!"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-vera-v05.png"

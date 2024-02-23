@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://bkroeiflwvbq7"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_vdgug"]
+
+[resource]
+script = ExtResource("1_vdgug")
+client_id = 27
+read_this_run = false
+client_name = "Frasier"
+client_subtitle = "Brother of Jonah"
+reason = 0
+theme = 2
+question = "Sire, I am searching for my sister, she fled our family some years hence. My mother has taken ill and wishes to see her before she departs this earth! Can you cards guide me?"
+reaction_positive = "You’ve given hope to my family sire!"
+reaction_negative = "That is a most egregious omen… my poor mother!"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-frasier-v01.png"

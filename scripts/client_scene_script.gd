@@ -37,6 +37,10 @@ var endgame = false
 var endgame_win
 
 var happy = false
+@export var flicker = true
+
+func _process(delta):
+	flicker = get_parent().get_parent().candle_flicker
 
 func _ready():
 	_sort_events()
@@ -276,6 +280,9 @@ func _client_fade(in_true):
 		print('client Modulate starting: ', $client_parent/Control/client/GboxClientPortrait1.modulate.a)
 		$client_parent/Control/client/GboxClientPortrait1.visible = true
 		add_child(t_4)
+		$client_parent/Control/client/reaction_happy.modulate.a =1
+		$client_parent/Control/client/reaction_angry.modulate.a =1
+		
 		while $client_parent/Control/client/GboxClientPortrait1.modulate.a <= 1:
 			$client_parent/Control/client/GboxClientPortrait1.modulate.a += 0.1
 			t_4.start(0.003)
@@ -287,6 +294,8 @@ func _client_fade(in_true):
 		add_child(t_5)
 		while $client_parent/Control/client/GboxClientPortrait1.modulate.a >= 0:
 			$client_parent/Control/client/GboxClientPortrait1.modulate.a -= 0.1
+			$client_parent/Control/client/reaction_happy.modulate.a -=0.1
+			$client_parent/Control/client/reaction_angry.modulate.a -=0.1
 			t_5.start(0.003)
 			await t_5.timeout
 		t_5.queue_free()
@@ -321,7 +330,6 @@ func _reader_fade(in_true):
 		$dialogue_box/name_tag.visible = true
 	
 
-
 func _dialogue_tree(dialogue_count):
 	var final_reaction
 	
@@ -337,7 +345,8 @@ func _dialogue_tree(dialogue_count):
 		card_selection_ready.emit()
 		var card_node = $"../reading_scene/reading_scene/AspectRatioContainer2/card"
 		
-		card_reading_options.emit(card_node.reading_upright,card_node.reading_reversed, card_node.upright_keyword_1, card_node.upright_keyword_2, card_node.upright_keyword_3, card_node.reversed_keyword_1, card_node.reversed_keyword_2, card_node.reversed_keyword_3, client.client_resource.question, client.client_resource.client_name)
+		card_reading_options.emit(card_node, client.client_resource.question, client.client_resource.client_name, client.client_resource.client_subtitle)
+		
 		var flavour = _card_flavour_calculator(card_node)
 		var flavour_text_upright
 		var flavour_text_reversed
@@ -367,53 +376,41 @@ func _dialogue_tree(dialogue_count):
 		
 		if selection_choice == 'a':
 			var result = _reaction_calculator(card_node,'upright')
+			print('result is:', result)
 			
 			if result == 0:
 				print('happyhappy')
 				happy = true
 				$dialogue_box._texture_swap(false)
-				#final_reaction = client.client_resource.reaction_positive
 				$dialogue_box._next_text(flavour_text_upright)
 				_reader_fade(true)
-				#await _update_bars(randi_range(1,10), randi_range(1,10), randi_range(1,10))
-				#$dialogue_box._next_text(client.client_resource.reaction_positive)
+
 			
 			if result == 1 or result == 2:
 				print('sadsad')
 				happy = false
 				$dialogue_box._texture_swap(false)
-				#final_reaction = client.client_resource.reaction_negative
 				$dialogue_box._next_text(flavour_text_upright)
 				_reader_fade(true)
-				#await _update_bars(randi_range(-1,-10), randi_range(-1,-10), randi_range(-1,-10))
-				#$dialogue_box._next_text(client.client_resource.reaction_negative)
-			
-			
-
 
 		if selection_choice == 'b':
 			var result = _reaction_calculator(card_node,'reversed')
+			print('result is:', result)
 			
 			if result == 0:
 				print('happyhappy')
 				happy = true
 				$dialogue_box._texture_swap(false)
-				#final_reaction = client.client_resource.reaction_positive
 				$dialogue_box._next_text(flavour_text_reversed)
 				_reader_fade(true)
-				#await _update_bars(randi_range(1,10), randi_range(1,10), randi_range(1,10))
-				#$dialogue_box._next_text(client.client_resource.reaction_positive)
 			
 			if result == 1 or result == 2:
 				print('sadsad')
 				happy = false
 				$dialogue_box._texture_swap(false)
-				#final_reaction = client.client_resource.reaction_negative
 				$dialogue_box._next_text(flavour_text_reversed)
 				_reader_fade(true)
-				#await _update_bars(randi_range(-1,-10), randi_range(-1,-10), randi_range(-1,-10))
-				#$dialogue_box._next_text(client.client_resource.reaction_negative)
-			
+
 		
 		print('mid adding +1 to count.')
 		$dialogue_box.count += 1
@@ -423,17 +420,19 @@ func _dialogue_tree(dialogue_count):
 	
 	if dialogue_count==3:
 		print('Client is happy?: ', happy)
-		print("Final reaction will be, ", client.client_resource.reaction_positive)
 		_reader_fade(false)
 		
 		if happy:
+			print("Final reaction will be, ", client.client_resource.reaction_positive)
 			$dialogue_box.visible = false
 			await _update_bars(randi_range(10,30), randi_range(10,30), randi_range(10,30))
 			$dialogue_box.visible = true
 			$client_parent/Control/client/reaction_happy.visible = true
 			$dialogue_box._texture_swap(true)
 			$dialogue_box._next_text(client.client_resource.reaction_positive)
+			
 		if !happy:
+			print("Final reaction will be, ", client.client_resource.reaction_negative)
 			$dialogue_box.visible = false
 			await _update_bars(randi_range(-5,-25), randi_range(-5,-25), randi_range(-5,-25))
 			$dialogue_box.visible = true
@@ -447,7 +446,6 @@ func _dialogue_tree(dialogue_count):
 		
 		
 	dialogue_count+=1
-	
 
 #function to incrementally update various resource meters
 func _update_bars(new_reputation, new_karma, new_gold):
@@ -522,6 +520,9 @@ func _update_bars(new_reputation, new_karma, new_gold):
 	if $gold_bar.value <= 0:
 		endgame = true
 		endgame_win = false
+	if past_clients.size()>=35:
+		endgame = true
+		endgame_win = false
 
 func _card_flavour_calculator(card):
 	var card_flavour
@@ -541,29 +542,31 @@ func _card_flavour_calculator(card):
 #outputs reaction of client
 func _reaction_calculator(card, position):
 	var final_reaction
+	var reason = client.client_resource.reason
+	print('CLients reason is: ', reason)
 	if position == 'upright':
 #		#upright compare
 		#validation
-		if client.client_resource.reason == 0:
+		if reason == 0:
 			final_reaction = card.upright_validation 
 		#practical
-		if client.client_resource.reason == 1:
+		if reason == 1:
 			final_reaction = card.upright_practical
 		#spiritual
-		if client.client_resource.reason == 2:
+		if reason == 2:
 			final_reaction = card.upright_spiritual
 		
 	if position == 'reversed':
 		#reversed compare
-		if client.client_resource.reason == 0:
+		if reason == 0:
 			final_reaction = card.reversed_validation 
 		#practical
-		if client.client_resource.reason == 1:
+		if reason == 1:
 			final_reaction = card.reversed_practical
 		#spiritual
-		if client.client_resource.reason == 2:
+		if reason == 2:
 			final_reaction = card.reversed_spiritual
-	
+	print('card reaction is: ', final_reaction)
 	return final_reaction
 
 func _next_text():
@@ -571,7 +574,6 @@ func _next_text():
 
 func _on_gold_slider_value_changed(value):
 	$gold_slider/Label.text = str(value)
-
 
 func _on_gold_button_pressed():
 	print('Gold Button Pressed')
@@ -589,12 +591,10 @@ func _on_dialogue_box_choose_price(is_visible):
 func _get_client_id():
 	return client_id
 
-
 func _on_reading_scene_finish_reading_scene(selection):
 	print('reading finished in client scene')
 	selection_choice = selection
 	sel_done.emit()
-
 
 func _on_button_pressed():
 	#func _hide_main():

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://c3n4ff3qmpm6e"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_oimys"]
+
+[resource]
+script = ExtResource("1_oimys")
+client_id = 23
+read_this_run = false
+client_name = "Brenna"
+client_subtitle = "The Clairvoyant"
+reason = 2
+theme = 0
+question = "Hail Reader, rumours are circulating of disappearances. Ask your cards what plot is afoot."
+reaction_positive = "My thanks Reader! I believe you to be a friend."
+reaction_negative = "You dance around the subject, you are involved in the plot!"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-brenna-v05.png"

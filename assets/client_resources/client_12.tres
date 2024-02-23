@@ -14,4 +14,4 @@ question = "Will you read my cards Sire, I have a most urgent need! Sire, I am w
 reaction_positive = "Gramercy sire, by my troth I shall not forget your kindness."
 reaction_negative = "I have heard whispers of you too sire, a man hears a lot on the road…"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/clientimage-jonah-v02.png"
+portrait_path = "res://assets/client_portraits/clientimage-jonah-v05.png"

@@ -14,4 +14,4 @@ question = "I deal in death, I fear it has cast an ill-omen upon me. Ask the car
 reaction_positive = "Do you suppose me a fool, sir, unable to work my land? The only foolishness was seeking answers here."
 reaction_negative = "A horse-shoe… death and destruction are in my home and you think a horse-shoe will save me. Be damned!"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/clientimage-martha-v02.png"
+portrait_path = "res://assets/client_portraits/clientimage-martha-v05.png"

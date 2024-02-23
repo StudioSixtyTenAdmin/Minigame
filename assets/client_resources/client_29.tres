@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://d3c06tn85wwpt"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_ui0e8"]
+
+[resource]
+script = ExtResource("1_ui0e8")
+client_id = 29
+read_this_run = false
+client_name = "Lilith"
+client_subtitle = "The Serving Girl"
+reason = 2
+theme = 2
+question = "Sire, I beseech you; help me please? My beloved has been making advances towards another, I want to cast a love spell. What say your cards?"
+reaction_positive = "I thank you sire, I shall pray upon it!"
+reaction_negative = "You have given me much to ponder sire."
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-lilith-v01.png"

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/cards/3d_card_root.gd" id="1_0ktj6"]
 [ext_resource type="Shape3D" uid="uid://drnlwnya2k3qa" path="res://scenes/cards/3d_card_root.tres" id="2_h3t3e"]
 [ext_resource type="Script" path="res://scenes/cards/fan_root.gd" id="3_qior5"]
-[ext_resource type="Texture2D" uid="uid://cbiujmq15c244" path="res://assets/card_art/card_back.png" id="4_yvp1x"]
+[ext_resource type="Texture2D" uid="uid://cjv8kp5ghy4mi" path="res://assets/card_art/card-back-v02.png" id="4_dkp71"]
 
 [node name="3d_card_root" type="Node3D"]
 script = ExtResource("1_0ktj6")
@@ -53,23 +53,23 @@ target = NodePath(".")
 
 [node name="Sprite3D" type="Sprite3D" parent="fan_root"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.489619, 0)
-texture = ExtResource("4_yvp1x")
+texture = ExtResource("4_dkp71")
 
 [node name="Sprite3D2" type="Sprite3D" parent="fan_root"]
 transform = Transform3D(0.0965926, -0.0258819, 0, 0.0258819, 0.0965926, 0, 0, 0, 0.1, -1, 0.35, 0)
-texture = ExtResource("4_yvp1x")
+texture = ExtResource("4_dkp71")
 
 [node name="Sprite3D3" type="Sprite3D" parent="fan_root"]
 transform = Transform3D(0.0965926, 0.0258819, 0, -0.0258819, 0.0965926, 0, 0, 0, 0.1, 1, 0.350364, 0)
-texture = ExtResource("4_yvp1x")
+texture = ExtResource("4_dkp71")
 
 [node name="Sprite3D4" type="Sprite3D" parent="fan_root"]
 transform = Transform3D(0.0866025, -0.05, 0, 0.05, 0.0866025, 0, 0, 0, 0.1, -2, 0, 0)
-texture = ExtResource("4_yvp1x")
+texture = ExtResource("4_dkp71")
 
 [node name="Sprite3D5" type="Sprite3D" parent="fan_root"]
 transform = Transform3D(0.0866025, 0.05, 0, -0.05, 0.0866025, 0, 0, 0, 0.1, 2, 0, 0)
-texture = ExtResource("4_yvp1x")
+texture = ExtResource("4_dkp71")
 
 [connection signal="mouse_entered" from="Area3D4" to="." method="_on_area_3d_4_mouse_entered"]
 [connection signal="mouse_entered" from="Area3D2" to="." method="_on_area_3d_2_mouse_entered"]

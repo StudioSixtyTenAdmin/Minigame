@@ -14,4 +14,4 @@ question = "Greetings my good fellow, I would like to engage your services for a
 reaction_positive = "You have been most helpful good sir, I will be guided by your wisdom!"
 reaction_negative = "Ugh, I may as well have thrown my gold down the well. You blaggard!"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/clientimage-orvyn-v02.png"
+portrait_path = "res://assets/client_portraits/clientimage-orvyn-v05.png"

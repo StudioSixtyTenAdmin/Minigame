@@ -1,9 +1,10 @@
 Sprite2D
+AnimatedSprite2D
+TextureButton
+CheckButton
 Control
 Button
-TextureButton
 Node2D
-AnimatedSprite2D
 AspectRatioContainer
 HBoxContainer
 RichTextLabel
@@ -11,4 +12,3 @@ VBoxContainer
 ReferenceRect
 Container
 ConfirmationDialog
-PopupPanel

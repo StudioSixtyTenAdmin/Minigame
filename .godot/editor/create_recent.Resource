@@ -1,3 +1,4 @@
+ClientResource
 EventResource
 LocationResource
 Resource

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://bn4h01q4smfk"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_21hp7"]
+
+[resource]
+script = ExtResource("1_21hp7")
+client_id = 34
+read_this_run = false
+client_name = "Lilith"
+client_subtitle = "The Serving Girl"
+reason = 2
+theme = 0
+question = "Dear Reader, you must help me. I cast the spell for my beloved, I fear I have dabbled in things I shouldn’t have. Will The Inquisitor find me?"
+reaction_positive = "Thank you my friend!"
+reaction_negative = "You must think me quite the fool, good day!"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-lilith-v01.png"

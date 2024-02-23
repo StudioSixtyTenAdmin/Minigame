@@ -6,9 +6,9 @@
 [ext_resource type="Theme" uid="uid://dyhggra4gad0m" path="res://assets/text_dialogue/main_theme.tres" id="4_3y8xl"]
 [ext_resource type="Texture2D" uid="uid://c0lvm2qi5uhaq" path="res://assets/ui_art/vertical-textbox.png" id="4_clkuw"]
 [ext_resource type="PackedScene" uid="uid://ctswap7g7ypoa" path="res://scenes/cards/3d_card_root.tscn" id="4_q4s0d"]
-[ext_resource type="Texture2D" uid="uid://dg2fqpkhj10q" path="res://assets/ui_art/TestIcon1.PNG" id="6_6b7gs"]
-[ext_resource type="Texture2D" uid="uid://ccleorkwx7c3v" path="res://assets/ui_art/TestIcon2.PNG" id="7_1uhqr"]
-[ext_resource type="Texture2D" uid="uid://dynd1kugfctqn" path="res://assets/ui_art/TestIcon3.PNG" id="8_k7gnn"]
+[ext_resource type="Texture2D" uid="uid://c0xosy0cryjvs" path="res://assets/ui_art/icon-advice-no-v01.png" id="5_0grno"]
+[ext_resource type="Texture2D" uid="uid://drk6er4itai43" path="res://assets/ui_art/icon-spiritual-no-v01.png" id="6_6aq3v"]
+[ext_resource type="Texture2D" uid="uid://cwraxsbjbv1c2" path="res://assets/ui_art/icon-validation-no-v01.png" id="7_r4r5c"]
 [ext_resource type="Texture2D" uid="uid://dcn66ocnttfy7" path="res://assets/ui_art/blank.png" id="10_ukchh"]
 
 [node name="reading_scene_root" type="Node3D"]
@@ -61,16 +61,19 @@ scale = Vector2(0.6, 0.5)
 texture = ExtResource("4_clkuw")
 
 [node name="hint_1" type="Sprite2D" parent="reading_scene/OptionA"]
-position = Vector2(48, 48)
-texture = ExtResource("6_6b7gs")
+position = Vector2(48, 44)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_0grno")
 
 [node name="hint_2" type="Sprite2D" parent="reading_scene/OptionA"]
-position = Vector2(120, 48)
-texture = ExtResource("7_1uhqr")
+position = Vector2(120, 44)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_6aq3v")
 
 [node name="hint_3" type="Sprite2D" parent="reading_scene/OptionA"]
-position = Vector2(192, 48)
-texture = ExtResource("8_k7gnn")
+position = Vector2(192, 44)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("7_r4r5c")
 
 [node name="keyword_1" type="RichTextLabel" parent="reading_scene/OptionA"]
 custom_minimum_size = Vector2(220, 120)
@@ -132,16 +135,19 @@ scale = Vector2(0.6, 0.5)
 texture = ExtResource("4_clkuw")
 
 [node name="hint_1" type="Sprite2D" parent="reading_scene/OptionB"]
-position = Vector2(48.64, 45.44)
-texture = ExtResource("6_6b7gs")
+position = Vector2(48, 44)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("5_0grno")
 
 [node name="hint_2" type="Sprite2D" parent="reading_scene/OptionB"]
-position = Vector2(120.64, 45.44)
-texture = ExtResource("7_1uhqr")
+position = Vector2(120, 44)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("6_6aq3v")
 
 [node name="hint_3" type="Sprite2D" parent="reading_scene/OptionB"]
-position = Vector2(184.64, 45.44)
-texture = ExtResource("8_k7gnn")
+position = Vector2(192, 44)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("7_r4r5c")
 
 [node name="keyword_1" type="RichTextLabel" parent="reading_scene/OptionB"]
 custom_minimum_size = Vector2(220, 120)
@@ -208,12 +214,12 @@ scale = Vector2(0.8, 0.8)
 
 [node name="Button" type="Button" parent="reading_scene"]
 layout_mode = 0
-offset_left = 224.0
-offset_top = 672.0
-offset_right = 393.0
-offset_bottom = 703.0
-scale = Vector2(1.72, 1.98907)
-text = "View Client Question"
+offset_top = 376.0
+offset_right = 192.0
+offset_bottom = 576.0
+theme_override_font_sizes/font_size = 35
+text = "See 
+Question"
 
 [node name="fade" type="Sprite2D" parent="."]
 visible = false
@@ -248,16 +254,19 @@ texture = ExtResource("4_clkuw")
 layout_mode = 2
 
 [node name="hint_1" type="Sprite2D" parent="Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer"]
-position = Vector2(106.264, -63.9799)
-texture = ExtResource("6_6b7gs")
+position = Vector2(72, -63.98)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("5_0grno")
 
 [node name="hint_2" type="Sprite2D" parent="Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer"]
 position = Vector2(178.264, -63.9799)
-texture = ExtResource("7_1uhqr")
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("6_6aq3v")
 
 [node name="hint_3" type="Sprite2D" parent="Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer"]
-position = Vector2(242.264, -63.9799)
-texture = ExtResource("8_k7gnn")
+position = Vector2(284, -63.98)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("7_r4r5c")
 
 [node name="full_text" type="RichTextLabel" parent="Dialogue_Confirmation_Box_rev/AspectRatioContainer/VBoxContainer"]
 custom_minimum_size = Vector2(350, 500)
@@ -307,16 +316,19 @@ texture = ExtResource("4_clkuw")
 layout_mode = 2
 
 [node name="hint_1" type="Sprite2D" parent="Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer"]
-position = Vector2(106.264, -63.9799)
-texture = ExtResource("6_6b7gs")
+position = Vector2(72, -63.98)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("5_0grno")
 
 [node name="hint_2" type="Sprite2D" parent="Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer"]
 position = Vector2(178.264, -63.9799)
-texture = ExtResource("7_1uhqr")
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("6_6aq3v")
 
 [node name="hint_3" type="Sprite2D" parent="Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer"]
-position = Vector2(242.264, -63.9799)
-texture = ExtResource("8_k7gnn")
+position = Vector2(284, -63.98)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("7_r4r5c")
 
 [node name="full_text" type="RichTextLabel" parent="Dialogue_Confirmation_Box_up/AspectRatioContainer/VBoxContainer"]
 custom_minimum_size = Vector2(350, 500)
@@ -366,6 +378,14 @@ texture = ExtResource("4_clkuw")
 layout_mode = 2
 
 [node name="Name" type="RichTextLabel" parent="Question_Recap/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_3y8xl")
+bbcode_enabled = true
+text = "TESTESTEST
+"
+fit_content = true
+
+[node name="Name2" type="RichTextLabel" parent="Question_Recap/AspectRatioContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_3y8xl")
 bbcode_enabled = true

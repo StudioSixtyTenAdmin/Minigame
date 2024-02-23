@@ -1,18 +1,334 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx7dj4d4rlj2b"]
+[gd_scene load_steps=91 format=3 uid="uid://bx7dj4d4rlj2b"]
 
 [ext_resource type="Script" path="res://scenes/Menu_Select.gd" id="1_e218o"]
-[ext_resource type="Texture2D" uid="uid://cdah7g0gh0w8n" path="res://assets/logo_art/Arcana_White.png" id="2_dd1ic"]
 [ext_resource type="Texture2D" uid="uid://duj8wglcnlpbw" path="res://assets/ui_art/Main_menu_screen_No_logo_000.png" id="2_onfr0"]
 [ext_resource type="AudioStream" uid="uid://byiv3leiy6f0e" path="res://assets/audio/Prelude.wav" id="3_uihmt"]
 [ext_resource type="Texture2D" uid="uid://bwy1y2ev1px74" path="res://assets/ui_art/main-menu.png" id="3_w2jyh"]
+[ext_resource type="Texture2D" uid="uid://d3od3yvos27js" path="res://assets/ui_art/Main_menu__Begin_menu_card.png" id="4_qdtiq"]
+[ext_resource type="Texture2D" uid="uid://cvjmih5t2rhyx" path="res://assets/ui_art/Main_menu_png_Resume_menu_card_.png" id="4_xmm26"]
+[ext_resource type="Texture2D" uid="uid://keqffi121vdf" path="res://assets/ui_art/Main_menu__Exit_menu_card.png" id="5_gbe1n"]
+[ext_resource type="Texture2D" uid="uid://cypuyyxs8tn5p" path="res://assets/ui_art/Main_menu__Settings_menu_card.png" id="6_tibhs"]
 [ext_resource type="Texture2D" uid="uid://6gf2d300rww1" path="res://assets/ui_art/Arcana-game-over-03-02.png" id="6_wcqby"]
 [ext_resource type="Texture2D" uid="uid://c0lvm2qi5uhaq" path="res://assets/ui_art/vertical-textbox.png" id="7_q2ce0"]
 [ext_resource type="Theme" uid="uid://dyhggra4gad0m" path="res://assets/text_dialogue/main_theme.tres" id="8_i8jbg"]
+[ext_resource type="Texture2D" uid="uid://cc1h37qfqyo4p" path="res://assets/ui_art/Arcana-Ui-boxes-_You_won.png" id="9_b538x"]
+[ext_resource type="Texture2D" uid="uid://d1b0gr4v4rvel" path="res://assets/logo_art/Arcana-Menu-title-seqence__00000.png" id="9_lnmax"]
+[ext_resource type="Texture2D" uid="uid://d2pa1cmeh2glg" path="res://assets/ui_art/Arcana-Ui-boxes-_Invitation_.png" id="10_3rug5"]
+[ext_resource type="Texture2D" uid="uid://blmtx106pk5vq" path="res://assets/logo_art/Arcana-Menu-title-seqence__00001.png" id="10_oqhj5"]
+[ext_resource type="Texture2D" uid="uid://ddenvtwphso0s" path="res://assets/logo_art/Arcana-Menu-title-seqence__00002.png" id="11_cv36v"]
+[ext_resource type="Texture2D" uid="uid://ud00wiqv7g0b" path="res://assets/logo_art/Arcana-Menu-title-seqence__00003.png" id="12_nm70a"]
+[ext_resource type="Texture2D" uid="uid://dct7u2fc0qll6" path="res://assets/logo_art/Arcana-Menu-title-seqence__00004.png" id="13_imga7"]
+[ext_resource type="Texture2D" uid="uid://py7fcpsftl23" path="res://assets/logo_art/Arcana-Menu-title-seqence__00005.png" id="14_qqa4y"]
+[ext_resource type="Texture2D" uid="uid://cpuc4ais3wibx" path="res://assets/logo_art/Arcana-Menu-title-seqence__00006.png" id="15_kbrj2"]
+[ext_resource type="Texture2D" uid="uid://brw1mt4o4pk57" path="res://assets/logo_art/Arcana-Menu-title-seqence__00007.png" id="16_4wr26"]
+[ext_resource type="Texture2D" uid="uid://nsfnshmyl15f" path="res://assets/logo_art/Arcana-Menu-title-seqence__00008.png" id="17_ana4d"]
+[ext_resource type="Texture2D" uid="uid://b8jkui7h8hfh" path="res://assets/logo_art/Arcana-Menu-title-seqence__00009.png" id="18_63jqh"]
+[ext_resource type="Texture2D" uid="uid://cthoq8lptgjdt" path="res://assets/logo_art/Arcana-Menu-title-seqence__00010.png" id="19_4hijg"]
+[ext_resource type="Texture2D" uid="uid://7xkf5ojxc063" path="res://assets/logo_art/Arcana-Menu-title-seqence__00011.png" id="20_28vh8"]
+[ext_resource type="Texture2D" uid="uid://bobcfp4gpgx1l" path="res://assets/logo_art/Arcana-Menu-title-seqence__00012.png" id="21_4mq5g"]
+[ext_resource type="Texture2D" uid="uid://b2pal4hjfawsy" path="res://assets/logo_art/Arcana-Menu-title-seqence__00013.png" id="22_slmun"]
+[ext_resource type="Texture2D" uid="uid://dj7os4v5h6r27" path="res://assets/logo_art/Arcana-Menu-title-seqence__00014.png" id="23_df466"]
+[ext_resource type="Texture2D" uid="uid://clfonacch6xty" path="res://assets/logo_art/Arcana-Menu-title-seqence__00015.png" id="24_78hn6"]
+[ext_resource type="Texture2D" uid="uid://deyqion073sns" path="res://assets/logo_art/Arcana-Menu-title-seqence__00016.png" id="25_vdrig"]
+[ext_resource type="Texture2D" uid="uid://dnmhem5d1cmdr" path="res://assets/logo_art/Arcana-Menu-title-seqence__00017.png" id="26_c7e11"]
+[ext_resource type="Texture2D" uid="uid://v5ofnqhc6pn5" path="res://assets/logo_art/Arcana-Menu-title-seqence__00018.png" id="27_wivp4"]
+[ext_resource type="Texture2D" uid="uid://dbgapj2ypx2b4" path="res://assets/logo_art/Arcana-Menu-title-seqence__00019.png" id="28_ipxni"]
+[ext_resource type="Texture2D" uid="uid://b3k5rse6ih0l3" path="res://assets/logo_art/Arcana-Menu-title-seqence__00020.png" id="29_lsr4x"]
+[ext_resource type="Texture2D" uid="uid://lpeve3ustfmn" path="res://assets/logo_art/Arcana-Menu-title-seqence__00021.png" id="30_g7bno"]
+[ext_resource type="Texture2D" uid="uid://clvxv00erbfv" path="res://assets/logo_art/Arcana-Menu-title-seqence__00022.png" id="31_cgcfs"]
+[ext_resource type="Texture2D" uid="uid://bn6at84khntxe" path="res://assets/logo_art/Arcana-Menu-title-seqence__00023.png" id="32_ttkfr"]
+[ext_resource type="Texture2D" uid="uid://gxkyey0hv3r2" path="res://assets/logo_art/Arcana-Menu-title-seqence__00024.png" id="33_qwklt"]
+[ext_resource type="Texture2D" uid="uid://qfh8obewkgrp" path="res://assets/logo_art/Arcana-Menu-title-seqence__00025.png" id="34_6p2us"]
+[ext_resource type="Texture2D" uid="uid://djyvvda6ga1ra" path="res://assets/logo_art/Arcana-Menu-title-seqence__00026.png" id="35_e2tw2"]
+[ext_resource type="Texture2D" uid="uid://jq12fcu88acg" path="res://assets/logo_art/Arcana-Menu-title-seqence__00027.png" id="36_nf62d"]
+[ext_resource type="Texture2D" uid="uid://doib8t3xsjlhh" path="res://assets/logo_art/Arcana-Menu-title-seqence__00028.png" id="37_yb5ru"]
+[ext_resource type="Texture2D" uid="uid://bkfity55i2e0a" path="res://assets/logo_art/Arcana-Menu-title-seqence__00029.png" id="38_5kijo"]
+[ext_resource type="Texture2D" uid="uid://c14kq1waxu2mq" path="res://assets/logo_art/Arcana-Menu-title-seqence__00030.png" id="39_4gs5b"]
+[ext_resource type="Texture2D" uid="uid://bwjukitjxkisr" path="res://assets/logo_art/Arcana-Menu-title-seqence__00031.png" id="40_pr3mg"]
+[ext_resource type="Texture2D" uid="uid://o8m4cwoaboxu" path="res://assets/logo_art/Arcana-Menu-title-seqence__00032.png" id="41_p2nx1"]
+[ext_resource type="Texture2D" uid="uid://bcvv2avvj2jdf" path="res://assets/logo_art/Arcana-Menu-title-seqence__00033.png" id="42_d77jm"]
+[ext_resource type="Texture2D" uid="uid://dald55l32ormx" path="res://assets/logo_art/Arcana-Menu-title-seqence__00034.png" id="43_32kps"]
+[ext_resource type="Texture2D" uid="uid://ds1d05gbhxecf" path="res://assets/logo_art/Arcana-Menu-title-seqence__00035.png" id="44_ht5qo"]
+[ext_resource type="Texture2D" uid="uid://dtq6bgponyr5k" path="res://assets/logo_art/Arcana-Menu-title-seqence__00036.png" id="45_tayem"]
+[ext_resource type="Texture2D" uid="uid://blljy6ctinbe3" path="res://assets/logo_art/Arcana-Menu-title-seqence__00037.png" id="46_qpyx0"]
+[ext_resource type="Texture2D" uid="uid://cfx41uciapxtf" path="res://assets/logo_art/Arcana-Menu-title-seqence__00038.png" id="47_i450v"]
+[ext_resource type="Texture2D" uid="uid://dh7147gfgr36q" path="res://assets/logo_art/Arcana-Menu-title-seqence__00039.png" id="48_tijk4"]
+[ext_resource type="Texture2D" uid="uid://dgphwgm656nl8" path="res://assets/logo_art/Arcana-Menu-title-seqence__00040.png" id="49_haf1d"]
+[ext_resource type="Texture2D" uid="uid://pmrepsi81gsu" path="res://assets/logo_art/Arcana-Menu-title-seqence__00041.png" id="50_0gsji"]
+[ext_resource type="Texture2D" uid="uid://bw5k4r53vhb8g" path="res://assets/logo_art/Arcana-Menu-title-seqence__00042.png" id="51_dgluw"]
+[ext_resource type="Texture2D" uid="uid://cxfj62sncuv3r" path="res://assets/logo_art/Arcana-Menu-title-seqence__00043.png" id="52_ph4xl"]
+[ext_resource type="Texture2D" uid="uid://dnlsimcncnj8x" path="res://assets/logo_art/Arcana-Menu-title-seqence__00044.png" id="53_i7d6b"]
+[ext_resource type="Texture2D" uid="uid://c384cd6wavktm" path="res://assets/logo_art/Arcana-Menu-title-seqence__00045.png" id="54_qu2ob"]
+[ext_resource type="Texture2D" uid="uid://c0nr0sipsc05y" path="res://assets/logo_art/Arcana-Menu-title-seqence__00046.png" id="55_ghbxq"]
+[ext_resource type="Texture2D" uid="uid://bhaeg1m1rqsdk" path="res://assets/logo_art/Arcana-Menu-title-seqence__00047.png" id="56_nntdc"]
+[ext_resource type="Texture2D" uid="uid://ffa6kef6ih62" path="res://assets/logo_art/Arcana-Menu-title-seqence__00048.png" id="57_2o56k"]
+[ext_resource type="Texture2D" uid="uid://dhgyo5l00htxf" path="res://assets/logo_art/Arcana-Menu-title-seqence__00049.png" id="58_56ff1"]
+[ext_resource type="Texture2D" uid="uid://cfbxjqsb5pqe1" path="res://assets/logo_art/Arcana-Menu-title-seqence__00050.png" id="59_q1lsj"]
+[ext_resource type="Texture2D" uid="uid://dya1e52oil7vo" path="res://assets/logo_art/Arcana-Menu-title-seqence__00051.png" id="60_2b86k"]
+[ext_resource type="Texture2D" uid="uid://c5bhneeq3hsb" path="res://assets/logo_art/Arcana-Menu-title-seqence__00052.png" id="61_1w6fi"]
+[ext_resource type="Texture2D" uid="uid://bno48hs1kex27" path="res://assets/logo_art/Arcana-Menu-title-seqence__00053.png" id="62_rxle8"]
+[ext_resource type="Texture2D" uid="uid://6yx74wd0bl6u" path="res://assets/logo_art/Arcana-Menu-title-seqence__00054.png" id="63_wivas"]
+[ext_resource type="Texture2D" uid="uid://c221nvtirtccy" path="res://assets/logo_art/Arcana-Menu-title-seqence__00055.png" id="64_jry1o"]
+[ext_resource type="Texture2D" uid="uid://di6e2oe6ljy4r" path="res://assets/logo_art/Arcana-Menu-title-seqence__00056.png" id="65_2456e"]
+[ext_resource type="Texture2D" uid="uid://c5bk7ggw6go46" path="res://assets/logo_art/Arcana-Menu-title-seqence__00057.png" id="66_dwrba"]
+[ext_resource type="Texture2D" uid="uid://bjmfx5tgmfou2" path="res://assets/logo_art/Arcana-Menu-title-seqence__00058.png" id="67_kqhwn"]
+[ext_resource type="Texture2D" uid="uid://ccowuspclo56m" path="res://assets/logo_art/Arcana-Menu-title-seqence__00059.png" id="68_6ur38"]
+[ext_resource type="Texture2D" uid="uid://otpkndqf6cg7" path="res://assets/logo_art/Arcana-Menu-title-seqence__00060.png" id="69_wingo"]
+[ext_resource type="Texture2D" uid="uid://c1js7pm7aksog" path="res://assets/logo_art/Arcana-Menu-title-seqence__00061.png" id="70_evm25"]
+[ext_resource type="Texture2D" uid="uid://dtq2ueiwio6tc" path="res://assets/logo_art/Arcana-Menu-title-seqence__00062.png" id="71_7g8uf"]
+[ext_resource type="Texture2D" uid="uid://4701q4mwwao2" path="res://assets/logo_art/Arcana-Menu-title-seqence__00063.png" id="72_yn7qx"]
+[ext_resource type="Texture2D" uid="uid://cuwkm2jmptsic" path="res://assets/logo_art/Arcana-Menu-title-seqence__00064.png" id="73_2ehth"]
+[ext_resource type="Texture2D" uid="uid://ceh4xof7uyau3" path="res://assets/logo_art/Arcana-Menu-title-seqence__00065.png" id="74_sx3lo"]
+[ext_resource type="Texture2D" uid="uid://knu1pvnwxx6w" path="res://assets/logo_art/Arcana-Menu-title-seqence__00066.png" id="75_xypn2"]
+[ext_resource type="Texture2D" uid="uid://cj41sdjy6vk7c" path="res://assets/logo_art/Arcana-Menu-title-seqence__00067.png" id="76_fmi7g"]
+[ext_resource type="Texture2D" uid="uid://fkm8tyak6724" path="res://assets/logo_art/Arcana-Menu-title-seqence__00068.png" id="77_sm66s"]
+[ext_resource type="Texture2D" uid="uid://dkjfkyw1ixmf6" path="res://assets/logo_art/Arcana-Menu-title-seqence__00069.png" id="78_4a1gg"]
+[ext_resource type="Texture2D" uid="uid://ca4tkffraolfn" path="res://assets/logo_art/Arcana-Menu-title-seqence__00070.png" id="79_qc36v"]
+[ext_resource type="Texture2D" uid="uid://cswt6wm0jhhmk" path="res://assets/logo_art/Arcana-Menu-title-seqence__00071.png" id="80_qjr0c"]
+[ext_resource type="Texture2D" uid="uid://olr7un3lihdf" path="res://assets/logo_art/Arcana-Menu-title-seqence__00072.png" id="81_ii0l2"]
+[ext_resource type="Texture2D" uid="uid://bpmyslncfhick" path="res://assets/logo_art/Arcana-Menu-title-seqence__00073.png" id="82_8derc"]
+[ext_resource type="Texture2D" uid="uid://dglrg2jlj0pfp" path="res://assets/logo_art/Arcana-Menu-title-seqence__00074.png" id="83_p5k0k"]
+[ext_resource type="Texture2D" uid="uid://bo43xk3kdhdj6" path="res://assets/logo_art/Arcana-Menu-title-seqence__00075.png" id="84_iapql"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g3o1t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_lnmax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_oqhj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cv36v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nm70a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_imga7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qqa4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kbrj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4wr26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ana4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_63jqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_4hijg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_28vh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_4mq5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_slmun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_df466")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_78hn6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_vdrig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_c7e11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_wivp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ipxni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_lsr4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_g7bno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_cgcfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ttkfr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_qwklt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_6p2us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_e2tw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_nf62d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_yb5ru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_5kijo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_4gs5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_pr3mg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_p2nx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_d77jm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_32kps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ht5qo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_tayem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_qpyx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_i450v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_tijk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_haf1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_0gsji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_dgluw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_ph4xl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_i7d6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_qu2ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_ghbxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_nntdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_2o56k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_56ff1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_q1lsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_2b86k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_1w6fi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_rxle8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_wivas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_jry1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_2456e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_dwrba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_kqhwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_6ur38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_wingo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_evm25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_7g8uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_yn7qx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_2ehth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_sx3lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_xypn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_fmi7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_sm66s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_4a1gg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_qc36v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_qjr0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_ii0l2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_8derc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_p5k0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_iapql")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="Menu_Select" type="Node2D"]
 script = ExtResource("1_e218o")
 volume_value = 50
-typespeed = 6
 
 [node name="MainMenuScreenNoLogo000" type="Sprite2D" parent="."]
 position = Vector2(360, 640)
@@ -32,8 +348,31 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(360, 675)
+visible = false
+position = Vector2(360, 744)
+scale = Vector2(1, 1.4625)
 texture = ExtResource("3_w2jyh")
+
+[node name="MainMenuResumeCard" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(350, 848.06)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("4_xmm26")
+
+[node name="MainMenuBeginMenuCard" type="Sprite2D" parent="."]
+position = Vector2(350, 848.06)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("4_qdtiq")
+
+[node name="MainMenuExitMenuCard" type="Sprite2D" parent="."]
+position = Vector2(351.05, 968.11)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("5_gbe1n")
+
+[node name="MainMenuSettingsMenuCard" type="Sprite2D" parent="."]
+position = Vector2(358, 1112.06)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("6_tibhs")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = -1
@@ -41,90 +380,111 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.634
 anchor_bottom = 0.5
-offset_left = 180.0
-offset_top = 561.0
-offset_right = 540.0
-offset_bottom = 850.0
+offset_left = 160.0
+offset_top = 560.0
+offset_right = 552.0
+offset_bottom = 936.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Resume" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+text = "
+"
+flat = true
+
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Start Game"
+flat = true
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Quit
+text = "
 "
-
-[node name="Resume" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Resume
-"
+flat = true
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Open Settings"
+flat = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 247.0
+offset_top = 1000.0
+offset_right = 472.0
+offset_bottom = 1200.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Volume" type="Label" parent="VBoxContainer/VBoxContainer"]
+[node name="Volume" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
+theme = ExtResource("8_i8jbg")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Volume - 100"
 horizontal_alignment = 1
 
-[node name="VolumeSlider" type="HSlider" parent="VBoxContainer/VBoxContainer"]
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer2"]
 layout_mode = 2
+theme = ExtResource("8_i8jbg")
 value = 100.0
 
-[node name="TextSpeed" type="Label" parent="VBoxContainer/VBoxContainer"]
+[node name="TextSpeed" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
+theme = ExtResource("8_i8jbg")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Text Speed"
 horizontal_alignment = 1
 
-[node name="TextSpeedSlider" type="HSlider" parent="VBoxContainer/VBoxContainer"]
+[node name="TextSpeedSlider" type="HSlider" parent="VBoxContainer2"]
 layout_mode = 2
+theme = ExtResource("8_i8jbg")
 min_value = 1.0
 max_value = 6.0
 value = 2.0
 
+[node name="Flicker" type="CheckButton" parent="VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("8_i8jbg")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+button_pressed = true
+action_mode = 0
+text = "Candle Flicker"
+
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 304.0
 offset_top = 232.0
 offset_right = 696.0
 offset_bottom = 272.0
 text = "Game Demo"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(352, 112)
-texture = ExtResource("2_dd1ic")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(360, 640)
+scale = Vector2(0.67, 0.67)
+sprite_frames = SubResource("SpriteFrames_g3o1t")
+autoplay = "default"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_uihmt")
 volume_db = -20.0
 autoplay = true
-
-[node name="PopupMenuWin" type="PopupMenu" parent="."]
-initial_position = 1
-size = Vector2i(444, 116)
-item_count = 4
-item_0/text = "Congratulations!"
-item_0/id = 0
-item_1/text = "You have succeeded in your quest."
-item_1/id = 1
-item_2/text = "You are now the main advisor to the lord of the lands."
-item_2/id = 2
-item_3/text = "Clock this message to close this window."
-item_3/id = 3
 
 [node name="GameLose" type="Control" parent="."]
 visible = false
@@ -166,8 +526,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="GameLose/Question_Recap/AspectRatioContainer"]
-position = Vector2(173.923, 221.419)
-scale = Vector2(1, 0.693161)
+position = Vector2(173.923, 236.275)
+scale = Vector2(1, 0.660619)
 texture = ExtResource("7_q2ce0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GameLose/Question_Recap/AspectRatioContainer"]
@@ -177,9 +537,11 @@ layout_mode = 2
 custom_minimum_size = Vector2(350, 400)
 layout_mode = 2
 theme = ExtResource("8_i8jbg")
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[center][shake]OH NO![/shake]
-You have run out of Gold and can no longer afford to continue your quest.
+Your business has run dry! 
+With no more means to fund future readings, your clients have turned against you.
 
 Dare you brave another attempt?
 "
@@ -192,10 +554,82 @@ alignment = 1
 [node name="Close" type="Button" parent="GameLose/Question_Recap/AspectRatioContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 34
 text = "Close"
 
+[node name="GameWin" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -32.0
+offset_right = 16.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="GameWin"]
+position = Vector2(344, 416)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_b538x")
+
+[node name="Question_Recap" type="AspectRatioContainer" parent="GameWin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 168.0
+offset_top = 616.0
+offset_right = 518.0
+offset_bottom = 1051.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.003, 1.01109)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="GameWin/Question_Recap"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="GameWin/Question_Recap/AspectRatioContainer"]
+position = Vector2(173.923, 16.0083)
+scale = Vector2(1, 0.524162)
+texture = ExtResource("7_q2ce0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameWin/Question_Recap/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="full_text" type="RichTextLabel" parent="GameWin/Question_Recap/AspectRatioContainer/VBoxContainer"]
+custom_minimum_size = Vector2(350, 150)
+layout_mode = 2
+theme = ExtResource("8_i8jbg")
+bbcode_enabled = true
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameWin/Question_Recap/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Close" type="Button" parent="GameWin/Question_Recap/AspectRatioContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 34
+text = "Close"
+
+[node name="Sprite2D2" type="Sprite2D" parent="GameWin"]
+position = Vector2(336, 656)
+scale = Vector2(0.2006, 0.202218)
+texture = ExtResource("10_3rug5")
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="toggled" from="VBoxContainer2/Flicker" to="." method="_on_flicker_toggled"]
 [connection signal="pressed" from="GameLose/Question_Recap/AspectRatioContainer/VBoxContainer/HBoxContainer/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="GameWin/Question_Recap/AspectRatioContainer/VBoxContainer/HBoxContainer/Close" to="." method="_on_win_close_pressed"]

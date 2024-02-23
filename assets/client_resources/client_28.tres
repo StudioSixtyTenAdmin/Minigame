@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://dmtxc2nyraxka"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_feb1p"]
+
+[resource]
+script = ExtResource("1_feb1p")
+client_id = 28
+read_this_run = false
+client_name = "Job"
+client_subtitle = "The Arable Farmer"
+reason = 0
+theme = 1
+question = "I have lost everything! Two failed harvests, The Bailiff has taken my land, my wife has taken my children. I have nothing left, pray tell me how I can recover?"
+reaction_positive = "Maybe sir, maybe, there is some hope!"
+reaction_negative = "Pray god, take me now!"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-job-v01.png"

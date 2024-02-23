@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://cjl4ttq4uht8f"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_lwp1n"]
+
+[resource]
+script = ExtResource("1_lwp1n")
+client_id = 25
+read_this_run = false
+client_name = "Jonah"
+client_subtitle = "The Minstrel"
+reason = 1
+theme = 0
+question = "Greetings Reader! I feel it’s time to move on from this place; there is an ill wind. Where should I be headed?"
+reaction_positive = "Thank you my good sir, thank you!"
+reaction_negative = "I’ve been foolish looking for answers here, what hokum!"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-jonah-v05.png"

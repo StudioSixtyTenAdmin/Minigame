@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://cqwrxfas8rl7n"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_kbbk7"]
+
+[resource]
+script = ExtResource("1_kbbk7")
+client_id = 33
+read_this_run = false
+client_name = "Fleur"
+client_subtitle = "The Market Girl"
+reason = 0
+theme = 0
+question = "Sire, can I call on your cards for guidance? I work at the market, the other girls my age shun me. How can I make them like me?"
+reaction_positive = "Your cards make a valid point, you’ve given me pause. I thank you!"
+reaction_negative = "I see… I must look inside myself."
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-fleur-v01.png"

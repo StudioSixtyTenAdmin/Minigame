@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://cdqi7rharolh"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_jowuh"]
+
+[resource]
+script = ExtResource("1_jowuh")
+client_id = 26
+read_this_run = false
+client_name = "Gemmie"
+client_subtitle = "The Blacksmith’s daughter"
+reason = 0
+theme = 0
+question = "Sire, my father intends to betrothe me to Florian so that he may help the business…He is a dreadful cad, how can I change his mind?"
+reaction_positive = "Gramercy my dearest Reader!"
+reaction_negative = "NO! I refuse it, I will run!"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-gemmie-v01.png"

@@ -14,4 +14,4 @@ question = "Good evening friend, pray will you read the cards for me? The Feast 
 reaction_positive = "You have soothed my soul friend, my eternal thanks!"
 reaction_negative = "Prithee, it cannot be so. Your cards can be damned!"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/clientimage-cassian-v02.png"
+portrait_path = "res://assets/client_portraits/clientimage-cassian-v05.png"

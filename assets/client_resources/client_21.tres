@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://nio5kj0qr46b"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_20yri"]
+
+[resource]
+script = ExtResource("1_20yri")
+client_id = 21
+read_this_run = false
+client_name = "Orvyn"
+client_subtitle = "The Playwright"
+reason = 2
+theme = 0
+question = "Greetings friend, I’ve come back to seek your wisdom. I have stumbled upon a wonderful tale, it is not my own, should I put my spin upon it? Is it wrong, or is it worse to leave such a beautiful tale untold…"
+reaction_positive = "Oh my dear fellow, I do declare we are kindred spirits!"
+reaction_negative = "I shall think upon your guidance, though I think it… green!"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-orvyn-v05.png"

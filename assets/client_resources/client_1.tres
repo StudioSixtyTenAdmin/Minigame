@@ -14,4 +14,4 @@ question = "Sir, my spirit-guides have brought me to your hearth this evening. I
 reaction_positive = "I thank thee sir, you have given me much to think about."
 reaction_negative = "Thank you for your counsel sir, I will be watchful!"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/clientimage-brenna-v02.png"
+portrait_path = "res://assets/client_portraits/clientimage-brenna-v05.png"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://dwwf0er4tk7o4"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_ybqc1"]
+
+[resource]
+script = ExtResource("1_ybqc1")
+client_id = 20
+read_this_run = false
+client_name = "Daegal"
+client_subtitle = "The Monk"
+reason = 1
+theme = 0
+question = "Reader, my sources informed me that The Clairvoyant has visited with you! Did your cards detect her evil intentions?"
+reaction_positive = "Hmmm I knew it… I must gather evidence."
+reaction_negative = "I knew you were a charleton, I should report you and your charlatanism!"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-daegal-v05.png"

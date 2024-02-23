@@ -14,4 +14,4 @@ question = "Hail Reader. I wish to avail of your service. A towns-woman has aske
 reaction_positive = "I thank thee Reader, I will pray upon the matter."
 reaction_negative = "Alas and alack… my suspicions were correct. My thanks"
 reaction_neutral = ""
-portrait_path = "res://assets/client_portraits/clientimage-petra-v02.png"
+portrait_path = "res://assets/client_portraits/clientimage-petra-v05.png"

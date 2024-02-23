@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://ddlnb718nrnod"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_t2aq3"]
+
+[resource]
+script = ExtResource("1_t2aq3")
+client_id = 31
+read_this_run = false
+client_name = "Farah"
+client_subtitle = "The Courtier"
+reason = 2
+theme = 1
+question = "Reader, I have come at the behest of our Lady of Lands. She fears a serpent is present at court, would you kindly consult your cards?"
+reaction_positive = "My thanks Reader, I will be sure to inform our Lady!"
+reaction_negative = "Interesting…"
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-farah-v01.png"

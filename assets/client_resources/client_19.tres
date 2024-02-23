@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ClientResource" load_steps=2 format=3 uid="uid://njaud1iicrtr"]
+
+[ext_resource type="Script" path="res://scripts/client_resource.gd" id="1_eyjkd"]
+
+[resource]
+script = ExtResource("1_eyjkd")
+client_id = 19
+read_this_run = false
+client_name = "Simon"
+client_subtitle = "The Beggar"
+reason = 2
+theme = 2
+question = "Sire, I have no means to pay you, but I beseech you to help me! I left my home many seasons hence, will your cards tell me if my father has forgiven me? I am so weary."
+reaction_positive = "Your words are a salve to my soul sire!"
+reaction_negative = "I feared as much, thank you sire... "
+reaction_neutral = ""
+portrait_path = "res://assets/client_portraits/clientimage-simon-v05.png"
