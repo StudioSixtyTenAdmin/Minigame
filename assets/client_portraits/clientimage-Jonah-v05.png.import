@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsni812opudge"
-path="res://.godot/imported/clientimage-Jonah-v05.png-8a49008da6e77279c60212b6368dba2a.ctex"
+uid="uid://c8v6es40ndr30"
+path="res://.godot/imported/clientimage-jonah-v05.png-c729fdf7d86a64564adb0b207812c12b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/client_portraits/clientimage-Jonah-v05.png"
-dest_files=["res://.godot/imported/clientimage-Jonah-v05.png-8a49008da6e77279c60212b6368dba2a.ctex"]
+source_file="res://assets/client_portraits/clientimage-jonah-v05.png"
+dest_files=["res://.godot/imported/clientimage-jonah-v05.png-c729fdf7d86a64564adb0b207812c12b.ctex"]
 
 [params]
 

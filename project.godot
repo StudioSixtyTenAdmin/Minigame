@@ -14,7 +14,6 @@ config/name="Minigame_Project"
 run/main_scene="res://scenes/Menu_Select.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/image="res://assets/logo_art/logo.png"
-config/icon="res://assets/logo_art/thumb.png"
 
 [display]
 
@@ -40,4 +39,3 @@ nextRoll={
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
-anti_aliasing/quality/use_taa=true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gdintrhwm3b0"
-path="res://.godot/imported/clientimage-Leif-v05.png-9e702d3666945f3278790726dbd8616f.ctex"
+uid="uid://ccpvltpdkqvhj"
+path="res://.godot/imported/clientimage-leif-v05.png-2ff8d0787ee45c1c178a8706dc33c2bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/client_portraits/clientimage-Leif-v05.png"
-dest_files=["res://.godot/imported/clientimage-Leif-v05.png-9e702d3666945f3278790726dbd8616f.ctex"]
+source_file="res://assets/client_portraits/clientimage-leif-v05.png"
+dest_files=["res://.godot/imported/clientimage-leif-v05.png-2ff8d0787ee45c1c178a8706dc33c2bf.ctex"]
 
 [params]
 

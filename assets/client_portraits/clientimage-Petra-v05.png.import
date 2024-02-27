@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://copedcf1ck0r6"
-path="res://.godot/imported/clientimage-Petra-v05.png-a52ab4bc0952a8c256833a4535823be6.ctex"
+uid="uid://xknr4solchkt"
+path="res://.godot/imported/clientimage-petra-v05.png-f89f510a18d846605ba7654e127fe283.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/client_portraits/clientimage-Petra-v05.png"
-dest_files=["res://.godot/imported/clientimage-Petra-v05.png-a52ab4bc0952a8c256833a4535823be6.ctex"]
+source_file="res://assets/client_portraits/clientimage-petra-v05.png"
+dest_files=["res://.godot/imported/clientimage-petra-v05.png-f89f510a18d846605ba7654e127fe283.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpndqgmsdhkbi"
-path="res://.godot/imported/clientimage-Vera-v05.png-839ad6ff58e4ab10a67a20cb911034d1.ctex"
+uid="uid://c1buvqxroip7k"
+path="res://.godot/imported/clientimage-vera-v05.png-e7b78fc3d9af6b71537b5e305b704627.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/client_portraits/clientimage-Vera-v05.png"
-dest_files=["res://.godot/imported/clientimage-Vera-v05.png-839ad6ff58e4ab10a67a20cb911034d1.ctex"]
+source_file="res://assets/client_portraits/clientimage-vera-v05.png"
+dest_files=["res://.godot/imported/clientimage-vera-v05.png-e7b78fc3d9af6b71537b5e305b704627.ctex"]
 
 [params]
 

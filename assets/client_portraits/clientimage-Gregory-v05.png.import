@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4d4ffrrrnn3c"
-path="res://.godot/imported/clientimage-Gregory-v05.png-d0e9b4b6d3ab6257d8e6bdf28b00e40b.ctex"
+uid="uid://drjyoa7qwise1"
+path="res://.godot/imported/clientimage-gregory-v05.png-27c5279115f50a7f99b8067879aacc7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/client_portraits/clientimage-Gregory-v05.png"
-dest_files=["res://.godot/imported/clientimage-Gregory-v05.png-d0e9b4b6d3ab6257d8e6bdf28b00e40b.ctex"]
+source_file="res://assets/client_portraits/clientimage-gregory-v05.png"
+dest_files=["res://.godot/imported/clientimage-gregory-v05.png-27c5279115f50a7f99b8067879aacc7a.ctex"]
 
 [params]
 

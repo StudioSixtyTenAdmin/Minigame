@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1ievho8cfqom"
-path="res://.godot/imported/clientimage-Regina-v05.png-55da863e8d8e75b260884f981c1adfe4.ctex"
+uid="uid://kb0ch3fvrpg1"
+path="res://.godot/imported/clientimage-regina-v05.png-b23e946fe3f695454f053a33db007f27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/client_portraits/clientimage-Regina-v05.png"
-dest_files=["res://.godot/imported/clientimage-Regina-v05.png-55da863e8d8e75b260884f981c1adfe4.ctex"]
+source_file="res://assets/client_portraits/clientimage-regina-v05.png"
+dest_files=["res://.godot/imported/clientimage-regina-v05.png-b23e946fe3f695454f053a33db007f27.ctex"]
 
 [params]
 

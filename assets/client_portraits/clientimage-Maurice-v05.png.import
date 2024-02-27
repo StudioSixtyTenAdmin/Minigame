@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cinathsow1k8a"
-path="res://.godot/imported/clientimage-Maurice-v05.png-5db088de3bd463432205fead98d92a6e.ctex"
+uid="uid://cn3pnssm65nlc"
+path="res://.godot/imported/clientimage-maurice-v05.png-b75837328c17acff0641e798763e35fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/client_portraits/clientimage-Maurice-v05.png"
-dest_files=["res://.godot/imported/clientimage-Maurice-v05.png-5db088de3bd463432205fead98d92a6e.ctex"]
+source_file="res://assets/client_portraits/clientimage-maurice-v05.png"
+dest_files=["res://.godot/imported/clientimage-maurice-v05.png-b75837328c17acff0641e798763e35fe.ctex"]
 
 [params]
 

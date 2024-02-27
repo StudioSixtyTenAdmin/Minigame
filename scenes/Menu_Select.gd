@@ -72,6 +72,7 @@ func _endgame(result):
 	if result:
 		print('winwinwinwinwinwinwinwin')
 		remove_child(running_scene)
+		$GameWin.visible = true
 		
 	$MainMenuBeginMenuCard.visible = true
 	$VBoxContainer/Start.visible = true

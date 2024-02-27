@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://041q027juymu"
-path="res://.godot/imported/clientimage-Orvyn-v05.png-281cc51c339afbc7cc60b64ba170a723.ctex"
+uid="uid://dmlggu8usqmu7"
+path="res://.godot/imported/clientimage-orvyn-v05.png-d2fd1407ef5905d6b47b90c175789a97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/client_portraits/clientimage-Orvyn-v05.png"
-dest_files=["res://.godot/imported/clientimage-Orvyn-v05.png-281cc51c339afbc7cc60b64ba170a723.ctex"]
+source_file="res://assets/client_portraits/clientimage-orvyn-v05.png"
+dest_files=["res://.godot/imported/clientimage-orvyn-v05.png-d2fd1407ef5905d6b47b90c175789a97.ctex"]
 
 [params]
 

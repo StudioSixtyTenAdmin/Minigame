@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci8n1t4xpgi40"
-path="res://.godot/imported/clientimage-Daegal-v05.png-42fd370a8bc24292f3672ce127a53173.ctex"
+uid="uid://bqoiem5shovft"
+path="res://.godot/imported/clientimage-daegal-v05.png-8707076779259358cbc3e6249c31e55a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/client_portraits/clientimage-Daegal-v05.png"
-dest_files=["res://.godot/imported/clientimage-Daegal-v05.png-42fd370a8bc24292f3672ce127a53173.ctex"]
+source_file="res://assets/client_portraits/clientimage-daegal-v05.png"
+dest_files=["res://.godot/imported/clientimage-daegal-v05.png-8707076779259358cbc3e6249c31e55a.ctex"]
 
 [params]
 

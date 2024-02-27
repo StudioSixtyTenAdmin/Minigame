@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fwcnw8w5tu5n"
-path="res://.godot/imported/clientimage-Silas-v05.png-bcd2fe06e68fe51d050b3b2920ed5e91.ctex"
+uid="uid://bfy4y5ie5k530"
+path="res://.godot/imported/clientimage-silas-v05.png-80787b7b64dd1d1260802419726c2747.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/client_portraits/clientimage-Silas-v05.png"
-dest_files=["res://.godot/imported/clientimage-Silas-v05.png-bcd2fe06e68fe51d050b3b2920ed5e91.ctex"]
+source_file="res://assets/client_portraits/clientimage-silas-v05.png"
+dest_files=["res://.godot/imported/clientimage-silas-v05.png-80787b7b64dd1d1260802419726c2747.ctex"]
 
 [params]
 

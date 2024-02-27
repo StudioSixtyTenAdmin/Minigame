@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx6ilbiywmsrs"
-path="res://.godot/imported/clientimage-Ursula-v05.png-d379c44daec55f1df388a9b56757ac95.ctex"
+uid="uid://dwahgnu3iixvx"
+path="res://.godot/imported/clientimage-ursula-v05.png-5f3ab04339850d5c3fd132ed5a1f07eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/client_portraits/clientimage-Ursula-v05.png"
-dest_files=["res://.godot/imported/clientimage-Ursula-v05.png-d379c44daec55f1df388a9b56757ac95.ctex"]
+source_file="res://assets/client_portraits/clientimage-ursula-v05.png"
+dest_files=["res://.godot/imported/clientimage-ursula-v05.png-5f3ab04339850d5c3fd132ed5a1f07eb.ctex"]
 
 [params]
 
