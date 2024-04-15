@@ -5,11 +5,11 @@ res://scripts/player_board.gd
 res://scripts/card_script.gd
 res://scenes/cards/curves/curve6.tres
 res://new_shader.gdshader
-res://scenes/Menu_Select.tscn
 res://scenes/reading_scene.tscn
 res://scenes/player_board.tscn
 res://scenes/clients/client_root.tscn
 res://scenes/dialogue_box.tscn
+res://scenes/Menu_Select.tscn
 res://scenes/swap_location.tscn
 res://scenes/tar_root_scene.tscn
 res://scenes/cards/card_root.tscn
